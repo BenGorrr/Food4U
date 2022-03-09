@@ -21,6 +21,6 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this@MainActivity, SignIn_SignUp::class.java))
             Toast.makeText(this@MainActivity, "First Run", Toast.LENGTH_LONG).show()
         }
-        getSharedPreferences("PREFERENCE", MODE_PRIVATE).edit().putBoolean("isFirstRun", true).commit()
+        getSharedPreferences("PREFERENCE", MODE_PRIVATE).edit().putBoolean("isFirstRun", false).commit()
     }
 }
