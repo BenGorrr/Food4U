@@ -3,10 +3,7 @@ package com.example.food4u
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.CheckBox
-import android.widget.ImageView
-import android.widget.TextView
+import android.widget.*
 import androidx.databinding.DataBindingUtil
 import com.example.food4u.databinding.ActivityUserRegisterBinding
 import com.example.food4u.databinding.ActivityUserSigninBinding
@@ -22,7 +19,7 @@ class userRegister : AppCompatActivity() {
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_user_register)
         val backArrow: ImageView = binding.backArrow
-        val tfUserEmail: TextView = binding.tfEmailAddress
+        val tfUsername: TextView = binding.tfUsername
         val tfUserPassword: TextView = binding.tfPassword
         val tfConfirmPw: TextView = binding.tfConfirmPassword
         val cbAgree:CheckBox = binding.cbAgree
@@ -35,9 +32,9 @@ class userRegister : AppCompatActivity() {
         }
 
         btnReg.setOnClickListener(){
-            if(tfUserEmail.getText().toString().isEmpty()||tfUserPassword.getText().toString().isEmpty()||tfConfirmPw.getText().toString().isEmpty()||!(cbAgree.isChecked)){
-                if(tfUserEmail.getText().toString().isEmpty()){
-                    tfUserEmail.setError("Your email is required!")
+            if(tfUsername.getText().toString().isEmpty()||tfUserPassword.getText().toString().isEmpty()||tfConfirmPw.getText().toString().isEmpty()||!(cbAgree.isChecked)){
+                if(tfUsername.getText().toString().isEmpty()){
+                    tfUsername.setError("Your username is required!")
                 }
                 else if(tfUserPassword.getText().toString().isEmpty()){
                     tfUserPassword.setError("Your password is required!")
@@ -49,15 +46,36 @@ class userRegister : AppCompatActivity() {
                     cbAgree.setError("Please check the box!")
                 }
                 else{
-                    tfUserEmail.setError("Your email is required!")
+                    tfUsername.setError("Your username is required!")
                     tfUserPassword.setError("Your password is required!")
                     tfConfirmPw.setError("Please re-enter the password!")
                     cbAgree.setError("Please check the box!")
                 }
             }
             else{
-                val intent = Intent(this, MainActivity::class.java)
-                startActivity(intent)
+                val username = tfUsername.getText().toString()
+                val password = tfUserPassword.getText().toString()
+                val checkPassword = tfConfirmPw.getText().toString()
+                if(password.equals(checkPassword)){
+                    val checkUser:Boolean = DB.checkusername(username)
+                    if(!checkUser){
+                        val insertUser:Boolean = DB.insertData(username, password)
+                        if(insertUser){
+                            Toast.makeText(this, "Registered successfully!",Toast.LENGTH_SHORT).show()
+                            val intent = Intent(this, userSignin::class.java)
+                            startActivity(intent)
+                        }
+                        else{
+                            Toast.makeText(this, "Registered failed!",Toast.LENGTH_SHORT).show()
+                        }
+                    }
+                    else{
+                        Toast.makeText(this, "User already exists! Please sign in instead.",Toast.LENGTH_SHORT).show()
+                    }
+                }
+                else{
+                    Toast.makeText(this, "Incorrect passwords!",Toast.LENGTH_SHORT).show()
+                }
             }
         }
 
