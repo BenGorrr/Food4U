@@ -1,12 +1,11 @@
 package com.example.food4u
 
+import android.app.Dialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.TextView
-import android.widget.Toast
+import android.view.Window
+import android.widget.*
 import androidx.databinding.DataBindingUtil
 import com.example.food4u.databinding.ActivityUserSigninBinding
 import com.example.food4u.sql.DatabaseHelper
@@ -24,6 +23,7 @@ class userSignin : AppCompatActivity() {
         val btnConfirmSignIn:Button = binding.btnConfirmSIgnIn
         val tfUsername:TextView = binding.tfUsernameSignIn
         val tfUserPassword:TextView = binding.tfPassword
+        val tvForgotPW:TextView = binding.tvResetPw
         DB = DatabaseHelper(this)
 
         backArrow.setOnClickListener(){
@@ -58,5 +58,26 @@ class userSignin : AppCompatActivity() {
                 }
             }
         }
+
+        tvForgotPW.setOnClickListener(){
+            showResetPwDialog()
+        }
+
+    }
+
+    private fun showResetPwDialog() {
+        val dialog:Dialog = Dialog(this)
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        dialog.setCancelable(true)
+        dialog.setContentView(R.layout.resetpw_dialog)
+
+        val username:EditText = dialog.findViewById(R.id.tfResetUsername)
+        val newPw:EditText = dialog.findViewById(R.id.tfNewPassword)
+        val btnConfrim:Button = dialog.findViewById(R.id.btnResetPw)
+        btnConfrim.setOnClickListener(){
+            DB.changePassword(username.toString(), newPw.toString())
+            dialog.dismiss()
+        }
+        dialog.show()
     }
 }

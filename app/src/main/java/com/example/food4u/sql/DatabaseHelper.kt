@@ -2,6 +2,7 @@ package com.example.food4u.sql
 
 import android.content.ContentValues
 import android.content.Context
+import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 
@@ -16,12 +17,14 @@ class DatabaseHelper(context: Context?) :
         MyDB.execSQL("drop Table if exists users")
     }
 
+
     fun insertData(username: String?, password: String?): Boolean {
         val MyDB = this.writableDatabase
         val contentValues = ContentValues()
         contentValues.put("username", username)
         contentValues.put("password", password)
         val result = MyDB.insert("users", null, contentValues)
+
         return if (result == -1L) false else true
     }
 
@@ -38,6 +41,22 @@ class DatabaseHelper(context: Context?) :
             arrayOf(username, password)
         )
         return if (cursor.count > 0) true else false
+    }
+
+    fun readUser(): String{
+        val MyDB = this.readableDatabase
+        val cursor = MyDB.query("users", null, null, null, null, null, null)
+        var stringC:String= cursor.count.toString()
+        return stringC
+    }
+
+    fun changePassword(username: String, newPassword: String): Boolean{
+        val MyDB = this.writableDatabase
+        val contentValues = ContentValues()
+        contentValues.put("password", newPassword)
+        val result = MyDB.update("users", contentValues, username +"=?", arrayOf(username.toString())).toLong()
+        MyDB.close()
+        return Integer.parseInt("$result") != -1
     }
 
     companion object {

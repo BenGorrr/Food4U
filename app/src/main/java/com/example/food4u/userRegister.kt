@@ -61,6 +61,7 @@ class userRegister : AppCompatActivity() {
                     if(!checkUser){
                         val insertUser:Boolean = DB.insertData(username, password)
                         if(insertUser){
+                            DB.readUser()
                             Toast.makeText(this, "Registered successfully!",Toast.LENGTH_SHORT).show()
                             val intent = Intent(this, userSignin::class.java)
                             startActivity(intent)
@@ -80,6 +81,9 @@ class userRegister : AppCompatActivity() {
         }
 
     }
-
+    override fun onDestroy() {
+        DB.close()
+        super.onDestroy()
+    }
 
 }

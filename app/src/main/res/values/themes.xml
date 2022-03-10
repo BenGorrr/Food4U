@@ -17,5 +17,7 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
+    <style name="Theme.Food4U.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="Theme.Food4U.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
 </resources>
