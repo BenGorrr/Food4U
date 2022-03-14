@@ -4,11 +4,19 @@ import android.app.Dialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.Window
 import android.widget.*
 import androidx.databinding.DataBindingUtil
 import com.example.food4u.databinding.ActivityUserSigninBinding
 import com.example.food4u.sql.DatabaseHelper
+import android.preference.PreferenceManager
+
+import android.content.SharedPreferences
+
+
+
 
 class userSignin : AppCompatActivity() {
     private lateinit var binding: ActivityUserSigninBinding
@@ -51,6 +59,10 @@ class userSignin : AppCompatActivity() {
                 val checkPassword:Boolean = DB.checkusernamepassword(username, password)
                 if(checkPassword){
                     Toast.makeText(this, "Login successfully!", Toast.LENGTH_SHORT).show()
+                    val isLogin = getSharedPreferences("PREFERENCE", MODE_PRIVATE).edit().putBoolean("isLogIn", true).commit()
+//                    val pref = getSharedPreferences()
+//                    val prefs = PreferenceManager.getDefaultSharedPreferences(this)
+//                    prefs.edit().putBoolean("Islogin", Islogin).commit()
                     val intent = Intent(this, MainActivity::class.java)
                     startActivity(intent)
                 }else{
@@ -58,7 +70,7 @@ class userSignin : AppCompatActivity() {
                 }
             }
         }
-
+        val password = tfUserPassword.getText().toString()
         tvForgotPW.setOnClickListener(){
             showResetPwDialog()
         }
@@ -75,8 +87,15 @@ class userSignin : AppCompatActivity() {
         val newPw:EditText = dialog.findViewById(R.id.tfNewPassword)
         val btnConfrim:Button = dialog.findViewById(R.id.btnResetPw)
         btnConfrim.setOnClickListener(){
-            DB.changePassword(username.toString(), newPw.toString())
-            dialog.dismiss()
+            val username:String = username.getText().toString()
+            val newPass:String = newPw.getText().toString()
+            if(DB.changePassword(username, newPass)) {
+                dialog.dismiss()
+                Toast.makeText(this, "Your password has been changed successfully!", Toast.LENGTH_SHORT).show()
+            }else{
+                newPw.setError("Your password is same as the old one!")
+            }
+
         }
         dialog.show()
     }

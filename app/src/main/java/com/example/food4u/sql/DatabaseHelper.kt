@@ -5,6 +5,13 @@ import android.content.Context
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
+import android.R.id
+import android.icu.lang.UProperty
+
+import android.icu.lang.UProperty.AGE
+
+
+
 
 
 class DatabaseHelper(context: Context?) :
@@ -53,10 +60,11 @@ class DatabaseHelper(context: Context?) :
     fun changePassword(username: String, newPassword: String): Boolean{
         val MyDB = this.writableDatabase
         val contentValues = ContentValues()
+        contentValues.put("username", username)
         contentValues.put("password", newPassword)
-        val result = MyDB.update("users", contentValues, username +"=?", arrayOf(username.toString())).toLong()
-        MyDB.close()
-        return Integer.parseInt("$result") != -1
+        if(checkusernamepassword(username, newPassword)) return false
+        val result = MyDB.update("users", contentValues, "username = ? ", arrayOf<String>(java.lang.String.valueOf(username)))
+        return true
     }
 
     companion object {

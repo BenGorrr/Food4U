@@ -37,7 +37,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="New password"
-        android:inputType="textShortMessage|number"
+        android:inputType="textShortMessage|text"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

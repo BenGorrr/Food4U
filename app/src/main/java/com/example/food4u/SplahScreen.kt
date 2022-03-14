@@ -14,7 +14,6 @@ class SplahScreen : AppCompatActivity() {
         supportActionBar?.hide()
         //to check signin signup, uncomment this line
         //getSharedPreferences("PREFERENCE", MODE_PRIVATE).edit().putBoolean("isFirstRun", true).commit()
-
         val isFirstRun = getSharedPreferences("PREFERENCE", MODE_PRIVATE).getBoolean("isFirstRun", true)
         Handler(Looper.getMainLooper()).postDelayed({
             if (isFirstRun) {
@@ -23,8 +22,19 @@ class SplahScreen : AppCompatActivity() {
                 startActivity(Intent(this, SignIn_SignUp::class.java))
                 Toast.makeText(this, "First Run", Toast.LENGTH_LONG).show()
             }else{
-                val intent = Intent(this, MainActivity::class.java)
-                startActivity(intent)
+                val isLogin = getSharedPreferences("PREFERENCE", MODE_PRIVATE).getBoolean("isLogIn", false)
+                if(isLogin){
+                    Toast.makeText(this, "Youre logged in!", Toast.LENGTH_SHORT).show()
+                    val intent = Intent(this, MainActivity::class.java)
+                    startActivity(intent)
+                    //this line to un-login
+                    //getSharedPreferences("PREFERENCE", MODE_PRIVATE).edit().putBoolean("isLogIn", false).commit()
+                }else{
+                    Toast.makeText(this, "Youre not logged in!", Toast.LENGTH_SHORT).show()
+                    val intent = Intent(this, SignIn_SignUp::class.java)
+                    startActivity(intent)
+                }
+
             }
         }, 1500)
 

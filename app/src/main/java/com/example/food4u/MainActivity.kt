@@ -13,6 +13,11 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
+        val isLogin = getSharedPreferences("PREFERENCE", MODE_PRIVATE).getBoolean("isLogIn", false)
+        if(isLogin){
+            Toast.makeText(this, "Youre logged in!", Toast.LENGTH_SHORT).show()
+        }else{
+            Toast.makeText(this, "Youre not logged in!", Toast.LENGTH_SHORT).show()
+        }
     }
 }
