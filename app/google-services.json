@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "440784113414",
+    "project_id": "food4u-9d1c8",
+    "storage_bucket": "food4u-9d1c8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:440784113414:android:ffad4347a3a07dab6b1887",
+        "android_client_info": {
+          "package_name": "com.example.food4u"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "440784113414-12s5hj0thde7gin47sof7c0kflkqlki2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAxLIT4K_zpceyGTuVwpsTmzKuUL36nIIM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "440784113414-12s5hj0thde7gin47sof7c0kflkqlki2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

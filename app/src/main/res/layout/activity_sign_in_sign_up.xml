@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
     <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#FFF1CE"
-        tools:context=".SignIn_SignUp">
+        android:background="#FFF1CE">
 
         <ImageView
             android:id="@+id/imageView4"
@@ -96,4 +95,3 @@
             app:strokeWidth="1dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-</layout>

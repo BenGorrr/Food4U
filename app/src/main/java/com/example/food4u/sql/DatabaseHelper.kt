@@ -11,9 +11,6 @@ import android.icu.lang.UProperty
 import android.icu.lang.UProperty.AGE
 
 
-
-
-
 class DatabaseHelper(context: Context?) :
     SQLiteOpenHelper(context, "Login.db", null, 1) {
     override fun onCreate(MyDB: SQLiteDatabase) {
