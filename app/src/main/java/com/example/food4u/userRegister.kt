@@ -79,8 +79,8 @@ class userRegister : AppCompatActivity() {
                         .addOnSuccessListener {
                             Toast.makeText(this, "Registered successfully!",Toast.LENGTH_SHORT).show()
                             val newUser = User(email, username, password)
-                            database.child("User").child(newUser.email).setValue(newUser)
-                            Toast.makeText(this, "diu!",Toast.LENGTH_SHORT).show()
+                            database.child("User").child(Firebase.auth.uid.toString()).setValue(newUser)
+
                             Firebase.auth.signOut()
                             val intent = Intent(this, userSignin::class.java)
                             startActivity(intent)
