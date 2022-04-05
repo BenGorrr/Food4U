@@ -8,10 +8,7 @@ import android.util.Log
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.food4u.databinding.ActivityMainBinding
-import com.example.food4u.fragments.AboutUsFragment
-import com.example.food4u.fragments.HomeFragment
-import com.example.food4u.fragments.NotificationFragment
-import com.example.food4u.fragments.ProfileFragment
+import com.example.food4u.fragments.*
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -28,6 +25,7 @@ class MainActivity : AppCompatActivity() {
         val aboutUsFragment = AboutUsFragment()
         val notificationFragment = NotificationFragment()
         val profileFragment = ProfileFragment()
+        val fundRaisingFragment = FundRaisingFragment()
 
         setCurrentFragment(homeFragment)
 
@@ -48,6 +46,10 @@ class MainActivity : AppCompatActivity() {
                 R.id.nav_profile -> {
                     setCurrentFragment(profileFragment)
                     Log.i(TAG, "Profile selected")
+                }
+                R.id.nav_donate -> {
+                    setCurrentFragment(fundRaisingFragment)
+                    Log.i(TAG, "Donate selected")
                 }
             }
             true
