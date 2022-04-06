@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFF1CE"
+    android:background="@color/backgroundColor"
     tools:context=".fragments.NotificationFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -19,7 +19,7 @@
             android:background="#FFFFFF"
             app:layout_constraintBottom_toTopOf="@+id/notificationMessagee"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0" />
@@ -75,11 +75,11 @@
             android:textSize="12sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/topNav"
-            app:layout_constraintEnd_toEndOf="@+id/topNav"
-            app:layout_constraintHorizontal_bias="0.87"
+            app:layout_constraintEnd_toStartOf="@+id/btnDeleteNotification"
+            app:layout_constraintHorizontal_bias="0.98"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.45999998" />
+            app:layout_constraintVertical_bias="0.465" />
 
         <TextView
             android:id="@+id/noOfNotify"
@@ -90,8 +90,8 @@
             android:textSize="12sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/topNav"
-            app:layout_constraintEnd_toEndOf="@+id/topNav"
-            app:layout_constraintHorizontal_bias="0.72"
+            app:layout_constraintEnd_toStartOf="@+id/notifications"
+            app:layout_constraintHorizontal_bias="0.98"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.465" />
@@ -106,6 +106,19 @@
             app:layout_constraintHorizontal_bias="0.97"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/notificationRecycleView"
+            android:layout_width="412dp"
+            android:layout_height="603dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/topNav"
+            app:layout_constraintVertical_bias="0.0"
+            tools:listitem="@layout/view_cycle_notification" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

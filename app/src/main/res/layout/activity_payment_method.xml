@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor">
+
+    <TextView
+        android:id="@+id/secondBg"
+        android:layout_width="0dp"
+        android:layout_height="580dp"
+        android:background="@drawable/lowercurve"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/paymentMethodTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Payment Methods"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/secondBg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.16000003" />
+
+    <ImageView
+        android:id="@+id/btnBackArrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/secondBg"
+        app:layout_constraintEnd_toStartOf="@+id/paymentMethodTitle"
+        app:layout_constraintHorizontal_bias="0.15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.16000003"
+        app:srcCompat="@drawable/ic_baseline_arrow_back_24" />
+
+    <Button
+        android:id="@+id/btnAddCard"
+        android:layout_width="270dp"
+        android:layout_height="165dp"
+        android:paddingTop="65dp"
+        android:text="Add Card"
+        android:textStyle="normal"
+        app:cornerRadius="25dp"
+        app:layout_constraintBottom_toBottomOf="@+id/secondBg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.125" />
+
+    <ImageView
+        android:id="@+id/imageView20"
+        android:layout_width="43dp"
+        android:layout_height="40dp"
+        android:translationZ="100dp"
+        app:layout_constraintBottom_toBottomOf="@+id/btnAddCard"
+        app:layout_constraintEnd_toEndOf="@+id/btnAddCard"
+        app:layout_constraintStart_toStartOf="@+id/btnAddCard"
+        app:layout_constraintTop_toTopOf="@+id/btnAddCard"
+        app:srcCompat="@drawable/ic_baseline_add_24" />
+
+    <TextView
+        android:id="@+id/otherPaymentLbl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Other Payment Methods"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/secondBg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.198"
+        app:layout_constraintStart_toStartOf="@+id/secondBg"
+        app:layout_constraintTop_toTopOf="@+id/secondBg"
+        app:layout_constraintVertical_bias="0.19999999" />
+
+    <TextView
+        android:id="@+id/touchNgoTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Touch N Go"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="@+id/secondBg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.38"
+        app:layout_constraintStart_toStartOf="@+id/secondBg"
+        app:layout_constraintTop_toTopOf="@+id/secondBg"
+        app:layout_constraintVertical_bias="0.26999998" />
+
+    <TextView
+        android:id="@+id/paypalTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="PayPal"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.35"
+        app:layout_constraintStart_toStartOf="@+id/secondBg"
+        app:layout_constraintTop_toBottomOf="@+id/touchNgoTxt" />
+
+    <TextView
+        android:id="@+id/creditDebitTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Credit/Debit Card"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.43"
+        app:layout_constraintStart_toStartOf="@+id/secondBg"
+        app:layout_constraintTop_toBottomOf="@+id/paypalTxt" />
+
+    <ImageView
+        android:id="@+id/imageView21"
+        android:layout_width="49dp"
+        android:layout_height="43dp"
+        app:layout_constraintBottom_toBottomOf="@+id/secondBg"
+        app:layout_constraintEnd_toEndOf="@+id/secondBg"
+        app:layout_constraintHorizontal_bias="0.171"
+        app:layout_constraintStart_toStartOf="@+id/secondBg"
+        app:layout_constraintTop_toTopOf="@+id/secondBg"
+        app:layout_constraintVertical_bias="0.266"
+        app:srcCompat="@drawable/touch_n_go" />
+
+    <ImageView
+        android:id="@+id/imageView23"
+        android:layout_width="88dp"
+        android:layout_height="71dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/secondBg"
+        app:layout_constraintHorizontal_bias="0.13"
+        app:layout_constraintStart_toStartOf="@+id/secondBg"
+        app:layout_constraintTop_toTopOf="@+id/secondBg"
+        app:layout_constraintVertical_bias="0.35000002"
+        app:srcCompat="@drawable/paypal" />
+
+    <ImageView
+        android:id="@+id/imageView24"
+        android:layout_width="63dp"
+        android:layout_height="91dp"
+        app:layout_constraintBottom_toBottomOf="@+id/secondBg"
+        app:layout_constraintEnd_toEndOf="@+id/secondBg"
+        app:layout_constraintHorizontal_bias="0.16"
+        app:layout_constraintStart_toStartOf="@+id/secondBg"
+        app:layout_constraintTop_toTopOf="@+id/secondBg"
+        app:layout_constraintVertical_bias="0.44"
+        app:srcCompat="@drawable/credit_debit_card" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

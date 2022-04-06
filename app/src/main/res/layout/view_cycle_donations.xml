@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/donationsNotify"
+        android:layout_width="375dp"
+        android:layout_height="84dp"
+        android:layout_margin="16dp"
+        android:background="@drawable/rightcurve"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/dateBg"
+        android:layout_width="63dp"
+        android:layout_height="57dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/donationsNotify"
+        app:layout_constraintEnd_toEndOf="@+id/donationsNotify"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toStartOf="@+id/donationsNotify"
+        app:layout_constraintTop_toTopOf="@+id/donationsNotify" />
+
+    <TextView
+        android:id="@+id/dayTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="01"
+        android:textColor="@color/orange"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/dateBg"
+        app:layout_constraintEnd_toEndOf="@+id/dateBg"
+        app:layout_constraintStart_toStartOf="@+id/dateBg"
+        app:layout_constraintTop_toTopOf="@+id/dateBg"
+        app:layout_constraintVertical_bias="0.27999997" />
+
+    <TextView
+        android:id="@+id/donationCampaign"
+        android:layout_width="205dp"
+        android:layout_height="25dp"
+        android:text="No txt"
+        android:textColor="@color/orange"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/donationsNotify"
+        app:layout_constraintEnd_toEndOf="@+id/donationsNotify"
+        app:layout_constraintStart_toStartOf="@+id/donationsNotify"
+        app:layout_constraintTop_toTopOf="@+id/donationsNotify"
+        app:layout_constraintVertical_bias="0.37" />
+
+    <TextView
+        android:id="@+id/donationAmount"
+        android:layout_width="66dp"
+        android:layout_height="19dp"
+        android:text="$"
+        android:textColor="@color/orange"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/donationsNotify"
+        app:layout_constraintEnd_toEndOf="@+id/donationsNotify"
+        app:layout_constraintHorizontal_bias="0.97"
+        app:layout_constraintStart_toStartOf="@+id/donationsNotify"
+        app:layout_constraintTop_toTopOf="@+id/donationsNotify" />
+
+    <TextView
+        android:id="@+id/donationTitle"
+        android:layout_width="205dp"
+        android:layout_height="25dp"
+        android:text="No txt"
+        android:textColor="@color/orange"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/donationsNotify"
+        app:layout_constraintEnd_toEndOf="@+id/donationsNotify"
+        app:layout_constraintStart_toStartOf="@+id/donationsNotify"
+        app:layout_constraintTop_toTopOf="@+id/donationsNotify"
+        app:layout_constraintVertical_bias="0.73" />
+
+    <TextView
+        android:id="@+id/monthTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Jan"
+        android:textColor="@color/colorPrimary"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/dateBg"
+        app:layout_constraintEnd_toEndOf="@+id/dateBg"
+        app:layout_constraintStart_toStartOf="@+id/dateBg"
+        app:layout_constraintTop_toTopOf="@+id/dateBg"
+        app:layout_constraintVertical_bias="0.83" />
+</androidx.constraintlayout.widget.ConstraintLayout>
