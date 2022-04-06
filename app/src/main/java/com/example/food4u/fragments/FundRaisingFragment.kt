@@ -8,13 +8,13 @@ import android.view.ViewGroup
 import com.example.food4u.R
 
 
-class NotificationFragment : Fragment() {
-
+class FundRaisingFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? = inflater.inflate(R.layout.fragment_notification, container, false)
+    ): View? = inflater.inflate(R.layout.fragment_fund_raising, container, false)
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

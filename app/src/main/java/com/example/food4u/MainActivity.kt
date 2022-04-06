@@ -25,6 +25,7 @@ class MainActivity : AppCompatActivity() {
         val aboutUsFragment = AboutUsFragment()
         val notificationFragment = NotificationFragment()
         val profileFragment = ProfileFragment()
+        val fundRaisingFragment = FundRaisingFragment()
         val necessityFragment = NecessityFragment()
 
         setCurrentFragment(homeFragment)
@@ -50,6 +51,10 @@ class MainActivity : AppCompatActivity() {
                 R.id.nav_donate -> {
                     setCurrentFragment(necessityFragment)
                     Log.i(TAG, "Necessity selected")
+                }
+                R.id.nav_donate -> {
+                    setCurrentFragment(fundRaisingFragment)
+                    Log.i(TAG, "Donate selected")
                 }
             }
             true
