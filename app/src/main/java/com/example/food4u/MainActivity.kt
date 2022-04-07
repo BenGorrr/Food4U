@@ -52,10 +52,10 @@ class MainActivity : AppCompatActivity() {
                     setCurrentFragment(necessityFragment)
                     Log.i(TAG, "Necessity selected")
                 }
-                R.id.nav_donate -> {
-                    setCurrentFragment(fundRaisingFragment)
-                    Log.i(TAG, "Donate selected")
-                }
+//                R.id.nav_donate -> {
+//                    setCurrentFragment(fundRaisingFragment)
+//                    Log.i(TAG, "Donate selected")
+//                }
             }
             true
         }

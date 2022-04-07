@@ -207,13 +207,13 @@
             android:layout_marginEnd="96dp"
             android:layout_marginBottom="8dp"
             android:background="@drawable/blue_button"
-            android:src="@drawable/ic_necessity"
             android:visibility="visible"
             app:layout_constraintBottom_toTopOf="@+id/textView22"
             app:layout_constraintEnd_toStartOf="@+id/imageBtnDonate"
             app:layout_constraintStart_toStartOf="@+id/textView22"
             app:layout_constraintTop_toTopOf="@+id/imageBtnDonate" />
 
+<!--        android:src="@drawable/ic_necessity"-->
         <TextView
             android:id="@+id/textView22"
             android:layout_width="wrap_content"
