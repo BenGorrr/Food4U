@@ -16,4 +16,5 @@
     <color name="darkblue">#18476D</color>
     <color name="grey">#C9C8C8</color>
 
+    <color name="backgroundColor">#FFF1CE</color>
 </resources>
