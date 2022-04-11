@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#BFF6C062"
+    tools:context=".MyCartActivity">
+
+    <ImageView
+        android:id="@+id/imageView18"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/tvMyCartTittle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.044"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.636"
+        app:srcCompat="@drawable/ic_back" />
+
+    <TextView
+        android:id="@+id/tvMyCartTittle"
+        android:layout_width="364dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/oval_shape"
+        android:paddingLeft="16dp"
+        android:text="My Cart"
+        android:textAlignment="textStart"
+        android:textColor="#070707"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="410dp"
+        android:layout_height="356dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:listitem="@layout/view_cycle_product_necessity" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="343dp"
+        android:layout_height="163dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/oval_shape"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvSubTotaltittle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:text="SubTotal"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/tvSubTotalAmount"
+        app:layout_constraintHorizontal_bias="0.032"
+        app:layout_constraintStart_toStartOf="@+id/textView8"
+        app:layout_constraintTop_toTopOf="@+id/textView8" />
+
+    <TextView
+        android:id="@+id/tvTax"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Platform charge (8%)"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/tvTaxAmount"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tvSubTotaltittle"
+        app:layout_constraintTop_toBottomOf="@+id/tvSubTotaltittle" />
+
+    <TextView
+        android:id="@+id/tvSubTotalAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/tvSubTotaltittle"
+        app:layout_constraintEnd_toEndOf="@+id/textView8"
+        app:layout_constraintTop_toTopOf="@+id/tvSubTotaltittle" />
+
+    <TextView
+        android:id="@+id/tvTaxAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="@+id/tvSubTotalAmount"
+        app:layout_constraintStart_toStartOf="@+id/tvSubTotalAmount"
+        app:layout_constraintTop_toBottomOf="@+id/tvSubTotalAmount" />
+
+    <TextView
+        android:id="@+id/tvLine"
+        android:layout_width="339dp"
+        android:layout_height="4dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/textView8"
+        app:layout_constraintStart_toStartOf="@+id/textView8"
+        app:layout_constraintTop_toBottomOf="@+id/tvTax" />
+
+    <TextView
+        android:id="@+id/tvTotalTittle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Total"
+        android:textColor="#070707"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/tvTax"
+        app:layout_constraintTop_toBottomOf="@+id/tvLine" />
+
+    <TextView
+        android:id="@+id/tvTotalAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="TextView"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/textView8"
+        app:layout_constraintStart_toStartOf="@+id/tvTotalTittle"
+        app:layout_constraintTop_toBottomOf="@+id/tvTotalTittle" />
+
+    <Button
+        android:id="@+id/btnCheckOut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="Check Out"
+        app:layout_constraintBottom_toBottomOf="@+id/textView8"
+        app:layout_constraintEnd_toEndOf="@+id/textView8"
+        app:layout_constraintHorizontal_bias="0.857"
+        app:layout_constraintStart_toEndOf="@+id/tvTotalAmount" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
