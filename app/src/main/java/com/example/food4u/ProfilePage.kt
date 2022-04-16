@@ -46,7 +46,7 @@ class ProfilePage : AppCompatActivity() {
         val btnPaymentMethod = binding.btnManagePayment
         val numOfDonation = binding.tvNumOfDonation
         val backArr = binding.editBackArr
-        var setClick = false
+        val homeBtn = binding.homeBtn
 
         tvEditProfile.visibility = View.GONE
         backArr.visibility = View.INVISIBLE
@@ -104,7 +104,7 @@ class ProfilePage : AppCompatActivity() {
             numOfDonation.visibility = View.INVISIBLE
             backArr.visibility = View.VISIBLE
             profPic.setImageResource(R.drawable.editicon)
-            setClick = true
+            homeBtn.visibility = View.INVISIBLE
             replaceFragment(EditProfileFragment())
         }
 
@@ -112,6 +112,10 @@ class ProfilePage : AppCompatActivity() {
             val intent = Intent(this, ProfilePage::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
             startActivity(intent)
+            finish()
+        }
+
+        homeBtn.setOnClickListener{
             finish()
         }
 
