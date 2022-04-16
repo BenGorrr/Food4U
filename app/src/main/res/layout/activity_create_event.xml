@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#BFF6C062"
+    tools:context=".CreateEventActivity">
+
+        <TextView
+            android:id="@+id/textView32"
+            android:layout_width="397dp"
+            android:layout_height="113dp"
+            android:background="@drawable/header_half_oval"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView31"
+            android:layout_width="335dp"
+            android:layout_height="673dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/oval_shape"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView32" />
+
+        <TextView
+            android:id="@+id/tvOrganizerName"
+            android:layout_width="111dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="32dp"
+            android:text="Organizer Name"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/textView31"
+            app:layout_constraintTop_toTopOf="@+id/textView31" />
+
+        <TextView
+            android:id="@+id/tvTittleCreateDonationEvent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Create Donation Event"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/textView32"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.435"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textView32" />
+
+        <TextView
+            android:id="@+id/tvEventGoal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:text="Goal"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/tvDonationEventTittle"
+            app:layout_constraintTop_toBottomOf="@+id/tvDonationEventTittle" />
+
+        <TextView
+            android:id="@+id/tvOrganizerAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Address"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/inputOrganizerAddress"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/tvOrganizerName"
+            app:layout_constraintTop_toBottomOf="@+id/tvOrganizerName" />
+
+        <EditText
+            android:id="@+id/inputEventDesc"
+            android:layout_width="301dp"
+            android:layout_height="140dp"
+            android:layout_marginTop="16dp"
+            android:ems="10"
+            android:gravity="start|top"
+            android:inputType="textMultiLine"
+            app:layout_constraintStart_toStartOf="@+id/tvEventDescription"
+            app:layout_constraintTop_toBottomOf="@+id/tvEventDescription" />
+
+        <TextView
+            android:id="@+id/tvEventDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Description"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/tvEventGoal"
+            app:layout_constraintTop_toBottomOf="@+id/tvEventGoal" />
+
+        <TextView
+            android:id="@+id/tvDonationEventTittle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Title"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/inputEventTitle"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/tvOrganizerAddress"
+            app:layout_constraintTop_toBottomOf="@+id/tvOrganizerAddress" />
+
+        <Button
+            android:id="@+id/btnConfirmCreateEvent"
+            android:layout_width="206dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="8dp"
+            android:text="Create Event"
+            app:layout_constraintBottom_toBottomOf="@+id/textView31"
+            app:layout_constraintEnd_toEndOf="@+id/textView31"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="@+id/textView31"
+            app:layout_constraintTop_toBottomOf="@+id/btnUploadEventImage"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <EditText
+            android:id="@+id/inputOrganizerName"
+            android:layout_width="169dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="@+id/textView31"
+            app:layout_constraintHorizontal_bias="0.568"
+            app:layout_constraintStart_toEndOf="@+id/tvOrganizerName"
+            app:layout_constraintTop_toTopOf="@+id/textView31" />
+
+        <EditText
+            android:id="@+id/inputOrganizerAddress"
+            android:layout_width="169dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="@+id/inputOrganizerName"
+            app:layout_constraintTop_toBottomOf="@+id/inputOrganizerName" />
+
+        <EditText
+            android:id="@+id/inputEventTitle"
+            android:layout_width="169dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="@+id/inputOrganizerAddress"
+            app:layout_constraintTop_toBottomOf="@+id/inputOrganizerAddress" />
+
+        <Button
+            android:id="@+id/btnUploadEventImage"
+            android:layout_width="110dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="152dp"
+            android:text="Upload"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/imageDonationEvent"
+            app:layout_constraintTop_toBottomOf="@+id/imageDonationEvent" />
+
+        <ImageView
+            android:id="@+id/imageDonationEvent"
+            android:layout_width="303dp"
+            android:layout_height="146dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="@+id/inputEventDesc"
+            app:layout_constraintStart_toStartOf="@+id/inputEventDesc"
+            app:layout_constraintTop_toBottomOf="@+id/inputEventDesc"
+            app:srcCompat="@drawable/ic_upload_image" />
+
+        <EditText
+            android:id="@+id/inputEventGoal"
+            android:layout_width="169dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:ems="10"
+            android:inputType="number"
+            app:layout_constraintEnd_toEndOf="@+id/inputEventTitle"
+            app:layout_constraintTop_toBottomOf="@+id/inputEventTitle" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
