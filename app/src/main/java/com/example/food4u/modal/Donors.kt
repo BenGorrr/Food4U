@@ -7,5 +7,6 @@ data class Donors(
     var id:String="",
     var donorName:String="",
     var paymentAmount:Float= 0.0f,
-    var donateDate:String=""
+    var donateDate:String="",
+    var imageURL: String = ""
 )
