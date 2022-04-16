@@ -8,18 +8,39 @@ import android.util.Log
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.food4u.databinding.ActivityMainBinding
+import com.example.food4u.firebase.firebaseHelper
 import com.example.food4u.fragments.*
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
+    private lateinit var FB: firebaseHelper
+    private lateinit var database: DatabaseReference
     val TAG = "MainActivity"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        FB = firebaseHelper(this)
+        val DB =
+            Firebase.database("https://food4u-9d1c8-default-rtdb.asia-southeast1.firebasedatabase.app/")
+        database = DB.getReference("userDB")
+        database.child("User").child(Firebase.auth.uid.toString()).get()
+            .addOnSuccessListener { rec ->
+                if (rec != null) {
+                    if(rec.child("role").value.toString() == "Admin"){
+                        val intent = Intent(this, AdminActivity::class.java)
+                        startActivity(intent)
+                    }
+                }
+            }
 
         val homeFragment = HomeFragment()
         val aboutUsFragment = AboutUsFragment()
@@ -45,8 +66,11 @@ class MainActivity : AppCompatActivity() {
                     Log.i(TAG, "Notification selected")
                 }
                 R.id.nav_profile -> {
-                    setCurrentFragment(profileFragment)
-                    Log.i(TAG, "Profile selected")
+//                    setCurrentFragment(profileFragment)
+//                    Log.i(TAG, "Profile selected")
+                    val intent = Intent(this, ProfilePage::class.java)
+                    startActivity(intent)
+
                 }
                 R.id.nav_donate -> {
                     setCurrentFragment(necessityFragment)

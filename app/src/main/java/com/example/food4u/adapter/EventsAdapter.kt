@@ -7,9 +7,9 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.food4u.R
-import com.example.food4u.modal.Agency
+import com.example.food4u.modal.Product
 
-class EventsAdapter(private val list: List<Agency>, private val listener: EventsAdapter.onItemClickListener) : RecyclerView.Adapter<EventsAdapter.myViewHolder>() {
+class EventsAdapter(private val list: List<Product>, private val listener: EventsAdapter.onItemClickListener) : RecyclerView.Adapter<EventsAdapter.myViewHolder>() {
     inner class myViewHolder (itemView: View) : RecyclerView.ViewHolder(itemView), View.OnClickListener {
 
 //        val tvAgencyName: TextView = itemView.findViewById(R.id.tvAgencyName)
