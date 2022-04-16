@@ -12,6 +12,7 @@ import com.example.food4u.adapter.ProductsAdapter
 import com.example.food4u.databinding.ActivityMyCartBinding
 import com.example.food4u.modal.CartItem
 import com.example.food4u.modal.Product
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 
 class MyCartActivity : AppCompatActivity(), CartAdapter.onItemClickListener {
@@ -32,6 +33,8 @@ class MyCartActivity : AppCompatActivity(), CartAdapter.onItemClickListener {
         agencyId = intent.getStringExtra("agencyId")!!
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        cartItemList = arrayListOf()
+        productList = arrayListOf()
 
         // populate Recycle View
         binding.rvCartProducts.layoutManager = LinearLayoutManager(applicationContext)
@@ -58,7 +61,7 @@ class MyCartActivity : AppCompatActivity(), CartAdapter.onItemClickListener {
     }
 
     fun readCart() {
-        val userId = "USERID"
+        val userId = FirebaseAuth.getInstance().currentUser!!.uid
 
         database.child("Cart").child(userId).child(agencyId).addValueEventListener(object :
             ValueEventListener {
