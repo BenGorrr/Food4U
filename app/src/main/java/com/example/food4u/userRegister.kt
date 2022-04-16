@@ -73,14 +73,19 @@ class userRegister : AppCompatActivity() {
                 }
             }
             else{
+                var userType=""
                 val email = tfEmail.getText().toString()
+                if(email.contains("admin", ignoreCase = true)){
+                    userType = "Admin"
+                }
+                else userType = "User"
                 val username = tfUsername.getText().toString()
                 val password = tfUserPassword.getText().toString()
                 val checkPassword = tfConfirmPw.getText().toString()
                 if(password.equals(checkPassword) && password.length>=6){
                     FB.registerUser(email, password)
                         .addOnSuccessListener {
-                            val newUser = User(email, username,null)
+                            val newUser = User(email, userType,username,null)
                             database.child("User").child(Firebase.auth.uid.toString()).setValue(newUser)
                             Firebase.auth.signOut()
                             val intent = Intent(this, userSignin::class.java)
