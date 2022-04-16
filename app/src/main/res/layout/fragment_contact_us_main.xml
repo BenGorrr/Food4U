@@ -226,4 +226,31 @@
         app:layout_constraintStart_toStartOf="@+id/contactUsTv"
         app:layout_constraintTop_toTopOf="@+id/contactUsTv"
         app:layout_constraintVertical_bias="0.356" />
+
+    <TextView
+        android:id="@+id/successfulMsgBg"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:background="@color/lightOrange"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/contactUsTv"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/successfulMsg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Successfully Submitted"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/successfulMsgBg"
+        app:layout_constraintEnd_toEndOf="@+id/successfulMsgBg"
+        app:layout_constraintStart_toStartOf="@+id/successfulMsgBg"
+        app:layout_constraintTop_toTopOf="@+id/successfulMsgBg"
+        app:layout_constraintVertical_bias="0.487" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

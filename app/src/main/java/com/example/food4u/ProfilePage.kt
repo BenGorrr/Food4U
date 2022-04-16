@@ -22,6 +22,7 @@ class ProfilePage : AppCompatActivity() {
 
         val tvName = binding.tvUserDisplayName
         val btnSignOut = binding.btnSignOut
+        val btnPaymentMethod = binding.btnManagePayment
 
         // get from general preference to access user-specific preference
         val username = getSharedPreferences("PREFERENCE", MODE_PRIVATE).getString("username", null)
@@ -43,6 +44,12 @@ class ProfilePage : AppCompatActivity() {
             FB.signOut()
             finish()
 
+        }
+
+        btnPaymentMethod.setOnClickListener {
+            val intent = Intent(this, PaymentMethodActivity::class.java)
+            startActivity(intent)
+            finish()
         }
     }
 }

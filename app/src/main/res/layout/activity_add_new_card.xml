@@ -8,7 +8,7 @@
     tools:context=".AddNewCardActivity">
 
     <ImageView
-        android:id="@+id/imageBack"
+        android:id="@+id/imageBackAddNewCard"
         android:layout_width="42dp"
         android:layout_height="45dp"
         android:layout_marginTop="32dp"
@@ -26,23 +26,23 @@
         android:textColor="#050505"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/imageBack"
+        app:layout_constraintBottom_toBottomOf="@+id/imageBackAddNewCard"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.326"
-        app:layout_constraintStart_toEndOf="@+id/imageBack"
-        app:layout_constraintTop_toTopOf="@+id/imageBack"
+        app:layout_constraintStart_toEndOf="@+id/imageBackAddNewCard"
+        app:layout_constraintTop_toTopOf="@+id/imageBackAddNewCard"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/textView10"
-        android:layout_width="401dp"
-        android:layout_height="550dp"
-        android:layout_marginTop="50dp"
+        android:layout_width="0dp"
+        android:layout_height="510dp"
         android:background="@drawable/lower_curve"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/AddNewCardTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/tvAddpaymentCardBox"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/tvAddpaymentCardBox"
@@ -76,7 +76,9 @@
         android:background="@drawable/grey_input_box"
         android:ems="10"
         android:inputType="number"
+        android:maxLength="16"
         android:minHeight="48dp"
+        android:padding="7dp"
         app:layout_constraintStart_toStartOf="@+id/tvCardNumberTitle"
         app:layout_constraintTop_toBottomOf="@+id/tvCardNumberTitle" />
 
@@ -99,6 +101,7 @@
         android:background="@drawable/grey_input_box"
         android:ems="10"
         android:inputType="date"
+        android:padding="7dp"
         app:layout_constraintStart_toStartOf="@+id/tvExpirayDateTitle"
         app:layout_constraintTop_toBottomOf="@+id/tvExpirayDateTitle" />
 
@@ -124,6 +127,8 @@
         android:background="@drawable/grey_input_box"
         android:ems="10"
         android:inputType="numberDecimal"
+        android:maxLength="4"
+        android:padding="7dp"
         app:layout_constraintBottom_toBottomOf="@+id/editTextDate"
         app:layout_constraintStart_toEndOf="@+id/editTextDate" />
 
@@ -144,9 +149,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:background="@drawable/grey_input_box"
+        android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
         android:ems="10"
         android:inputType="textPersonName"
         android:minHeight="48dp"
+        android:padding="7dp"
         app:layout_constraintStart_toStartOf="@+id/tvCardHolderName"
         app:layout_constraintTop_toBottomOf="@+id/tvCardHolderName" />
 
