@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.food4u.databinding.ActivityContactUsBinding
 import com.example.food4u.databinding.FragmentContactUsMainBinding
 import android.content.DialogInterface
+import android.net.Uri
 import android.view.View
 import androidx.appcompat.app.AlertDialog
 import androidx.core.view.isVisible
@@ -24,12 +25,19 @@ class ContactUs : AppCompatActivity() {
         val btnContactUs = binding.btnSendUsMessage
         val successfulMsgTv = binding.successfulMsg
         val successfulMsgBg = binding.successfulMsgBg
+        val telPhoneNumber = binding.addressLocation3
 
         btnContactUs.setOnClickListener() {
             val intent = Intent(this, ContactUsActivity::class.java)
             startActivity(intent)
             finish()
         }
+
+        telPhoneNumber.setOnClickListener(){
+            val intent = Intent(Intent.ACTION_CALL, Uri.parse("tel:" + "603 2234 1123"))
+            startActivity(intent)
+        }
+
         var submitted = false
         submitted = intent.getBooleanExtra("submitted", submitted)
         if (submitted){
