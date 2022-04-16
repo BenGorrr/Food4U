@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
+    tools:context=".fragments.NecessityFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tvAgentListTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="56dp"
+            android:text="@string/available_agents"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewAgency"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="1dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvAgentListTitle"
+            tools:listitem="@layout/rv_agent" />
+
+        <Button
+            android:id="@+id/btnAddAgent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:text="Add"
+            app:layout_constraintBottom_toBottomOf="@+id/tvAgentListTitle"
+            app:layout_constraintStart_toEndOf="@+id/tvAgentListTitle"
+            app:layout_constraintTop_toTopOf="@+id/tvAgentListTitle" />
+
+        <ImageView
+            android:id="@+id/ivAgentImg"
+            android:layout_width="79dp"
+            android:layout_height="66dp"
+            android:layout_marginStart="16dp"
+            app:layout_constraintBottom_toBottomOf="@+id/btnAddAgent"
+            app:layout_constraintStart_toEndOf="@+id/btnAddAgent"
+            tools:src="@tools:sample/avatars" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

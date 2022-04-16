@@ -1,18 +1,125 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
     tools:context=".fragments.NotificationFragment">
 
-    <RelativeLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <TextView
+            android:id="@+id/topNav"
+            android:layout_width="411dp"
+            android:layout_height="59dp"
+            android:background="#FFFFFF"
+            app:layout_constraintBottom_toTopOf="@+id/notificationMessagee"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/notificationMessage2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:text="Notification" />
-    </RelativeLayout>
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="Let explore more content around you"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.45" />
+
+        <TextView
+            android:id="@+id/notificationMessagee"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="Can't find notifications"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.41000003" />
+
+        <TextView
+            android:id="@+id/notificationTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Notification"
+            android:textColor="@color/focused_color"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/topNav"
+            app:layout_constraintEnd_toEndOf="@+id/topNav"
+            app:layout_constraintHorizontal_bias="0.06"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/notifications"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Notification"
+            android:textColor="@color/focused_color"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/topNav"
+            app:layout_constraintEnd_toStartOf="@+id/btnDeleteNotification"
+            app:layout_constraintHorizontal_bias="0.98"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.465" />
+
+        <TextView
+            android:id="@+id/noOfNotify"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textColor="@color/focused_color"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/topNav"
+            app:layout_constraintEnd_toStartOf="@+id/notifications"
+            app:layout_constraintHorizontal_bias="0.98"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.465" />
+
+        <ImageView
+            android:id="@+id/btnDeleteNotification"
+            android:layout_width="34dp"
+            android:layout_height="37dp"
+            android:src="@drawable/ic_dustbin"
+            app:layout_constraintBottom_toBottomOf="@+id/topNav"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.97"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/notificationRecycleView"
+            android:layout_width="412dp"
+            android:layout_height="603dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/topNav"
+            app:layout_constraintVertical_bias="0.0"
+            tools:listitem="@layout/view_cycle_notification" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/recycleViewNecessity"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp"
+    android:background="@drawable/oval_shape">
+
+    <ImageView
+        android:id="@+id/imageNecessity"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/tvNecessityName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toStartOf="@+id/btnAddNecessity"
+        app:layout_constraintHorizontal_bias="0.032"
+        app:layout_constraintStart_toEndOf="@+id/imageNecessity"
+        app:layout_constraintTop_toTopOf="@+id/imageNecessity" />
+
+    <TextView
+        android:id="@+id/tvNecessityPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="@+id/tvNecessityName"
+        app:layout_constraintTop_toBottomOf="@+id/tvNecessityName" />
+
+    <Button
+        android:id="@+id/btnAddNecessity"
+        android:layout_width="42dp"
+        android:layout_height="39dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="4dp"
+        android:background="@drawable/circle_button"
+        android:text="+"
+        app:layout_constraintBottom_toTopOf="@+id/tvNecessityQuantity"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvNecessityName"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/btnDeductNecessity"
+        android:layout_width="42dp"
+        android:layout_height="41dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/circle_button"
+        android:text="-"
+        app:layout_constraintBottom_toTopOf="@+id/btnAddToCartNecessity"
+        app:layout_constraintEnd_toEndOf="@+id/tvNecessityQuantity"
+        app:layout_constraintStart_toStartOf="@+id/tvNecessityQuantity" />
+
+    <TextView
+        android:id="@+id/tvNecessityQuantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:text="0"
+        app:layout_constraintBottom_toTopOf="@+id/btnDeductNecessity"
+        app:layout_constraintEnd_toEndOf="@+id/btnAddNecessity"
+        app:layout_constraintStart_toStartOf="@+id/btnAddNecessity" />
+
+    <Button
+        android:id="@+id/btnAddToCartNecessity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="Add"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.826"
+        app:layout_constraintStart_toEndOf="@+id/tvNecessityPrice" />
+
+    <ImageButton
+        android:id="@+id/imageButton3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="200dp"
+        android:layout_marginBottom="4dp"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toBottomOf="@+id/btnAddToCartNecessity"
+        app:layout_constraintEnd_toStartOf="@+id/btnAddToCartNecessity"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageNecessity"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/ic_color_love" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

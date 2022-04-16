@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#BFF6C062">
+
+    <ImageView
+        android:id="@+id/imageEvent"
+        android:layout_width="333dp"
+        android:layout_height="132dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/tvEventTittle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.461"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/tvEventTittle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:text="TextView"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerViewDonorPic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.012"
+        app:layout_constraintStart_toStartOf="@+id/imageEvent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewDonorPic"
+        android:layout_width="114dp"
+        android:layout_height="24dp"
+        android:layout_marginBottom="12dp"
+        app:layout_constraintBottom_toTopOf="@+id/progressBar"
+        app:layout_constraintStart_toStartOf="@+id/tvEventTittle" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="324dp"
+        android:layout_height="27dp"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView16"
+        app:layout_constraintEnd_toEndOf="@+id/imageEvent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/recyclerViewDonorPic" />
+
+    <TextView
+        android:id="@+id/tvGoalAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="16dp"
+        android:text="Goals:"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/tvOrganiserTittle"
+        app:layout_constraintStart_toStartOf="@+id/progressBar"
+        app:layout_constraintTop_toBottomOf="@+id/progressBar"
+        app:layout_constraintVertical_bias="0.416" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/tvOrganiserTittle"
+        app:layout_constraintEnd_toStartOf="@+id/tvRaised"
+        app:layout_constraintHorizontal_bias="0.15"
+        app:layout_constraintStart_toEndOf="@+id/tvGoalAmount" />
+
+    <TextView
+        android:id="@+id/tvRaised"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Raised: "
+        app:layout_constraintEnd_toStartOf="@+id/tvCollectedAmount"
+        app:layout_constraintTop_toTopOf="@+id/tvCollectedAmount" />
+
+    <TextView
+        android:id="@+id/tvCollectedAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="2dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toStartOf="@+id/tvCollectedPercentage"
+        app:layout_constraintTop_toBottomOf="@+id/progressBar" />
+
+    <TextView
+        android:id="@+id/tvCollectedPercentage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="@+id/progressBar"
+        app:layout_constraintTop_toTopOf="@+id/tvCollectedAmount" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="338dp" />
+
+    <TextView
+        android:id="@+id/tvOrganiserTittle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:layout_marginBottom="8dp"
+        android:text="Organiser"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/imageOrganiser"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageOrganiser"
+        android:layout_width="63dp"
+        android:layout_height="71dp"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintBottom_toTopOf="@+id/tvDescription"
+        app:layout_constraintEnd_toStartOf="@+id/tvOraniserName"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tvOrganiserTittle"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/tvDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:text="Description"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
+        app:layout_constraintStart_toStartOf="@+id/imageOrganiser" />
+
+    <ImageButton
+        android:id="@+id/imagebtnBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:layout_marginBottom="4dp"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageEvent"
+        app:layout_constraintStart_toStartOf="@+id/imageEvent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_baseline_arrow_back_24" />
+
+    <TextView
+        android:id="@+id/tvOraniserName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="212dp"
+        android:layout_marginBottom="16dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/tvOrganiserAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageOrganiser"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/tvOrganiserAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/tvDescription"
+        app:layout_constraintStart_toStartOf="@+id/tvOraniserName" />
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="403dp"
+        android:layout_height="129dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="1dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDescription">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.borjabravo.readmoretextview.ReadMoreTextView
+                android:layout_width="366dp"
+                android:layout_height="132dp"
+                android:layout_marginTop="8dp"
+                android:text="AAAAAAAAAAAAAAAAAAAAAAge the life of an orphan’s life by giving them a loving and caring home. Your sponsorship will provide nutritious meals, clothing, healthcare, education and a special guardian. Give the chance to break out of poverty today......aaaaaaaaaaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbbbbbbbbbbccccccccccccccccccccccc"
+                app:colorClickableText="@android:color/holo_blue_light"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:trimCollapsedText="Read less"
+                app:trimExpandedText="Read more"
+                app:trimLength="200"
+                app:trimMode="trimModeLength" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="198dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="8dp"
+        android:text="Donate Now"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2"
+        app:layout_constraintVertical_bias="0.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

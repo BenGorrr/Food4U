@@ -1,18 +1,294 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:background="#FFF1CE"
+    android:textAlignment="center"
     tools:context=".fragments.AboutUsFragment">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+
+    <ScrollView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imageView12"
+            android:layout_width="418dp"
+            android:layout_height="215dp"
+            android:layout_marginTop="48dp"
+            android:src="@drawable/companybackground"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <TextView
+            android:id="@+id/tvOurCompany"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:text="About Us" />
-    </RelativeLayout>
+            android:fontFamily="serif"
+            android:text="OUR STORY"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="@+id/imageView12"
+            app:layout_constraintStart_toStartOf="@+id/imageView12"
+            app:layout_constraintTop_toTopOf="@+id/imageView12" />
 
+        <TextView
+            android:id="@+id/vissionBox"
+            android:layout_width="215dp"
+            android:layout_height="103dp"
+            android:layout_marginTop="112dp"
+            android:background="@color/colorAccent"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.502"
+            app:layout_constraintStart_toStartOf="@+id/imageView12"
+            app:layout_constraintTop_toBottomOf="@+id/tvOurCompany" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="185dp"
+            android:layout_height="88dp"
+            android:background="@color/white"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@+id/vissionBox"
+            app:layout_constraintEnd_toEndOf="@+id/vissionBox"
+            app:layout_constraintStart_toStartOf="@+id/vissionBox"
+            app:layout_constraintTop_toTopOf="@+id/vissionBox" />
+
+        <TextView
+            android:id="@+id/tvVission"
+            android:layout_width="179dp"
+            android:layout_height="81dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="2dp"
+            android:layout_marginBottom="2dp"
+            android:background="@color/colorAccent"
+            android:text="Vission"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@+id/textView9"
+            app:layout_constraintEnd_toEndOf="@+id/textView9"
+            app:layout_constraintStart_toStartOf="@+id/textView9"
+            app:layout_constraintTop_toTopOf="@+id/textView9" />
+
+        <TextView
+            android:id="@+id/tvVissionDetail"
+            android:layout_width="153dp"
+            android:layout_height="62dp"
+            android:padding="4dp"
+            android:text="A world where every woman, man and child leads a healthy, fulfilling life of self-reliance and dignity."
+            android:textColor="#FAFAFA"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@+id/tvVission"
+            app:layout_constraintEnd_toEndOf="@+id/tvVission"
+            app:layout_constraintHorizontal_bias="0.538"
+            app:layout_constraintStart_toStartOf="@+id/tvVission"
+            app:layout_constraintTop_toTopOf="@+id/tvVission"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/tvIntro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:text="Introduction"
+            android:textColor="#171717"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/imageView12"
+            app:layout_constraintTop_toBottomOf="@+id/vissionBox" />
+
+        <ScrollView
+            android:id="@+id/scrollView3"
+            android:layout_width="381dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvIntro">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.borjabravo.readmoretextview.ReadMoreTextView
+                    android:layout_width="362dp"
+                    android:layout_height="104dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAaIt all began in 1999, amidst a raging war in Kosova where thousands of livntless innolah Mahmood, a Malaysian obstetrician gynaecologist, was moved to volunteer "
+                    app:colorClickableText="@android:color/holo_blue_light"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:trimCollapsedText="Read less"
+                    app:trimExpandedText="Read more"
+                    app:trimLength="20"
+                    app:trimMode="trimModeLength" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
+
+            <TextView
+                android:id="@+id/tvStoryBehingBox"
+                android:layout_width="404dp"
+                android:layout_height="133dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/colorAccent"
+                android:text="The story behind our story"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/scrollView3" />
+
+        <TextView
+            android:id="@+id/tvStoryBehindText"
+            android:layout_width="325dp"
+            android:layout_height="21dp"
+            android:layout_marginTop="40dp"
+            android:text=" FOOD4U is registered with the Societies Act 1966 "
+            android:textColor="#F4F0F0"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="@+id/tvStoryBehingBox"
+            app:layout_constraintStart_toStartOf="@+id/tvStoryBehingBox"
+            app:layout_constraintTop_toBottomOf="@+id/scrollView3" />
+
+        <TextView
+            android:id="@+id/textView23"
+            android:layout_width="336dp"
+            android:layout_height="63dp"
+            android:layout_marginTop="2dp"
+            android:text="(Registration No: PPM-020-14-16091999). To date, we have over 500 members, and over 7,000 registered volunteers in our database. In compliance with the Societies Act, FOOD4U submits its accounts to an external auditor, publishes its Annual Report for review and holds an Annual General Meeting for all members, usually in June every year. "
+            android:textColor="#FAF9F9"
+            android:textSize="10sp"
+            app:layout_constraintEnd_toEndOf="@+id/tvStoryBehindText"
+            app:layout_constraintStart_toStartOf="@+id/tvStoryBehindText"
+            app:layout_constraintTop_toBottomOf="@+id/tvStoryBehindText" />
+
+        <TextView
+            android:id="@+id/textView30"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="200dp"
+            android:text="Organization"
+            android:textColor="#090909"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.027"
+            app:layout_constraintStart_toStartOf="@+id/tvStoryBehingBox"
+            app:layout_constraintTop_toBottomOf="@+id/tvStoryBehingBox"
+            app:layout_constraintVertical_bias="0.142" />
+
+        <ImageView
+            android:id="@+id/imageView14"
+            android:layout_width="90dp"
+            android:layout_height="104dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/kailok"
+            app:layout_constraintEnd_toStartOf="@+id/imageView15"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView30" />
+
+        <ImageView
+            android:id="@+id/imageView15"
+            android:layout_width="87dp"
+            android:layout_height="106dp"
+            android:layout_marginEnd="24dp"
+            android:src="@drawable/ben"
+            app:layout_constraintEnd_toStartOf="@+id/imageView16"
+            app:layout_constraintTop_toTopOf="@+id/imageView14" />
+
+        <ImageView
+            android:id="@+id/imageView16"
+            android:layout_width="78dp"
+            android:layout_height="103dp"
+            android:layout_marginEnd="108dp"
+            android:src="@drawable/weilun"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageView15" />
+
+        <TextView
+            android:id="@+id/textView31"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="President"
+            android:textSize="10sp"
+            app:layout_constraintEnd_toEndOf="@+id/imageView14"
+            app:layout_constraintHorizontal_bias="0.375"
+            app:layout_constraintStart_toStartOf="@+id/imageView14"
+            app:layout_constraintTop_toBottomOf="@+id/imageView14" />
+
+        <TextView
+            android:id="@+id/textView32"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:text="Vice-President I"
+            android:textSize="10sp"
+            app:layout_constraintEnd_toEndOf="@+id/imageView15"
+            app:layout_constraintHorizontal_bias="0.685"
+            app:layout_constraintStart_toEndOf="@+id/textView31"
+            app:layout_constraintTop_toBottomOf="@+id/imageView15" />
+
+        <TextView
+            android:id="@+id/textView33"
+            android:layout_width="408dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="32dp"
+            android:background="@color/colorAccent"
+            android:text="© 2020 FOOD4U - ALL RIGHTS RESERVED"
+            android:textAlignment="center"
+            android:textColor="#FDF9F9"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView16" />
+
+        <TextView
+            android:id="@+id/textView34"
+            android:layout_width="177dp"
+            android:layout_height="21dp"
+            android:text="Still need help? Contact us"
+            android:textAlignment="center"
+            android:textColor="#FAFAFA"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toBottomOf="@+id/textView33"
+            app:layout_constraintEnd_toEndOf="@+id/textView33"
+            app:layout_constraintHorizontal_bias="0.484"
+            app:layout_constraintStart_toStartOf="@+id/textView33"
+            app:layout_constraintTop_toTopOf="@+id/textView33"
+            app:layout_constraintVertical_bias="1.0" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
 </FrameLayout>
+

@@ -13,9 +13,7 @@ class AboutUsFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View? = inflater.inflate(R.layout.fragment_about_us, container, false)
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false)
-    }
 
 }

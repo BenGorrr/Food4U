@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
+    tools:context=".NecessityActivity">
+
+    <TextView
+        android:id="@+id/tvShopTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="SHOP"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/tvNecessityTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvNecessityTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="Necessity"
+        app:layout_constraintBottom_toBottomOf="@+id/necessitySearch"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/necessitySearch" />
+
+    <SearchView
+        android:id="@+id/necessitySearch"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/tvInstantNoodlesTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/tvNecessityTitle" />
+
+    <TextView
+        android:id="@+id/tvAllProductTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/rvProducts"
+        app:layout_constraintEnd_toStartOf="@+id/tvBreadTitle"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvBreadTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/tvAllProductTitle"
+        app:layout_constraintEnd_toStartOf="@+id/tvInstantNoodlesTitle"
+        app:layout_constraintStart_toEndOf="@+id/tvAllProductTitle"
+        app:layout_constraintTop_toTopOf="@+id/tvAllProductTitle" />
+
+    <TextView
+        android:id="@+id/tvInstantNoodlesTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="52dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toStartOf="@+id/imageBtnCart"
+        app:layout_constraintTop_toTopOf="@+id/tvBreadTitle" />
+
+    <ImageButton
+        android:id="@+id/imageBtnCart"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/ic_shop_cart"
+        app:layout_constraintEnd_toEndOf="@+id/necessitySearch"
+        app:layout_constraintTop_toBottomOf="@+id/necessitySearch"
+        app:srcCompat="@drawable/ic_shop_cart" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvProducts"
+        android:layout_width="401dp"
+        android:layout_height="449dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:listitem="@layout/rv_necessity_product" />
+
+    <ImageView
+        android:id="@+id/imageView17"
+        android:layout_width="52dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/tvShopTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.044"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/ic_baseline_arrow_back_24"
+        android:visibility="gone"
+        tools:visibility="gone" />
+
+    <Button
+        android:id="@+id/btnAddProduct"
+        android:layout_width="67dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="24dp"
+        android:text="Add"
+        app:layout_constraintStart_toEndOf="@+id/tvShopTitle"
+        app:layout_constraintTop_toTopOf="@+id/tvShopTitle" />
+</androidx.constraintlayout.widget.ConstraintLayout>

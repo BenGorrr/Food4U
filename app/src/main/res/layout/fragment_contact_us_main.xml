@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/contactUsMainBg"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor">
+
+    <ImageView
+        android:id="@+id/backContactUs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_baseline_arrow_back_24" />
+
+    <TextView
+        android:id="@+id/contactUsTv"
+        android:layout_width="320dp"
+        android:layout_height="450dp"
+        android:background="@drawable/shadowrec"
+        android:elevation="2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/addressTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Address"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:translationZ="90dp"
+        app:layout_constraintBottom_toBottomOf="@+id/contactUsTv"
+        app:layout_constraintEnd_toEndOf="@+id/contactUsTv"
+        app:layout_constraintHorizontal_bias="0.116"
+        app:layout_constraintStart_toStartOf="@+id/contactUsTv"
+        app:layout_constraintTop_toTopOf="@+id/contactUsTv"
+        app:layout_constraintVertical_bias="0.067" />
+
+    <TextView
+        android:id="@+id/contactUsHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Contact Us"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:translationZ="90dp"
+        app:layout_constraintBottom_toTopOf="@+id/contactUsTv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.29000002" />
+
+    <TextView
+        android:id="@+id/phoneTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Phone"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:translationZ="90dp"
+        app:layout_constraintBottom_toBottomOf="@+id/contactUsTv"
+        app:layout_constraintEnd_toEndOf="@+id/contactUsTv"
+        app:layout_constraintHorizontal_bias="0.116"
+        app:layout_constraintStart_toStartOf="@+id/contactUsTv"
+        app:layout_constraintTop_toTopOf="@+id/contactUsTv"
+        app:layout_constraintVertical_bias="0.248" />
+
+    <TextView
+        android:id="@+id/openHoursTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hours Open"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:translationZ="90dp"
+        app:layout_constraintBottom_toBottomOf="@+id/contactUsTv"
+        app:layout_constraintEnd_toEndOf="@+id/contactUsTv"
+        app:layout_constraintHorizontal_bias="0.118"
+        app:layout_constraintStart_toStartOf="@+id/contactUsTv"
+        app:layout_constraintTop_toTopOf="@+id/contactUsTv"
+        app:layout_constraintVertical_bias="0.406" />
+
+    <TextView
+        android:id="@+id/addressLocation"
+        android:layout_width="221dp"
+        android:layout_height="34dp"
+        android:text="F2-A, Solaris Mont Kiara, Federal Territory of Kuala Lumpur 50480 "
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        android:translationZ="90dp"
+        app:layout_constraintBottom_toBottomOf="@+id/contactUsTv"
+        app:layout_constraintEnd_toEndOf="@+id/contactUsTv"
+        app:layout_constraintHorizontal_bias="0.33"
+        app:layout_constraintStart_toStartOf="@+id/contactUsTv"
+        app:layout_constraintTop_toTopOf="@+id/contactUsTv"
+        app:layout_constraintVertical_bias="0.13" />
+
+    <TextView
+        android:id="@+id/addressLocation3"
+        android:layout_width="221dp"
+        android:layout_height="14dp"
+        android:text="Tel: 60(3) 2234 1123"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        android:translationZ="90dp"
+        app:layout_constraintBottom_toBottomOf="@+id/contactUsTv"
+        app:layout_constraintEnd_toEndOf="@+id/contactUsTv"
+        app:layout_constraintHorizontal_bias="0.316"
+        app:layout_constraintStart_toStartOf="@+id/contactUsTv"
+        app:layout_constraintTop_toTopOf="@+id/contactUsTv"
+        app:layout_constraintVertical_bias="0.31" />
+
+    <TextView
+        android:id="@+id/openHours1"
+        android:layout_width="221dp"
+        android:layout_height="14dp"
+        android:text="Mon, 10 am - 5pm"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        android:translationZ="90dp"
+        app:layout_constraintBottom_toBottomOf="@+id/contactUsTv"
+        app:layout_constraintEnd_toEndOf="@+id/contactUsTv"
+        app:layout_constraintHorizontal_bias="0.316"
+        app:layout_constraintStart_toStartOf="@+id/contactUsTv"
+        app:layout_constraintTop_toTopOf="@+id/contactUsTv"
+        app:layout_constraintVertical_bias="0.472" />
+
+    <TextView
+        android:id="@+id/openHours2"
+        android:layout_width="221dp"
+        android:layout_height="14dp"
+        android:layout_marginTop="6dp"
+        android:text="Tues, 10 am - 6pm"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        android:translationZ="90dp"
+        app:layout_constraintBottom_toBottomOf="@+id/contactUsTv"
+        app:layout_constraintEnd_toEndOf="@+id/openHours1"
+        app:layout_constraintHorizontal_bias="0.316"
+        app:layout_constraintStart_toStartOf="@+id/openHours1"
+        app:layout_constraintTop_toBottomOf="@+id/openHours1"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/openHours3"
+        android:layout_width="221dp"
+        android:layout_height="14dp"
+        android:layout_marginTop="6dp"
+        android:text="Wed, 10 am - 6pm"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        android:translationZ="90dp"
+        app:layout_constraintBottom_toBottomOf="@+id/contactUsTv"
+        app:layout_constraintEnd_toEndOf="@+id/openHours2"
+        app:layout_constraintHorizontal_bias="0.316"
+        app:layout_constraintStart_toStartOf="@+id/openHours2"
+        app:layout_constraintTop_toBottomOf="@+id/openHours2"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/openHours4"
+        android:layout_width="221dp"
+        android:layout_height="14dp"
+        android:layout_marginTop="6dp"
+        android:text="Thurs &amp; Fri, 10 am - 5pm"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        android:translationZ="90dp"
+        app:layout_constraintBottom_toBottomOf="@+id/contactUsTv"
+        app:layout_constraintEnd_toEndOf="@+id/openHours3"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/openHours3"
+        app:layout_constraintTop_toBottomOf="@+id/openHours3"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/btnSendUsMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#FFF1CE"
+        android:elevation="3dp"
+        android:text="Send us a message >"
+        android:textColor="#000000"
+        app:cornerRadius="12dp"
+        app:layout_constraintBottom_toBottomOf="@+id/contactUsTv"
+        app:layout_constraintEnd_toEndOf="@+id/contactUsTv"
+        app:layout_constraintStart_toStartOf="@+id/contactUsTv"
+        app:layout_constraintTop_toTopOf="@+id/contactUsTv"
+        app:layout_constraintVertical_bias="0.92"
+        app:strokeColor="@color/colorPrimary"
+        app:strokeWidth="1dp" />
+
+    <TextView
+        android:id="@+id/addressLine"
+        android:layout_width="265dp"
+        android:layout_height="7dp"
+        android:background="@drawable/bottom_line_orange"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:translationZ="90dp"
+        app:layout_constraintBottom_toBottomOf="@+id/contactUsTv"
+        app:layout_constraintEnd_toEndOf="@+id/contactUsTv"
+        app:layout_constraintStart_toStartOf="@+id/contactUsTv"
+        app:layout_constraintTop_toTopOf="@+id/contactUsTv"
+        app:layout_constraintVertical_bias="0.19999999" />
+
+    <TextView
+        android:id="@+id/addressLine2"
+        android:layout_width="265dp"
+        android:layout_height="7dp"
+        android:background="@drawable/bottom_line_orange"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:translationZ="90dp"
+        app:layout_constraintBottom_toBottomOf="@+id/contactUsTv"
+        app:layout_constraintEnd_toEndOf="@+id/contactUsTv"
+        app:layout_constraintStart_toStartOf="@+id/contactUsTv"
+        app:layout_constraintTop_toTopOf="@+id/contactUsTv"
+        app:layout_constraintVertical_bias="0.356" />
+</androidx.constraintlayout.widget.ConstraintLayout>
