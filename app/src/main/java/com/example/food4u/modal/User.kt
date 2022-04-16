@@ -6,9 +6,11 @@ import java.util.*
 
 data class User(
     var email: String="",
+    var role: String="",
     var name: String="",
     var birthDate: Date? = null,
     var address: String = "",
     var phoneNo: String = "",
     var numOfDonation: Int = 0,
-    var imgUrl: String = "")
+    var imgUrl: String = ""
+    )
