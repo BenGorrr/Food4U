@@ -58,7 +58,7 @@ class userSignin : AppCompatActivity() {
                 FB.signInUser(email, password)
                     .addOnSuccessListener {
                         Toast.makeText(this, "Sign in successfully!", Toast.LENGTH_SHORT).show()
-                        val intent = Intent(this, ProfilePage::class.java)
+                        val intent = Intent(this, MainActivity::class.java)
                         startActivity(intent)
                         finish()
                     }

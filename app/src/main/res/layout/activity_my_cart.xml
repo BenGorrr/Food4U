@@ -45,7 +45,7 @@
         app:layout_constraintBottom_toTopOf="@+id/textView8"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:listitem="@layout/view_cycle_product_necessity" />
+        tools:listitem="@layout/view_cycle_product_in_cart" />
 
     <TextView
         android:id="@+id/textView8"

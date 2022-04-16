@@ -3,6 +3,7 @@ package com.example.food4u
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.*
 import com.example.food4u.databinding.ActivityUserRegisterBinding
 import com.example.food4u.firebase.firebaseHelper
@@ -12,6 +13,7 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
+import java.util.*
 
 class userRegister : AppCompatActivity() {
     private lateinit var binding: ActivityUserRegisterBinding
@@ -34,6 +36,7 @@ class userRegister : AppCompatActivity() {
         val tfConfirmPw = binding.tfConfirmPassword
         val cbAgree = binding.cbAgree
         val btnReg = binding.btnConfirmSignUp
+        var boolCheck = true
 
         FB = firebaseHelper(this)
         val DB = Firebase.database("https://food4u-9d1c8-default-rtdb.asia-southeast1.firebasedatabase.app/")
@@ -77,16 +80,14 @@ class userRegister : AppCompatActivity() {
                 if(password.equals(checkPassword) && password.length>=6){
                     FB.registerUser(email, password)
                         .addOnSuccessListener {
-                            Toast.makeText(this, "Registered successfully!",Toast.LENGTH_SHORT).show()
-                            val newUser = User(email, username, password)
+                            val newUser = User(email, username,null)
                             database.child("User").child(Firebase.auth.uid.toString()).setValue(newUser)
-
                             Firebase.auth.signOut()
                             val intent = Intent(this, userSignin::class.java)
                             startActivity(intent)
                         }
                         .addOnFailureListener{
-                            Toast.makeText(this, "User already exists! Please sign in instead.",Toast.LENGTH_SHORT).show()
+                            // toast not working bruh
                         }
                 }
                 else{
