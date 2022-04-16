@@ -12,9 +12,7 @@ import com.example.food4u.adapter.AgencyAdapter
 import com.example.food4u.adapter.ProductsAdapter
 import com.example.food4u.databinding.ActivityNecessityBinding
 import com.example.food4u.fragments.NecessityFragment
-import com.example.food4u.modal.Agency
-import com.example.food4u.modal.AgencyProduct
-import com.example.food4u.modal.Product
+import com.example.food4u.modal.*
 import com.google.android.gms.tasks.OnFailureListener
 import com.google.android.gms.tasks.OnSuccessListener
 import com.google.firebase.database.*
@@ -36,6 +34,8 @@ class NecessityActivity : AppCompatActivity(), ProductsAdapter.onItemClickListen
         setContentView(binding.root)
         database = FirebaseDatabase.getInstance().getReference("Products")
 
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
         val agencyName = intent.getStringExtra("agencyName")
         agencyId = intent.getStringExtra("agencyId")!!
 
@@ -44,11 +44,13 @@ class NecessityActivity : AppCompatActivity(), ProductsAdapter.onItemClickListen
         binding.btnAddProduct.setOnClickListener {
 //            val key = database.push().key!!
 //            addNewProduct(Product(key.toString(), "awd"))
-
             database = FirebaseDatabase.getInstance().getReference("agencyProducts")
+        }
 
-
-
+        binding.imageBtnCart.setOnClickListener {
+            val intent = Intent(this, MyCartActivity::class.java)
+            intent.putExtra("agencyId", agencyId)
+            startActivity(intent)
         }
 
         binding.rvProducts.layoutManager = LinearLayoutManager(applicationContext)
@@ -57,23 +59,41 @@ class NecessityActivity : AppCompatActivity(), ProductsAdapter.onItemClickListen
         readAgencyProduct(mContext, agencyId)
     }
 
+    override fun onSupportNavigateUp(): Boolean {
+        finish()
+        return true
+    }
+
     override fun itemClick(position: Int) {
-        val selectedProduct = productList[position]
-        Toast.makeText(applicationContext, selectedProduct.name, Toast.LENGTH_LONG).show()
+        //val selectedProduct = productList[position]
+        //Toast.makeText(applicationContext, selectedProduct.name, Toast.LENGTH_LONG).show()
 //        selectedName = selectedProduct.name
 //        startForResult.launch("image/*")
-        database = FirebaseDatabase.getInstance().getReference("agencyProducts")
-        val agencyProd = AgencyProduct(hashMapOf(selectedProduct.id to true))
-        //database.child(agencyId).setValue(agencyProd)
+//        database = FirebaseDatabase.getInstance().getReference("agencyProducts")
+//        val agencyProd = AgencyProduct(hashMapOf(selectedProduct.id to true))
+//        //database.child(agencyId).setValue(agencyProd)
+//
+//        val agencyProdValues = hashMapOf<String, Boolean>(selectedProduct.id to true)
+//        val prodId = selectedProduct.id
+//        val childUpdates = hashMapOf<String, Any>(
+//            "/$agencyId/products/$prodId" to true,
+//        )
+//
+//        database.updateChildren(childUpdates)
 
-        val agencyProdValues = hashMapOf<String, Boolean>(selectedProduct.id to true)
-        val prodId = selectedProduct.id
+    }
+
+    override fun onAddToCart(product: Product, qty: Int) {
+        database = FirebaseDatabase.getInstance().getReference("Cart")
+        val userId = "USERID"
+        val id = product.id
         val childUpdates = hashMapOf<String, Any>(
-            "/$agencyId/products/$prodId" to true,
+            "/$userId/$agencyId/$id" to qty,
         )
-
         database.updateChildren(childUpdates)
-
+//        database.child(userId).setValue(cart).addOnSuccessListener {
+//            Log.d("TAG", "Done add to cart")
+//        }
     }
 
     private fun readAgencyProduct(mContext: NecessityActivity, id: String) {

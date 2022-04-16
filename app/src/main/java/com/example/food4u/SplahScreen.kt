@@ -24,7 +24,7 @@ class SplahScreen : AppCompatActivity() {
         Handler(Looper.getMainLooper()).postDelayed({
             val user: FirebaseUser? = FB.checkCurrUser()
             if(user!=null){
-                val intent = Intent(this, ProfilePage::class.java)
+                val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
                 finish()
             }else{
