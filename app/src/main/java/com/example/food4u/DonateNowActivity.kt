@@ -3,12 +3,16 @@ package com.example.food4u
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.food4u.databinding.ActivityCreateEventBinding
 import com.example.food4u.databinding.ActivityDonateNowBinding
 import com.example.food4u.databinding.ActivityDonorListBinding
+import com.google.firebase.database.DatabaseReference
 
 class DonateNowActivity : AppCompatActivity() {
 
-    lateinit var binding: ActivityDonateNowBinding
+    private lateinit var binding: ActivityDonateNowBinding
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityDonateNowBinding.inflate(layoutInflater)

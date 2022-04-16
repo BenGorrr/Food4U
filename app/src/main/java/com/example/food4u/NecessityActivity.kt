@@ -191,7 +191,6 @@ class NecessityActivity : AppCompatActivity(), ProductsAdapter.onItemClickListen
         if (fileUri != null) {
             val filename = UUID.randomUUID().toString() + ".png"
 
-
             val refStorage = FirebaseStorage.getInstance().reference.child("images/products/$filename")
 
             refStorage.putFile(fileUri)

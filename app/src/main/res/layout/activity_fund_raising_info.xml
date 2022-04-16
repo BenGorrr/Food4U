@@ -264,7 +264,7 @@
             android:minWidth="48dp"
             android:minHeight="48dp"
             android:visibility="visible"
-            app:layout_constraintBottom_toTopOf="@+id/editTextTextMultiLine"
+            app:layout_constraintBottom_toTopOf="@+id/donateMessageBox"
             app:layout_constraintEnd_toEndOf="@+id/tvDonationAmountBox"
             app:layout_constraintHorizontal_bias="0.504"
             app:layout_constraintStart_toEndOf="@+id/textView12" />
@@ -280,7 +280,7 @@
             app:layout_constraintTop_toBottomOf="@+id/button5" />
 
         <EditText
-            android:id="@+id/editTextTextMultiLine"
+            android:id="@+id/donateMessageBox"
             android:layout_width="264dp"
             android:layout_height="63dp"
             android:layout_marginTop="12dp"
@@ -346,7 +346,7 @@
             app:layout_constraintBottom_toBottomOf="@+id/tvDonationAmountBox"
             app:layout_constraintEnd_toEndOf="@+id/tvDonationAmountBox"
             app:layout_constraintStart_toStartOf="@+id/tvDonationAmountBox"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLine" />
+            app:layout_constraintTop_toBottomOf="@+id/donateMessageBox" />
 
         <ImageView
             android:id="@+id/imageView9"
