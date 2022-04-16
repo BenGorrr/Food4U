@@ -7,16 +7,16 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.food4u.R
-import com.example.food4u.modal.Agency
+import com.example.food4u.modal.Product
 import com.squareup.picasso.Picasso
 
-class AgencyAdapter(private val list: List<Agency>, private val listener: onItemClickListener) : RecyclerView.Adapter<AgencyAdapter.myViewHolder>() {
+class ProductsAdapter (private val list: List<Product>, private val listener: ProductsAdapter.onItemClickListener) : RecyclerView.Adapter<ProductsAdapter.myViewHolder>(){
 
     inner class myViewHolder (itemView: View) : RecyclerView.ViewHolder(itemView), View.OnClickListener {
 
-        val tvAgencyName: TextView = itemView.findViewById(R.id.tvAgencyName)
-        val tvAgencyDesc: TextView = itemView.findViewById(R.id.tvAgencyDesc)
-        val ivAgencyPic: ImageView = itemView.findViewById(R.id.ivAgencyPic)
+        val tvNecessityName: TextView = itemView.findViewById(R.id.tvNecessityName)
+        val tvNecessityPrice: TextView = itemView.findViewById(R.id.tvNecessityPrice)
+        val ivNecessityImg: ImageView = itemView.findViewById(R.id.imageNecessity)
 
         init {
             itemView.setOnClickListener(this)
@@ -34,20 +34,21 @@ class AgencyAdapter(private val list: List<Agency>, private val listener: onItem
 
     interface onItemClickListener {
         fun itemClick(position: Int)
+        //fun plusBtnClick(position: Int)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): myViewHolder {
-        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.rv_agent, parent, false)
+        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.rv_necessity_product, parent, false)
 
         return myViewHolder(itemView)
     }
 
     override fun onBindViewHolder(holder: myViewHolder, position: Int) {
         val currentAgency = list[position]
-        holder.tvAgencyName.text = currentAgency.name
-        holder.tvAgencyDesc.text = currentAgency.description
+        holder.tvNecessityName.text = currentAgency.name
+        holder.tvNecessityPrice.text = currentAgency.price.toString()
         if (currentAgency.imageURL.isNotEmpty()){
-            Picasso.get().load(currentAgency.imageURL).resize(150, 0).centerCrop().into(holder.ivAgencyPic)
+            Picasso.get().load(currentAgency.imageURL).resize(150, 0).centerCrop().into(holder.ivNecessityImg)
         }
     }
 

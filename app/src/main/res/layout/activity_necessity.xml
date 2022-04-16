@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#BFF6C062"
+    android:background="@color/backgroundColor"
     tools:context=".NecessityActivity">
 
     <TextView
@@ -49,7 +49,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
         android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/recyclerView3"
+        app:layout_constraintBottom_toTopOf="@+id/rvProducts"
         app:layout_constraintEnd_toStartOf="@+id/tvBreadTitle"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -85,7 +85,7 @@
         app:srcCompat="@drawable/ic_shop_cart" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView3"
+        android:id="@+id/rvProducts"
         android:layout_width="401dp"
         android:layout_height="449dp"
         android:layout_marginStart="1dp"
@@ -94,7 +94,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.333"
         app:layout_constraintStart_toStartOf="parent"
-        tools:listitem="@layout/view_cycle_ncessity" />
+        tools:listitem="@layout/rv_necessity_product" />
 
     <ImageView
         android:id="@+id/imageView17"
@@ -107,5 +107,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/ic_baseline_arrow_back_24" />
+        app:srcCompat="@drawable/ic_baseline_arrow_back_24"
+        android:visibility="gone"
+        tools:visibility="gone" />
+
+    <Button
+        android:id="@+id/btnAddProduct"
+        android:layout_width="67dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="24dp"
+        android:text="Add"
+        app:layout_constraintStart_toEndOf="@+id/tvShopTitle"
+        app:layout_constraintTop_toTopOf="@+id/tvShopTitle" />
 </androidx.constraintlayout.widget.ConstraintLayout>
