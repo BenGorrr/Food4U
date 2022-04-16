@@ -15,11 +15,11 @@
             android:id="@+id/tvAgentListTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="48dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="56dp"
             android:text="@string/available_agents"
             android:textAlignment="center"
             android:textSize="24sp"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -45,5 +45,14 @@
             app:layout_constraintBottom_toBottomOf="@+id/tvAgentListTitle"
             app:layout_constraintStart_toEndOf="@+id/tvAgentListTitle"
             app:layout_constraintTop_toTopOf="@+id/tvAgentListTitle" />
+
+        <ImageView
+            android:id="@+id/ivAgentImg"
+            android:layout_width="79dp"
+            android:layout_height="66dp"
+            android:layout_marginStart="16dp"
+            app:layout_constraintBottom_toBottomOf="@+id/btnAddAgent"
+            app:layout_constraintStart_toEndOf="@+id/btnAddAgent"
+            tools:src="@tools:sample/avatars" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

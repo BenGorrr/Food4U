@@ -20,9 +20,10 @@
 
     <TextView
         android:id="@+id/tvNecessityName"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:text="TextView"
         app:layout_constraintEnd_toStartOf="@+id/btnAddNecessity"
         app:layout_constraintHorizontal_bias="0.032"
@@ -30,7 +31,7 @@
         app:layout_constraintTop_toTopOf="@+id/imageNecessity" />
 
     <TextView
-        android:id="@+id/tvNecesstiyPrice"
+        android:id="@+id/tvNecessityPrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
@@ -40,8 +41,8 @@
 
     <Button
         android:id="@+id/btnAddNecessity"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
+        android:layout_width="42dp"
+        android:layout_height="39dp"
         android:layout_marginEnd="40dp"
         android:layout_marginBottom="4dp"
         android:background="@drawable/circle_button"
@@ -53,25 +54,23 @@
 
     <Button
         android:id="@+id/btnDeductNecessity"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
+        android:layout_width="42dp"
+        android:layout_height="41dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/circle_button"
         android:text="-"
         app:layout_constraintBottom_toTopOf="@+id/btnAddToCartNecessity"
         app:layout_constraintEnd_toEndOf="@+id/tvNecessityQuantity"
-        app:layout_constraintHorizontal_bias="0.35"
         app:layout_constraintStart_toStartOf="@+id/tvNecessityQuantity" />
 
     <TextView
         android:id="@+id/tvNecessityQuantity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="4dp"
-        android:text="TextView"
+        android:layout_marginBottom="12dp"
+        android:text="0"
         app:layout_constraintBottom_toTopOf="@+id/btnDeductNecessity"
         app:layout_constraintEnd_toEndOf="@+id/btnAddNecessity"
-        app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toStartOf="@+id/btnAddNecessity" />
 
     <Button
@@ -83,7 +82,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.826"
-        app:layout_constraintStart_toEndOf="@+id/tvNecesstiyPrice" />
+        app:layout_constraintStart_toEndOf="@+id/tvNecessityPrice" />
 
     <ImageButton
         android:id="@+id/imageButton3"
