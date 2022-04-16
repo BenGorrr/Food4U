@@ -29,16 +29,17 @@
             android:id="@+id/tvFundRaising"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="132dp"
+            android:layout_marginEnd="16dp"
             android:text="Fundraising Event"
             android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/imageBtnBack"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btnCreateEvent"
             app:layout_constraintTop_toTopOf="@+id/imageBtnBack"
             app:layout_constraintVertical_bias="0.437" />
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView4"
             android:layout_width="389dp"
             android:layout_height="607dp"
             android:layout_margin="8dp"
@@ -51,6 +52,16 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvFundRaising"
             tools:listitem="@layout/view_cycle_fundraising_event" />
+
+        <Button
+            android:id="@+id/btnCreateEvent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="Create"
+            app:layout_constraintBottom_toBottomOf="@+id/imageBtnBack"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageBtnBack" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>
