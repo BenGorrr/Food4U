@@ -1,19 +1,122 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="wrap_content"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".fragments.ProfileFragment">
-
-    <RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/frameLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <TextView
+        android:layout_height="match_parent"
+        tools:context=".fragments.ProfileFragment">
+
+        <Button
+            android:id="@+id/btnSignOut"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:text="Profile" />
-    </RelativeLayout>
+            android:layout_marginTop="44dp"
+            android:text="Sign out"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/phoneNumIcon" />
 
+        <Button
+            android:id="@+id/btnTransactionHistory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="#FF9800"
+            android:elevation="3dp"
+            android:text="Transaction history"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnSignOut" />
 
-</FrameLayout>
+        <ImageView
+            android:id="@+id/emailIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/vector"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/birthDateIcon"
+            android:layout_width="31dp"
+            android:layout_height="23dp"
+            android:layout_marginTop="32dp"
+            android:src="@drawable/calendar"
+            app:layout_constraintEnd_toEndOf="@+id/emailIcon"
+            app:layout_constraintHorizontal_bias="0.6"
+            app:layout_constraintStart_toStartOf="@+id/emailIcon"
+            app:layout_constraintTop_toBottomOf="@+id/tvDisplayEmail" />
+
+        <ImageView
+            android:id="@+id/addressIcon"
+            android:layout_width="27dp"
+            android:layout_height="27dp"
+            android:layout_marginTop="32dp"
+            android:src="@drawable/address"
+            app:layout_constraintEnd_toEndOf="@+id/birthDateIcon"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/birthDateIcon"
+            app:layout_constraintTop_toBottomOf="@+id/tvDisplayDate" />
+
+        <ImageView
+            android:id="@+id/phoneNumIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:src="@drawable/phonenum"
+            app:layout_constraintEnd_toEndOf="@+id/addressIcon"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/addressIcon"
+            app:layout_constraintTop_toBottomOf="@+id/tvDisplayAddress" />
+
+        <TextView
+            android:id="@+id/tvDisplayEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="26dp"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/emailIcon"
+            app:layout_constraintStart_toEndOf="@+id/emailIcon"
+            app:layout_constraintTop_toTopOf="@+id/emailIcon"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/tvDisplayDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/birthDateIcon"
+            app:layout_constraintStart_toEndOf="@+id/birthDateIcon"
+            app:layout_constraintTop_toTopOf="@+id/birthDateIcon"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/tvDisplayAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/addressIcon"
+            app:layout_constraintStart_toEndOf="@+id/addressIcon"
+            app:layout_constraintTop_toTopOf="@+id/addressIcon"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/tvDisplayPhoneNo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_marginStart="24dp"
+            app:layout_constraintBottom_toBottomOf="@+id/phoneNumIcon"
+            app:layout_constraintStart_toEndOf="@+id/phoneNumIcon"
+            app:layout_constraintTop_toTopOf="@+id/phoneNumIcon" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

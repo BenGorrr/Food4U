@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/frameLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".fragments.EditProfileFragment" >
+
+        <TextView
+            android:id="@+id/tvEditName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="20dp"
+            android:text="Full Name"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/tfEditName"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:ems="10"
+            android:hint="Name"
+            android:inputType="textPersonName"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/tvEditName"
+            app:layout_constraintTop_toBottomOf="@+id/tvEditName" />
+
+        <TextView
+            android:id="@+id/tvEditBirthDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Birth of Date (DD.MM.YYYY)"
+            app:layout_constraintStart_toStartOf="@+id/tfEditName"
+            app:layout_constraintTop_toBottomOf="@+id/tfEditName" />
+
+        <TextView
+            android:id="@+id/tvEditAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Address"
+            app:layout_constraintStart_toStartOf="@+id/tfEditBirthDate"
+            app:layout_constraintTop_toBottomOf="@+id/tfEditBirthDate" />
+
+        <EditText
+            android:id="@+id/tfEditAddress"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Address"
+            android:inputType="textPersonName"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/tvEditAddress"
+            app:layout_constraintTop_toBottomOf="@+id/tvEditAddress" />
+
+        <TextView
+            android:id="@+id/tvPhoneNo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Phone Number"
+            app:layout_constraintStart_toStartOf="@+id/tfEditAddress"
+            app:layout_constraintTop_toBottomOf="@+id/tfEditAddress" />
+
+        <EditText
+            android:id="@+id/tfPhoneNo"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Phone number"
+            android:inputType="phone"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/tvPhoneNo"
+            app:layout_constraintTop_toBottomOf="@+id/tvPhoneNo" />
+
+        <EditText
+            android:id="@+id/tfEditBirthDate"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="date"
+            app:layout_constraintStart_toStartOf="@+id/tvEditBirthDate"
+            app:layout_constraintTop_toBottomOf="@+id/tvEditBirthDate" />
+
+        <Button
+            android:id="@+id/btnChangePw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="36dp"
+            android:backgroundTint="#FF9800"
+            android:text="Change Password"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tfPhoneNo"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FF9800"
+            android:text="Save"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btnChangePw"
+            app:layout_constraintTop_toTopOf="@+id/btnChangePw" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
+
