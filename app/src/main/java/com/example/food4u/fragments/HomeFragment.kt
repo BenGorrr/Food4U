@@ -9,6 +9,9 @@ import android.view.ViewGroup
 import com.example.food4u.FundRaisingInfoActivity
 import com.example.food4u.R
 import com.example.food4u.databinding.FragmentHomeBinding
+import com.google.firebase.FirebaseApiNotAvailableException
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
 
 
 class HomeFragment : Fragment() {
@@ -26,6 +29,14 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.tvUserName.text = "Friend"
+        val uid = FirebaseAuth.getInstance().uid
+        val database = FirebaseDatabase.getInstance().reference.child("userDB/User/$uid/name").get().addOnSuccessListener {
+            binding.tvUserName.text = it.getValue(String::class.java).toString()
+        }
+
+
 
         binding.imageBtnDonate.setOnClickListener {
             setCurrentFragment(FundRaisingFragment())

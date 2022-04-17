@@ -124,12 +124,16 @@ class PaypalActivity : AppCompatActivity() {
                                     //                                .addOnFailureListener{
                                     //                                    Log.d("Something went wrong", "Error" + it.message)
                                     //                                }
-                                    val childUpdate = hashMapOf<String, Any>(
-                                        "/Donor/${eventPayment.eventId}/${eventPaymentId}" to true,
-                                        "/Events/${eventPayment.eventId}/raised" to eventPayment.amount,
-                                    )
-                                    database.updateChildren(childUpdate)
+                                    var raised = 0.0f
+                                    database.child("Events/${eventPayment.eventId}/raised").get().addOnSuccessListener {
+                                        raised = it.getValue(Float::class.java)!! + eventPayment.amount
 
+                                        val childUpdate = hashMapOf<String, Any>(
+                                            "/Donor/${eventPayment.eventId}/${eventPaymentId}" to true,
+                                            "/Events/${eventPayment.eventId}/raised" to raised,
+                                        )
+                                        database.updateChildren(childUpdate)
+                                    }
 
                                     val intent = Intent(this, PaymentThankYouActivity::class.java)
                                     intent.putExtra("eventId", eventPayment.eventId)

@@ -8,14 +8,15 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.food4u.R
 import com.example.food4u.modal.Events
+import com.example.food4u.modal.Notification
 import com.squareup.picasso.Picasso
 
-class NotificationAdapter (private val list: List<Events>, private val listener: NotificationAdapter.onItemClickListener) : RecyclerView.Adapter<NotificationAdapter.myViewHolder>(){
+class NotificationAdapter (private val list: List<Notification>, private val listener: NotificationAdapter.onItemClickListener) : RecyclerView.Adapter<NotificationAdapter.myViewHolder>(){
     inner class myViewHolder (itemView: View) : RecyclerView.ViewHolder(itemView), View.OnClickListener {
 
         val noficationTitle: TextView = itemView.findViewById(R.id.notificationTitles)
         val notificationMessage: TextView = itemView.findViewById(R.id.notificationMessages)
-        val notificationTime: ImageView = itemView.findViewById(R.id.notificationTime)
+        val notificationTime: TextView = itemView.findViewById(R.id.notificationTime)
 
         init {
             itemView.setOnClickListener(this)
@@ -42,9 +43,10 @@ class NotificationAdapter (private val list: List<Events>, private val listener:
     }
 
     override fun onBindViewHolder(holder: myViewHolder, position: Int) {
-        val currentEvents = list[position]
-        holder.noficationTitle.text = currentEvents.eventTitle
-        holder.notificationMessage.text = currentEvents.description
+        val currentNoti = list[position]
+        holder.noficationTitle.text = currentNoti.title
+        holder.notificationMessage.text = currentNoti.msg
+        holder.notificationTime.text = currentNoti.date
     }
 
     override fun getItemCount(): Int {
