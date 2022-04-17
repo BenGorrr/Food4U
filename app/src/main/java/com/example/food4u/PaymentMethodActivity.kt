@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import com.example.food4u.databinding.ActivityPaymentMethodBinding
 import com.example.food4u.modal.CreditCard
+import com.example.food4u.modal.EventPayment
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
@@ -16,12 +17,18 @@ import kotlinx.android.synthetic.main.activity_payment_method.*
 class PaymentMethodActivity : AppCompatActivity() {
     private lateinit var binding: ActivityPaymentMethodBinding
     lateinit var database: DatabaseReference
+    var eventPaymentId = "null"
+    var orderPaymentId = "null"
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         supportActionBar?.hide()
         binding = ActivityPaymentMethodBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        eventPaymentId = intent.getStringExtra("eventPaymentId").toString()
+        orderPaymentId = intent.getStringExtra("orderPaymentId").toString()
 
         val btnAddCard = binding.btnAddCreditCard
         val paypalImg = binding.imageViewPayPal
@@ -76,11 +83,19 @@ class PaymentMethodActivity : AppCompatActivity() {
         //Paypal
         paypalImg.setOnClickListener() {
             val intent = Intent(this, PaypalActivity::class.java)
+            if (eventPaymentId != "null")
+                intent.putExtra("eventPaymentId", eventPaymentId)
+            else if (orderPaymentId != "null")
+                intent.putExtra("orderPaymentId", orderPaymentId)
             startActivity(intent)
             finish()
         }
         paypalTv.setOnClickListener() {
             val intent = Intent(this, PaypalActivity::class.java)
+            if (eventPaymentId != "null")
+                intent.putExtra("eventPaymentId", eventPaymentId)
+            else if (orderPaymentId != "null")
+                intent.putExtra("orderPaymentId", orderPaymentId)
             startActivity(intent)
             finish()
         }

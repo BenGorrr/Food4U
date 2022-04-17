@@ -1,6 +1,7 @@
 package com.example.food4u
 
 import android.content.Intent
+import android.media.metrics.Event
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -8,6 +9,11 @@ import android.util.Log
 import androidx.annotation.RequiresApi
 import com.example.food4u.databinding.ActivityPaymentMethodBinding
 import com.example.food4u.databinding.ActivityPaypalBinding
+import com.example.food4u.modal.Donors
+import com.example.food4u.modal.EventPayment
+import com.example.food4u.modal.OrderPayment
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 import com.paypal.checkout.PayPalCheckout.setConfig
 import com.paypal.checkout.PayPalCheckout
 import com.paypal.checkout.approve.OnApprove
@@ -27,6 +33,11 @@ import kotlinx.android.synthetic.main.activity_paypal.*
 
 class PaypalActivity : AppCompatActivity() {
     private lateinit var binding: ActivityPaypalBinding
+    private lateinit var database: DatabaseReference
+    var eventPaymentId = ""
+    var orderPaymentId = ""
+    var amount = "0.0"
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityPaypalBinding.inflate(layoutInflater)
@@ -40,6 +51,28 @@ class PaypalActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
+
+
+        eventPaymentId = intent.getStringExtra("eventPaymentId").toString()
+        orderPaymentId = intent.getStringExtra("orderPaymentId").toString()
+        var eventPayment: EventPayment = EventPayment()
+        var orderPayment: OrderPayment = OrderPayment()
+        if (eventPaymentId != "null") {
+            database = FirebaseDatabase.getInstance().reference
+            database.child("EventPayment/$eventPaymentId").get().addOnSuccessListener {
+                eventPayment = it.getValue(EventPayment::class.java)!!
+                amount = eventPayment.amount.toString()
+            }
+        }
+        else if (orderPaymentId != "null") {
+            database = FirebaseDatabase.getInstance().reference
+            database.child("OrderPayment/$orderPaymentId").get().addOnSuccessListener {
+                orderPayment = it.getValue(OrderPayment::class.java)!!
+                amount = orderPayment.amount.toString()
+            }
+        }
+
+
 
         val config = CheckoutConfig(
             application = this.application,
@@ -66,7 +99,7 @@ class PaypalActivity : AppCompatActivity() {
                             listOf(
                                 PurchaseUnit(
                                     amount =
-                                    Amount(currencyCode = CurrencyCode.MYR, value = "10.00")
+                                    Amount(currencyCode = CurrencyCode.MYR, value = amount)
                                 )
                             )
                         )
@@ -76,9 +109,76 @@ class PaypalActivity : AppCompatActivity() {
                 OnApprove { approval ->
                     approval.orderActions.capture { captureOrderResult ->
                         Log.i("CaptureOrder", "CaptureOrderResult: $captureOrderResult")
+
+
+                        if (eventPaymentId != "null") {
+                            database.child("EventPayment/$eventPaymentId/complete").setValue(true)
+                                .addOnSuccessListener {
+                                    Log.d("Payment", "Success")
+
+                                    //val newDonor = Donors(key, donorName, donateAmount.toFloat(), donateDate.toString())
+                                    //                            database.child("Donors").child(newDonor.id).setValue(newDonor)
+                                    //                                .addOnSuccessListener {
+                                    //                                    Log.d("Successful","Successful")
+                                    //                                }
+                                    //                                .addOnFailureListener{
+                                    //                                    Log.d("Something went wrong", "Error" + it.message)
+                                    //                                }
+                                    val childUpdate = hashMapOf<String, Any>(
+                                        "/Donor/${eventPayment.eventId}/${eventPaymentId}" to true,
+                                        "/Events/${eventPayment.eventId}/raised" to eventPayment.amount,
+                                    )
+                                    database.updateChildren(childUpdate)
+
+
+                                    val intent = Intent(this, PaymentThankYouActivity::class.java)
+                                    intent.putExtra("eventId", eventPayment.eventId)
+                                    startActivity(intent)
+                                    finish()
+                                }.addOnFailureListener {
+                                Log.d("Payment", "Failed")
+                                finish()
+                            }
+                        } else if (orderPaymentId != "null") {
+                            database.child("OrderPayment/$orderPaymentId/complete").setValue(true)
+                                .addOnSuccessListener {
+                                    Log.d("Payment", "Success")
+
+                                    //val newDonor = Donors(key, donorName, donateAmount.toFloat(), donateDate.toString())
+                                    //                            database.child("Donors").child(newDonor.id).setValue(newDonor)
+                                    //                                .addOnSuccessListener {
+                                    //                                    Log.d("Successful","Successful")
+                                    //                                }
+                                    //                                .addOnFailureListener{
+                                    //                                    Log.d("Something went wrong", "Error" + it.message)
+                                    //                                }
+                                    val childUpdate = hashMapOf<String, Any?>(
+                                        "/Cart/${orderPayment.userId}/${orderPayment.agencyId}" to null,
+                                    )
+                                    database.updateChildren(childUpdate)
+
+                                    val intent = Intent(this, PaymentThankYouActivity::class.java)
+                                    intent.putExtra("agencyId", orderPayment.agencyId)
+                                    startActivity(intent)
+                                    finish()
+                                }.addOnFailureListener {
+                                    Log.d("Payment", "Failed")
+                                    finish()
+                                }
+                        }
                     }
                 }
             )
         }
+    }
+
+    private fun addNewDonor(newDonor: Donors) {
+        database.child("Donors").child(newDonor.id).setValue(newDonor)
+            .addOnSuccessListener {
+                Log.d("Successful","Successful")
+            }
+            .addOnFailureListener{
+                Log.d("Something went wrong", "Error" + it.message)
+            }
     }
 }

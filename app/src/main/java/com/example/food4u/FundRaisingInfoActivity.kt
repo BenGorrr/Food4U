@@ -1,24 +1,21 @@
 package com.example.food4u
 
 import android.content.Intent
-import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.util.Patterns
-import android.widget.Toast
-import com.example.food4u.databinding.ActivityCreateEventBinding
 import com.example.food4u.databinding.ActivityFundRaisingInfoBinding
-import com.example.food4u.databinding.ActivityPaymentThankYouBinding
 import com.example.food4u.modal.Donors
 import com.example.food4u.modal.Events
+import com.example.food4u.modal.EventPayment
 import com.example.food4u.modal.User
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import kotlinx.android.synthetic.main.activity_fund_raising_info.*
 import java.text.SimpleDateFormat
 import java.util.*
-import java.util.regex.Pattern
 
 class FundRaisingInfoActivity : AppCompatActivity() {
     private lateinit var binding: ActivityFundRaisingInfoBinding
@@ -117,7 +114,7 @@ class FundRaisingInfoActivity : AppCompatActivity() {
             valid=false
         }
         if(donateAmount.isEmpty()){
-            binding.tvDonationAmountBox.error = "This field cannot be empty"
+            binding.tvFundRaisingAmount.error = "This field cannot be empty"
             valid=false
         }
         if(donateMessage.isEmpty()){
@@ -126,19 +123,42 @@ class FundRaisingInfoActivity : AppCompatActivity() {
         }
 
         if(valid){
-            database = FirebaseDatabase.getInstance().getReference("Donors")
-            val key = database.push().key!!
+            database = FirebaseDatabase.getInstance().reference
+//            val key = database.push().key!!
 
-            val newDonor = Donors(key,donorName,donateAmount.toFloat(),donateDate.toString())
-            addNewDonor(newDonor)
+//            val newDonor = Donors(key,donorName,donateAmount.toFloat(),donateDate.toString())
+//            addNewDonor(newDonor)
 
-            val intentFundraisingInfo: Intent = Intent(this, MainActivity::class.java)
-            startActivity(intentFundraisingInfo)
+            val paymentId = UUID.randomUUID().toString()
+            var amt = 0.0f
+            amt = binding.tvFundRaisingAmount.text.toString().trim().toFloat()
+            val newEventPayment = EventPayment(paymentId, amt, FirebaseAuth.getInstance().currentUser!!.uid, eventId, binding.inputDate.text.toString())
+
+            database.child("EventPayment").child(newEventPayment.id).setValue(newEventPayment).addOnSuccessListener {
+                Log.d("EventPayment", "Success")
+                val intentFundraisingInfo: Intent = Intent(this, PaymentMethodActivity::class.java)
+                intentFundraisingInfo.putExtra("eventPaymentId", paymentId)
+                startActivity(intentFundraisingInfo)
+
+            }.addOnFailureListener{
+                Log.d("EventPayment", "Failed")
+            }
+
+
+        }
+    }
+
+
+    private fun createOrder(newEventPayment: EventPayment) {
+        database.child("EventPayment").child(newEventPayment.id).setValue(newEventPayment).addOnSuccessListener {
+            Log.d("EventPayment", "Success")
+        }.addOnFailureListener{
+            Log.d("EventPayment", "Failed")
         }
     }
 
     private fun addNewDonor(newDonor:Donors) {
-        database.child(newDonor.id).setValue(newDonor)
+        database.child("Donors").child(newDonor.id).setValue(newDonor)
             .addOnSuccessListener {
                 Log.d("Successful","Successful")
             }

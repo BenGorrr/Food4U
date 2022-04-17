@@ -8,6 +8,7 @@ import com.example.food4u.databinding.ActivityCreateEventBinding
 import com.example.food4u.databinding.ActivityDonateNowBinding
 import com.example.food4u.databinding.ActivityDonorListBinding
 import com.example.food4u.modal.Events
+import com.example.food4u.modal.User
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.squareup.picasso.Picasso
@@ -24,11 +25,12 @@ class DonateNowActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityDonateNowBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         eventId = intent.getStringExtra("eventId").toString()
 
-        database = FirebaseDatabase.getInstance().getReference("Events/$eventId")
-        database.get().addOnSuccessListener {
+        database = FirebaseDatabase.getInstance().reference
+        database.child("Events/$eventId").get().addOnSuccessListener {
             event = it.getValue(Events::class.java)!!
 
             binding.tvEventTitle.text = event.eventTitle
@@ -39,9 +41,19 @@ class DonateNowActivity : AppCompatActivity() {
             binding.tvCollectedAmount.text = event.raised.toString()
             if (event.imageURL.isNotEmpty())
                 Picasso.get().load(event.imageURL).into(binding.imageEvent)
-            val collectedPerc = event.raised / event.goal * 100
+            val collectedPerc = ((event.raised / event.goal * 100) * 100.0f).roundToInt() / 100.0f
             binding.tvCollectedPercentage.text = "($collectedPerc %)"
             binding.progressBar.progress = collectedPerc.roundToInt()
+
+            database.child("userDB/User/${event.organizerId}").get().addOnSuccessListener {
+                val user = it.getValue(User::class.java)!!
+                if (user.imgUrl.toString().isNotEmpty()) {
+                    Picasso.get().load(user.imgUrl.toString()).into(binding.imageOrganiser)
+                }else {
+                    binding.imageOrganiser.setImageResource(R.drawable.userimg)
+                }
+            }
+
         }
 
 
@@ -56,7 +68,12 @@ class DonateNowActivity : AppCompatActivity() {
 
         binding.tvRaised.setOnClickListener {
             val intentDonateNow = Intent(this, DonorListActivity::class.java)
+            intentDonateNow.putExtra("eventId", eventId)
             startActivity(intentDonateNow)
         }
+    }
+    override fun onSupportNavigateUp(): Boolean {
+        finish()
+        return true
     }
 }

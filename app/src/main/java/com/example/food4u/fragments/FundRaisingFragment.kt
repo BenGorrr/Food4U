@@ -46,6 +46,10 @@ class FundRaisingFragment : Fragment(), EventsAdapter.onItemClickListener {
             startActivity(intentCreateEvent)
         }
 
+        binding.imageBtnBack.setOnClickListener{
+            setCurrentFragment(HomeFragment())
+        }
+
         binding.rvFundraisingEvents.layoutManager = LinearLayoutManager(activity!!.applicationContext)
         binding.rvFundraisingEvents.setHasFixedSize(true)
         readEvents()
@@ -88,4 +92,10 @@ class FundRaisingFragment : Fragment(), EventsAdapter.onItemClickListener {
             }
         })
     }
+
+    private fun setCurrentFragment(fragment: Fragment) =
+        activity!!.supportFragmentManager.beginTransaction().apply {
+            replace(R.id.fl_wrapper, fragment)
+            commit()
+        }
 }
