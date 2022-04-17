@@ -245,7 +245,8 @@
             android:src="@drawable/image_new1"
             app:layout_constraintBottom_toBottomOf="@+id/textView5"
             app:layout_constraintStart_toStartOf="@+id/textView5"
-            app:layout_constraintTop_toTopOf="@+id/textView5" />
+            app:layout_constraintTop_toTopOf="@+id/textView5"
+            app:srcCompat="@drawable/image_new1" />
 
         <TextView
             android:id="@+id/textView15"
@@ -301,7 +302,8 @@
             android:src="@drawable/image_new2"
             app:layout_constraintBottom_toBottomOf="@+id/textView29"
             app:layout_constraintStart_toStartOf="@+id/textView29"
-            app:layout_constraintTop_toTopOf="@+id/textView29" />
+            app:layout_constraintTop_toTopOf="@+id/textView29"
+            app:srcCompat="@drawable/image_new2" />
 
         <TextView
             android:id="@+id/textView35"
@@ -357,7 +359,8 @@
             android:src="@drawable/image_new3"
             app:layout_constraintBottom_toBottomOf="@+id/textView37"
             app:layout_constraintStart_toStartOf="@+id/textView37"
-            app:layout_constraintTop_toTopOf="@+id/textView37" />
+            app:layout_constraintTop_toTopOf="@+id/textView37"
+            app:srcCompat="@drawable/image_new3" />
 
         <TextView
             android:id="@+id/textView38"
