@@ -121,6 +121,13 @@ class ProfilePage : AppCompatActivity() {
             finish()
         }
 
+        btnPaymentMethod.setOnClickListener {
+            val intent = Intent(this, PaymentMethodActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
+            startActivity(intent)
+            finish()
+        }
+
     }
 
     private fun replaceFragment(fragment1: Fragment) {
