@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.food4u.TransactionHistoryActivity
 import com.example.food4u.databinding.FragmentProfileBinding
 import com.example.food4u.firebase.firebaseHelper
 import com.example.food4u.userSignin
@@ -54,13 +55,19 @@ class ProfileFragment : Fragment() {
 
         btnSignOut.setOnClickListener {
             val intent = Intent(activity, userSignin::class.java)
-            startActivity(intent)
             intent.putExtra("finish", true)
             intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP // To clean up all activities
             startActivity(intent)
             FB.signOut()
             activity!!.finish()
         }
+
+        binding.btnTransactionHistory.setOnClickListener {
+            val intent = Intent(activity, TransactionHistoryActivity::class.java)
+            intent.putExtra("finish", true)
+            startActivity(intent)
+        }
+
         return binding.root
     }
 

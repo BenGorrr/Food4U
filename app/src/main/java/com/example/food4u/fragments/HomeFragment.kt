@@ -17,6 +17,23 @@ import com.google.firebase.database.FirebaseDatabase
 class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding
 
+    companion object {
+        const val ARG_NAME = "mode"
+
+        fun newInstance(mode: String): HomeFragment {
+            val fragment = HomeFragment()
+
+            val bundle = Bundle().apply {
+                putString(ARG_NAME, mode)
+            }
+
+            fragment.arguments = bundle
+
+            return fragment
+        }
+    }
+
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
