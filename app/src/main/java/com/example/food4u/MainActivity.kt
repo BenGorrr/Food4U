@@ -44,18 +44,19 @@ class MainActivity : AppCompatActivity() {
                     }
                 }
             }
-        val homeFragment = HomeFragment()
         val aboutUsFragment = AboutUsFragment()
         val notificationFragment = NotificationFragment()
         val profileFragment = ProfileFragment()
         val fundRaisingFragment = FundRaisingFragment()
         val necessityFragment = NecessityFragment()
 
+        val homeFragment = HomeFragment.newInstance("profile")
         setCurrentFragment(homeFragment)
 
         nav.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.nav_home -> {
+                    val homeFragment = HomeFragment.newInstance("profile")
                     setCurrentFragment(homeFragment)
                     Log.i(TAG, "Home selected")
                 }
@@ -75,7 +76,7 @@ class MainActivity : AppCompatActivity() {
 
                 }
                 R.id.nav_donate -> {
-
+                    val homeFragment = HomeFragment.newInstance("donate")
                     setCurrentFragment(homeFragment)
                     //Log.i(TAG, "Necessity selected")
                 }

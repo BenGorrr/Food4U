@@ -121,12 +121,6 @@ class ProfilePage : AppCompatActivity() {
             finish()
         }
 
-        btnPaymentMethod.setOnClickListener {
-            val intent = Intent(this, PaymentMethodActivity::class.java)
-            startActivity(intent)
-            finish()
-        }
-
     }
 
     private fun replaceFragment(fragment1: Fragment) {

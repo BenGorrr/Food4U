@@ -35,6 +35,8 @@ class NotificationFragment : Fragment(), NotificationAdapter.onItemClickListener
     ): View? {
         binding = FragmentNotificationBinding.inflate(inflater, container, false)
 
+        database = FirebaseDatabase.getInstance().reference
+
         return binding.root
     }
 
@@ -48,6 +50,27 @@ class NotificationFragment : Fragment(), NotificationAdapter.onItemClickListener
         binding.notificationRecycleView.layoutManager = LinearLayoutManager(requireContext())
         binding.notificationRecycleView.setHasFixedSize(true)
         readNoti(mContext)
+
+        binding.btnDeleteNotification.setOnClickListener {
+            deleteNoti()
+        }
+    }
+
+    fun deleteNoti() {
+        val builder = AlertDialog.Builder(activity)
+        builder.setTitle("Confirm delete?")
+        builder.setMessage("Are you sure you want to clear all notifications?")
+        builder.setPositiveButton("Yes", DialogInterface.OnClickListener { dialog, id ->
+            val userId = FirebaseAuth.getInstance().uid.toString()
+            database.child("UserNotification").child(userId).removeValue()
+            //readNoti()
+            dialog.cancel()
+        })
+        builder.setNegativeButton("Cancel", DialogInterface.OnClickListener { dialog, id ->
+            dialog.cancel()
+        })
+        val alert: AlertDialog = builder.create()
+        alert.show()
     }
 
     override fun itemClick(position: Int) {
@@ -71,6 +94,7 @@ class NotificationFragment : Fragment(), NotificationAdapter.onItemClickListener
                 if (dataSnapshot.exists()) {
                     for (notiId in dataSnapshot.children) {
                         // TODO: handle the post
+                        notificationList = arrayListOf()
                         val notiId = notiId.key.toString()
                         notificationIdList.add(notiId)
 
@@ -88,7 +112,10 @@ class NotificationFragment : Fragment(), NotificationAdapter.onItemClickListener
                                 binding.notificationMessage2.visibility = View.GONE
                             }
                             else binding.notificationRecycleView.visibility = View.GONE
+                            binding.noOfNotify.text = notificationList.size.toString()
                         }
+                        val adapter = NotificationAdapter(notificationList, mContext)
+                        binding.notificationRecycleView.adapter = adapter
                     }
 
 
