@@ -55,6 +55,7 @@ dependencies {
     implementation "androidx.recyclerview:recyclerview:1.2.1"
     implementation 'com.google.firebase:firebase-storage-ktx:20.0.1'
     implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'com.paypal.checkout:android-sdk:0.6.0'
 
     testImplementation 'junit:junit:4.+'
