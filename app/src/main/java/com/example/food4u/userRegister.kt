@@ -85,7 +85,7 @@ class userRegister : AppCompatActivity() {
                 if(password.equals(checkPassword) && password.length>=6){
                     FB.registerUser(email, password)
                         .addOnSuccessListener {
-                            val newUser = User(email, userType,username,null)
+                            val newUser = User(email, userType,username,"")
                             database.child("User").child(Firebase.auth.uid.toString()).setValue(newUser)
                             Firebase.auth.signOut()
                             val intent = Intent(this, userSignin::class.java)

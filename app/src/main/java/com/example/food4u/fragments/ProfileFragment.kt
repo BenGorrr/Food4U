@@ -14,6 +14,7 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
+import java.time.format.DateTimeFormatter
 
 class ProfileFragment : Fragment() {
 
@@ -42,9 +43,8 @@ class ProfileFragment : Fragment() {
             .addOnSuccessListener { rec->
                 if(rec!=null){
                     displayEmail.text = rec.child("email").value.toString()
-                    if(rec.child("birthDate").value!=null){
-                        val unformattedDate = rec.child("birthDate").value.toString()
-                        displayBirthDate.text = unformattedDate
+                    if(rec.child("birthDate").value.toString()!=""){ // if there is date record
+                        displayBirthDate.text = rec.child("birthDate").value.toString()
                     }
 
                     displayAdd.text = rec.child("address").value.toString()

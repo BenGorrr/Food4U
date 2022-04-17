@@ -1,68 +1,268 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".AdminActivity">
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="#FFF1CE"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <TextView
-        android:id="@+id/addProductPanel"
-        android:layout_width="371dp"
-        android:layout_height="263dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="@+id/textView11"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textView11"
-        app:layout_constraintTop_toBottomOf="@+id/textView11" />
-
-    <TextView
-        android:id="@+id/addAgenciesPanel"
-        android:layout_width="371dp"
-        android:layout_height="263dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="@+id/addProductPanel"
-        app:layout_constraintStart_toStartOf="@+id/addProductPanel"
-        app:layout_constraintTop_toBottomOf="@+id/addProductPanel" />
-
-    <TextView
-        android:id="@+id/textView11"
-        android:layout_width="371dp"
-        android:layout_height="57dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.6"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/btnSignMeOut"
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="400dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="SIGN OUT"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addAgenciesPanel" />
+        tools:context=".AdminActivity">
 
-    <TextView
-        android:id="@+id/tvName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        app:layout_constraintEnd_toEndOf="@+id/tvRole"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/tvRole"
-        app:layout_constraintTop_toBottomOf="@+id/tvRole" />
+        <TextView
+            android:id="@+id/addProductPanel"
+            android:layout_width="371dp"
+            android:layout_height="330dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/white"
+            app:layout_constraintEnd_toEndOf="@+id/textView11"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/textView11"
+            app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
-    <TextView
-        android:id="@+id/tvRole"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="8dp"
-        android:text="Role: Admin"
-        app:layout_constraintStart_toStartOf="@+id/textView11"
-        app:layout_constraintTop_toTopOf="@+id/textView11" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/tvProdPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Product Price: "
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/tvProdName"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/tvProdName"
+            app:layout_constraintTop_toBottomOf="@+id/tvProdName" />
+
+        <TextView
+            android:id="@+id/addAgenciesPanel"
+            android:layout_width="371dp"
+            android:layout_height="500dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/white"
+            app:layout_constraintEnd_toEndOf="@+id/addProductPanel"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/addProductPanel"
+            app:layout_constraintTop_toBottomOf="@+id/addProductPanel" />
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="371dp"
+            android:layout_height="57dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.6"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btnSignMeOut"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SIGN OUT"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.508"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/addAgenciesPanel" />
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            app:layout_constraintEnd_toEndOf="@+id/tvRole"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/tvRole"
+            app:layout_constraintTop_toBottomOf="@+id/tvRole" />
+
+        <TextView
+            android:id="@+id/tvRole"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="8dp"
+            android:text="Role: Admin"
+            app:layout_constraintStart_toStartOf="@+id/textView11"
+            app:layout_constraintTop_toTopOf="@+id/textView11" />
+
+        <TextView
+            android:id="@+id/tvProdName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="244dp"
+            android:text="Product Name: "
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/addProductPanel"
+            app:layout_constraintTop_toBottomOf="@+id/textView35" />
+
+        <TextView
+            android:id="@+id/tv20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:text="Agency Name: "
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/addAgenciesPanel"
+            app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+        <TextView
+            android:id="@+id/tv21"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="28dp"
+            android:text="Agency Description: "
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/addAgenciesPanel"
+            app:layout_constraintTop_toBottomOf="@+id/tv20" />
+
+        <Button
+            android:id="@+id/btnAddImgProd"
+            android:layout_width="118dp"
+            android:layout_height="37dp"
+            android:layout_marginTop="28dp"
+            android:text="Add Image"
+            app:layout_constraintEnd_toEndOf="@+id/tvProdPrice"
+            app:layout_constraintHorizontal_bias="0.272"
+            app:layout_constraintStart_toStartOf="@+id/tvProdPrice"
+            app:layout_constraintTop_toBottomOf="@+id/tvProdPrice" />
+
+        <Button
+            android:id="@+id/btnAddAgencyImg"
+            android:layout_width="118dp"
+            android:layout_height="37dp"
+            android:layout_marginTop="24dp"
+            android:text="Add Image"
+            app:layout_constraintEnd_toEndOf="@+id/tv21"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/tv21"
+            app:layout_constraintTop_toBottomOf="@+id/agencyDesc" />
+
+        <TextView
+            android:id="@+id/textView35"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:text="ADD PRODUCT"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/addProductPanel"
+            app:layout_constraintTop_toTopOf="@+id/addProductPanel" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:text="ADD AGENCY"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/addAgenciesPanel"
+            app:layout_constraintTop_toTopOf="@+id/addAgenciesPanel" />
+
+        <EditText
+            android:id="@+id/tfProdName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="52dp"
+            android:ems="10"
+            android:hint="Enter product name"
+            android:inputType="textPersonName"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvProdName"
+            app:layout_constraintEnd_toEndOf="@+id/addProductPanel"
+            app:layout_constraintTop_toTopOf="@+id/tvProdName"
+            app:layout_constraintVertical_bias="0.571" />
+
+        <EditText
+            android:id="@+id/tfAgencyName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
+            android:ems="10"
+            android:hint="Enter agency name"
+            android:inputType="textPersonName"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tv20"
+            app:layout_constraintEnd_toEndOf="@+id/addAgenciesPanel"
+            app:layout_constraintTop_toTopOf="@+id/tv20"
+            app:layout_constraintVertical_bias="0.571" />
+
+        <EditText
+            android:id="@+id/tfProdPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Enter product price"
+            android:inputType="numberDecimal"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@+id/tfProdName"
+            app:layout_constraintStart_toStartOf="@+id/tfProdName"
+            app:layout_constraintTop_toBottomOf="@+id/tfProdName" />
+
+        <Button
+            android:id="@+id/btnConfirmAddProd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="84dp"
+            android:text="Add product"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.501"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnAddImgProd" />
+
+        <Button
+            android:id="@+id/btnConfirmAddAgency"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="110dp"
+            android:text="Add Agency"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnAddAgencyImg" />
+
+        <ImageView
+            android:id="@+id/imgProd"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginEnd="92dp"
+            app:layout_constraintEnd_toEndOf="@+id/addProductPanel"
+            app:layout_constraintStart_toEndOf="@+id/btnAddImgProd"
+            app:layout_constraintTop_toTopOf="@+id/btnAddImgProd"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <ImageView
+            android:id="@+id/imgAgency"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="96dp"
+            app:layout_constraintBottom_toBottomOf="@+id/btnAddAgencyImg"
+            app:layout_constraintEnd_toEndOf="@+id/addAgenciesPanel"
+            app:layout_constraintTop_toTopOf="@+id/btnAddAgencyImg"
+            app:layout_constraintVertical_bias="0.267"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <EditText
+            android:id="@+id/agencyDesc"
+            android:layout_width="188dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:ems="10"
+            android:gravity="start|top"
+            android:hint="Enter agency description."
+            android:inputType="textMultiLine"
+            app:layout_constraintEnd_toEndOf="@+id/tfAgencyName"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/tfAgencyName"
+            app:layout_constraintTop_toBottomOf="@+id/tfAgencyName" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
