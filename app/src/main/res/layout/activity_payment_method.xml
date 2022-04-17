@@ -8,89 +8,93 @@
     tools:context=".PaymentMethodActivity">
 
     <ImageView
-        android:id="@+id/imageBack"
+        android:id="@+id/imageBackAddNewCard"
         android:layout_width="42dp"
         android:layout_height="45dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView10"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.073"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/ic_baseline_arrow_back_24" />
 
     <TextView
         android:id="@+id/AddNewCardTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
         android:text="Payment Method"
         android:textColor="#050505"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/imageBack"
+        app:layout_constraintBottom_toTopOf="@+id/textView10"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.326"
-        app:layout_constraintStart_toEndOf="@+id/imageBack"
-        app:layout_constraintTop_toTopOf="@+id/imageBack"
+        app:layout_constraintStart_toEndOf="@+id/imageBackAddNewCard"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/textView10"
-        android:layout_width="415dp"
-        android:layout_height="542dp"
-        android:layout_marginBottom="4dp"
+        android:layout_width="0dp"
+        android:layout_height="470dp"
         android:background="@drawable/lower_curve"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/tvAddpaymentCardBox"
-        android:layout_width="276dp"
-        android:layout_height="150dp"
-        android:layout_marginTop="24dp"
-        android:background="@drawable/oval_shape_blue"
-        app:layout_constraintEnd_toEndOf="@+id/textView10"
-        app:layout_constraintStart_toStartOf="@+id/textView10"
-        app:layout_constraintTop_toBottomOf="@+id/AddNewCardTitle" />
-
-    <Button
-        android:id="@+id/btnAddCreditCard"
-        android:layout_width="91dp"
-        android:layout_height="65dp"
-        android:text="+"
-        app:layout_constraintBottom_toTopOf="@+id/tvAddCardTitle"
-        app:layout_constraintEnd_toEndOf="@+id/tvAddpaymentCardBox"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="@+id/tvAddpaymentCardBox"
-        app:layout_constraintTop_toTopOf="@+id/tvAddpaymentCardBox"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnAddCreditCard"
         app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/tvAddCardTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
         android:text="Add Card"
         android:textColor="#FDF9F9"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/tvAddpaymentCardBox"
+        android:translationZ="90dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/btnAddCreditCard"
         app:layout_constraintEnd_toEndOf="@+id/btnAddCreditCard"
-        app:layout_constraintStart_toStartOf="@+id/btnAddCreditCard" />
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="@+id/btnAddCreditCard"
+        app:layout_constraintTop_toTopOf="@+id/btnAddCreditCard"
+        app:layout_constraintVertical_bias="0.73" />
+
+    <Button
+        android:id="@+id/btnAddCreditCard"
+        android:layout_width="314dp"
+        android:layout_height="170dp"
+        android:layout_marginTop="92dp"
+        android:background="@drawable/oval_shape_blue"
+        android:backgroundTint="@color/darkblue"
+        android:text="+"
+        android:textSize="48sp"
+        android:theme="@style/Button.DarkBlue"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView17"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
         android:text="Other Payment Methods"
         android:textColor="#000000"
         android:textSize="24sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/textView10"
         app:layout_constraintHorizontal_bias="0.156"
         app:layout_constraintStart_toStartOf="@+id/textView10"
-        app:layout_constraintTop_toBottomOf="@+id/tvAddpaymentCardBox" />
+        app:layout_constraintTop_toTopOf="@+id/textView10"
+        app:layout_constraintVertical_bias="0.24000001" />
 
     <ImageView
         android:id="@+id/imageViewTNG"
@@ -139,11 +143,12 @@
         android:layout_width="52dp"
         android:layout_height="20dp"
         android:layout_marginTop="44dp"
-        android:layout_marginEnd="204dp"
         android:text="PayPal"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/imageViewPayPal"
         app:layout_constraintEnd_toEndOf="@+id/textView10"
+        app:layout_constraintHorizontal_bias="0.32"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvTNGTittle"
         app:layout_constraintVertical_bias="0.0" />
 
@@ -158,4 +163,76 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/tvPayPalTittle"
         app:layout_constraintTop_toBottomOf="@+id/tvPayPalTittle" />
+
+    <TextView
+        android:id="@+id/paymentErrorMsgBg"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:background="@color/lightOrange"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/textView10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/paymentErrorMsgTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/textView10"
+        app:layout_constraintEnd_toEndOf="@+id/paymentErrorMsgBg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/paymentErrorMsgBg" />
+
+    <TextView
+        android:id="@+id/savedcreditCardBg"
+        android:layout_width="300dp"
+        android:layout_height="170dp"
+        android:background="@drawable/oval_shape_blue"
+        app:layout_constraintBottom_toBottomOf="@+id/textView10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/AddNewCardTitle"
+        app:layout_constraintVertical_bias="0.07999998" />
+
+    <TextView
+        android:id="@+id/savedcreditCardNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Card Number"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:translationZ="90dp"
+        app:layout_constraintBottom_toBottomOf="@+id/savedcreditCardBg"
+        app:layout_constraintEnd_toEndOf="@+id/savedcreditCardBg"
+        app:layout_constraintStart_toStartOf="@+id/savedcreditCardBg"
+        app:layout_constraintTop_toTopOf="@+id/savedcreditCardBg"
+        app:layout_constraintVertical_bias="0.84000003" />
+
+    <ImageView
+        android:id="@+id/masterCardImg"
+        android:layout_width="198dp"
+        android:layout_height="115dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/savedcreditCardBg"
+        app:layout_constraintStart_toStartOf="@+id/savedcreditCardBg"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.19999999"
+        app:srcCompat="@drawable/ic_master_card" />
+
+    <!--    <com.paypal.checkout.paymentbutton.PayPalButton-->
+<!--        android:id="@+id/payPalButton"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/textView10"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/tvCredirCardTittle"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/textView10"-->
+<!--        app:layout_constraintVertical_bias="1.0" />-->
+
 </androidx.constraintlayout.widget.ConstraintLayout>

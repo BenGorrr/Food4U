@@ -26,8 +26,10 @@
         android:elevation="2dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.439"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.58" />
 
     <TextView
         android:id="@+id/addressTv"
@@ -106,18 +108,33 @@
 
     <TextView
         android:id="@+id/addressLocation3"
-        android:layout_width="221dp"
-        android:layout_height="14dp"
-        android:text="Tel: 60(3) 2234 1123"
+        android:layout_width="117dp"
+        android:layout_height="16dp"
+        android:text="60(3) 2234 1123"
+        android:textColor="@color/orange"
+        android:textSize="12sp"
+        android:translationZ="90dp"
+        app:layout_constraintBottom_toBottomOf="@+id/contactUsTv"
+        app:layout_constraintEnd_toEndOf="@+id/contactUsTv"
+        app:layout_constraintHorizontal_bias="0.03"
+        app:layout_constraintStart_toEndOf="@+id/addressLocation2"
+        app:layout_constraintTop_toTopOf="@+id/contactUsTv"
+        app:layout_constraintVertical_bias="0.314" />
+
+    <TextView
+        android:id="@+id/addressLocation2"
+        android:layout_width="21dp"
+        android:layout_height="17dp"
+        android:text="Tel:"
         android:textColor="@color/black"
         android:textSize="12sp"
         android:translationZ="90dp"
         app:layout_constraintBottom_toBottomOf="@+id/contactUsTv"
         app:layout_constraintEnd_toEndOf="@+id/contactUsTv"
-        app:layout_constraintHorizontal_bias="0.316"
+        app:layout_constraintHorizontal_bias="0.11"
         app:layout_constraintStart_toStartOf="@+id/contactUsTv"
         app:layout_constraintTop_toTopOf="@+id/contactUsTv"
-        app:layout_constraintVertical_bias="0.31" />
+        app:layout_constraintVertical_bias="0.314" />
 
     <TextView
         android:id="@+id/openHours1"
@@ -226,4 +243,31 @@
         app:layout_constraintStart_toStartOf="@+id/contactUsTv"
         app:layout_constraintTop_toTopOf="@+id/contactUsTv"
         app:layout_constraintVertical_bias="0.356" />
+
+    <TextView
+        android:id="@+id/successfulMsgBg"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:background="@color/lightOrange"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/contactUsTv"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/successfulMsg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Successfully Submitted"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/successfulMsgBg"
+        app:layout_constraintEnd_toEndOf="@+id/successfulMsgBg"
+        app:layout_constraintStart_toStartOf="@+id/successfulMsgBg"
+        app:layout_constraintTop_toTopOf="@+id/successfulMsgBg"
+        app:layout_constraintVertical_bias="0.487" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

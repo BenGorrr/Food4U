@@ -4,6 +4,16 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
         jcenter() // Warning: this repository is going to shut down soon
+        // This private repository is required to resolve the Cardinal SDK transitive dependency.
+        maven {
+            url  "https://cardinalcommerceprod.jfrog.io/artifactory/android"
+            credentials {
+                // Be sure to add these non-sensitive credentials in order to retrieve dependencies from
+                // the private repository.
+                username mavenUsername
+                password mavenPassword
+            }
+        }
     }
 }
 rootProject.name = "Food4U"
