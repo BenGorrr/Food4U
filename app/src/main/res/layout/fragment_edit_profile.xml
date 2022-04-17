@@ -37,7 +37,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="Birth of Date (DD.MM.YYYY)"
+            android:text="Birth of Date (YYYY-MM-DD)"
             app:layout_constraintStart_toStartOf="@+id/tfEditName"
             app:layout_constraintTop_toBottomOf="@+id/tfEditName" />
 

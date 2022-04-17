@@ -66,6 +66,7 @@ class ProfilePage : AppCompatActivity() {
         database.child("User").child(Firebase.auth.uid.toString()).get()
             .addOnSuccessListener { rec ->
                 if (rec != null) {
+                    val diu = rec.child("imgUrl").value.toString()
                     if(rec.child("imgUrl").value.toString().isEmpty()) profPic.setImageResource(R.drawable.userimg)
                     //else Picasso.get().load(rec.child("imgUrl").value.toString()).resize(150, 150).centerCrop().into(profPic)
                     //tvName.text = rec.child("name").value.toString()
@@ -78,7 +79,8 @@ class ProfilePage : AppCompatActivity() {
                 val post = dataSnapshot.getValue<User>()
                 if(post!=null){
                     tvName.text = post.name
-                    Picasso.get().load(post.imgUrl).resize(150, 150).centerCrop().into(profPic)
+                    if(post.imgUrl.isNotEmpty())
+                        Picasso.get().load(post.imgUrl).resize(150, 150).centerCrop().into(profPic)
                     numOfDonation.text = "Donation: " + post.numOfDonation
                 }
 
