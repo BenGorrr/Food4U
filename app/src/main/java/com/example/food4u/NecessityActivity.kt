@@ -66,10 +66,10 @@ class NecessityActivity : AppCompatActivity(), ProductsAdapter.onItemClickListen
     }
 
     override fun itemClick(position: Int) {
-        //val selectedProduct = productList[position]
-        //Toast.makeText(applicationContext, selectedProduct.name, Toast.LENGTH_LONG).show()
+//        val selectedProduct = productList[position]
+//        Toast.makeText(applicationContext, selectedProduct.name, Toast.LENGTH_LONG).show()
 //        selectedName = selectedProduct.name
-//        startForResult.launch("image/*")
+//        //startForResult.launch("image/*")
 //        database = FirebaseDatabase.getInstance().getReference("agencyProducts")
 //        val agencyProd = AgencyProduct(hashMapOf(selectedProduct.id to true))
 //        //database.child(agencyId).setValue(agencyProd)
@@ -85,6 +85,7 @@ class NecessityActivity : AppCompatActivity(), ProductsAdapter.onItemClickListen
     }
 
     override fun onAddToCart(product: Product, qty: Int) {
+        Toast.makeText(applicationContext, "Added to cart", Toast.LENGTH_SHORT).show()
         database = FirebaseDatabase.getInstance().getReference("Cart")
         val userId = FirebaseAuth.getInstance().currentUser!!.uid
         val id = product.id

@@ -1,63 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_height="wrap_content"
-    android:layout_width="wrap_content"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_height="wrap_content"
+android:layout_width="wrap_content"
+xmlns:android="http://schemas.android.com/apk/res/android"
+tools:context=".fragments.NewsDetailFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/frameLayout3"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".fragments.NewsDetailFragment">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/frameLayout3"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.NewsDetailFragment">
 
-        <!-- TODO: Update blank fragment layout -->
+    <!-- TODO: Update blank fragment layout -->
 
-        <TextView
-            android:id="@+id/textView27"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:background="#BFF6C062"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
+    <TextView
+        android:id="@+id/textView27"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#BFF6C062"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
-        <ImageView
-            android:id="@+id/imageView26"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="32dp"
-            android:src="@drawable/ic_back"
-            app:layout_constraintStart_toStartOf="@+id/textView27"
-            app:layout_constraintTop_toTopOf="@+id/textView27" />
+    <ImageView
+        android:id="@+id/imageView26"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:src="@drawable/ic_back"
+        app:layout_constraintStart_toStartOf="@+id/textView27"
+        app:layout_constraintTop_toTopOf="@+id/textView27" />
 
-        <ImageView
-            android:id="@+id/imageView27"
-            android:layout_width="444dp"
-            android:layout_height="248dp"
-            android:layout_marginTop="8dp"
-            android:src="@drawable/image_new2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView26" />
+    <ImageView
+        android:id="@+id/imageView27"
+        android:layout_width="444dp"
+        android:layout_height="248dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/image_new2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView26" />
 
-        <TextView
-            android:id="@+id/textView39"
-            android:layout_width="371dp"
-            android:layout_height="77dp"
-            android:layout_marginTop="16dp"
-            android:text="FOR MANY FAMILIES, THE ONLY OPTION IS TO PUT THEIR CHILD IN AN INSTITUTION OR ORPHANAGE"
-            android:textColor="#F47E00"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="@+id/imageView27"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView27" />
+    <TextView
+        android:id="@+id/textView39"
+        android:layout_width="371dp"
+        android:layout_height="77dp"
+        android:layout_marginTop="16dp"
+        android:text="FOR MANY FAMILIES, THE ONLY OPTION IS TO PUT THEIR CHILD IN AN INSTITUTION OR ORPHANAGE"
+        android:textColor="#F47E00"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/imageView27"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView27" />
 
     <!--    <ImageView-->
     <!--        android:id="@+id/imageView28"-->
@@ -67,64 +68,71 @@
     <!--        tools:layout_editor_absoluteX="39dp"-->
     <!--        tools:layout_editor_absoluteY="431dp" />-->
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardView"
-            android:layout_width="79dp"
-            android:layout_height="75dp"
-            android:layout_centerInParent="true"
-            android:layout_margin="16dp"
-            android:layout_marginTop="8dp"
-            android:foregroundGravity="center"
-            app:cardCornerRadius="160dp"
-            app:cardElevation="16dp"
-            app:layout_constraintStart_toStartOf="@+id/textView44"
-            app:layout_constraintTop_toBottomOf="@+id/textView39">
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="79dp"
+        android:layout_height="75dp"
+        android:layout_centerInParent="true"
+        android:layout_margin="16dp"
+        android:layout_marginTop="8dp"
+        android:foregroundGravity="center"
+        app:cardCornerRadius="160dp"
+        app:cardElevation="16dp"
+        app:layout_constraintStart_toStartOf="@+id/textView44"
+        app:layout_constraintTop_toBottomOf="@+id/textView39">
 
-            <!-- simple image view -->
+        <!-- simple image view -->
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scaleType="centerCrop"
-                android:src="@drawable/news_person"
-                app:srcCompat="@drawable/news_person" />
-        </androidx.cardview.widget.CardView>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/news_person"
+            app:srcCompat="@drawable/news_person" />
+    </androidx.cardview.widget.CardView>
 
-        <TextView
-            android:id="@+id/textView41"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginBottom="12dp"
-            android:text="Jessica Darrow"
-            android:textColor="#000000"
-            app:layout_constraintBottom_toBottomOf="@+id/cardView"
-            app:layout_constraintEnd_toStartOf="@+id/textView42"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/cardView" />
+    <TextView
+        android:id="@+id/textView41"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="12dp"
+        android:text="Jessica Darrow"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toBottomOf="@+id/cardView"
+        app:layout_constraintEnd_toStartOf="@+id/textView42"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/cardView" />
 
-        <TextView
-            android:id="@+id/textView42"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
-            android:text="17/4/2022"
-            android:textColor="#000000"
-            app:layout_constraintEnd_toEndOf="@+id/textView39"
-            app:layout_constraintTop_toTopOf="@+id/textView41" />
+    <TextView
+        android:id="@+id/textView42"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="17/4/2022"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="@+id/textView39"
+        app:layout_constraintTop_toTopOf="@+id/textView41" />
 
-        <TextView
-            android:id="@+id/textView44"
-            android:layout_width="387dp"
-            android:layout_height="471dp"
-            android:layout_marginTop="4dp"
-            android:background="@drawable/oval_shape"
-            android:text="\n
-            WWO are co-authors of a critical joint report, ‘Children: The Hidden Pandemic 2021’, which reveals that two million children have already lost a parent and/or grandparent caregiver as a result of COVID-19 associated deaths. This number will likely rise significantly in the months to come.  See how many children have lost a parent in your nation. \n   These children and their families are likely to go on to face many challenges – including the loss of income, mental health issues, as well as the inability to access education and health care. Children are also more likely to end up in an orphanage because of these challenges, even if they have only lost one caregiver.  We know there is a better alternative. \n   Children who are well supported and cared for by a family member after losing a parent or other primary caregiver show great resiliency.  Therefore, now is not the time to build more orphanages."
-            android:textColor="#000000"
-            android:textSize="18sp"
-            app:layout_constraintEnd_toEndOf="@+id/textView39"
-            app:layout_constraintTop_toBottomOf="@+id/textView41" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/textView44"
+        android:layout_width="387dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/oval_shape"
+        android:text="\n
+            WWO are co-authors of a critical joint report, ‘Children: The Hidden Pandemic 2021’, which reveals that two million children have already lost a parent and/or grandparent caregiver as a result of COVID-19 associated deaths. This number will likely rise significantly in the months to come.  See how many children have lost a parent in your nation. \n\n   These children and their families are likely to go on to face many challenges – including the loss of income, mental health issues, as well as the inability to access education and health care. Children are also more likely to end up in an orphanage because of these challenges, even if they have only lost one caregiver.  We know there is a better alternative. \n\n   Children who are well supported and cared for by a family member after losing a parent or other primary caregiver show great resiliency.  Therefore, now is not the time to build more orphanages.\n"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView41"
+        app:layout_constraintVertical_bias="1.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

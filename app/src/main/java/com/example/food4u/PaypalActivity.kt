@@ -134,7 +134,7 @@ class PaypalActivity : AppCompatActivity() {
                                             "/Events/${eventPayment.eventId}/raised" to raised
                                         )
                                         database.updateChildren(childUpdate)
-                                        database.child("userDB/User/${eventPayment.userId}").setValue(ServerValue.increment(1))
+                                        database.child("userDB/User/${eventPayment.userId}/numOfDonation").setValue(ServerValue.increment(1))
                                     }
 
                                     val intent = Intent(this, PaymentThankYouActivity::class.java)

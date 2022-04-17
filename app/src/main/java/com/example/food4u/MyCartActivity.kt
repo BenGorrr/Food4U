@@ -134,7 +134,7 @@ class MyCartActivity : AppCompatActivity(), CartAdapter.onItemClickListener {
                                     binding.tvTaxAmount.text = "RM$taxedAmt"
                                     binding.tvTotalAmount.text = "RM$total"
 
-                                    val adapter = CartAdapter(productList, cartItemList, this@MyCartActivity)
+                                    val adapter = CartAdapter(productList, agencyId, cartItemList, this@MyCartActivity)
                                     binding.rvCartProducts.adapter = adapter
                                 }
                             }
