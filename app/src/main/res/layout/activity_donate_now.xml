@@ -147,6 +147,7 @@
         android:layout_marginTop="36dp"
         android:layout_marginBottom="4dp"
         android:minHeight="48dp"
+        android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/imageEvent"
         app:layout_constraintStart_toStartOf="@+id/imageEvent"
         app:layout_constraintTop_toTopOf="parent"

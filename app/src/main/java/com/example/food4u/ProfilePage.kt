@@ -15,6 +15,7 @@ import com.example.food4u.firebase.firebaseHelper
 import com.example.food4u.fragments.EditProfileFragment
 import com.example.food4u.fragments.ProfileFragment
 import com.example.food4u.modal.User
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.DataSnapshot

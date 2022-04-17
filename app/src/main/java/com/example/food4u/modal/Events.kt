@@ -12,4 +12,5 @@ data class Events(
     var imageURL: String = "",
     var organizerId: String = "",
     var raised: Float=0.0f,
+    var complete: Boolean = false,
 )
