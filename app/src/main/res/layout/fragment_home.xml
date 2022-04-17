@@ -112,6 +112,7 @@
             android:layout_marginTop="16dp"
             android:layout_marginBottom="8dp"
             android:text="News"
+            android:textColor="#090909"
             android:textStyle="bold"
             android:visibility="visible"
             app:layout_constraintBottom_toTopOf="@+id/recyclerView2"
@@ -126,6 +127,7 @@
             android:layout_width="357dp"
             android:layout_height="374dp"
             android:layout_marginBottom="64dp"
+            android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -202,11 +204,12 @@
 
         <ImageButton
             android:id="@+id/imageBtnNecessity"
-            android:layout_width="88dp"
-            android:layout_height="88dp"
+            android:layout_width="108dp"
+            android:layout_height="95dp"
             android:layout_marginEnd="96dp"
             android:layout_marginBottom="8dp"
             android:background="@drawable/blue_button"
+            android:src="@drawable/ic_necessity"
             android:visibility="visible"
             app:layout_constraintBottom_toTopOf="@+id/textView22"
             app:layout_constraintEnd_toStartOf="@+id/imageBtnDonate"
@@ -223,6 +226,172 @@
             android:visibility="visible"
             app:layout_constraintEnd_toStartOf="@+id/textView7"
             app:layout_constraintTop_toTopOf="@+id/textView7" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="377dp"
+            android:layout_height="115dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/oval_shape"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView24" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="108dp"
+            android:layout_height="104dp"
+            android:layout_marginStart="8dp"
+            android:src="@drawable/image_new1"
+            app:layout_constraintBottom_toBottomOf="@+id/textView5"
+            app:layout_constraintStart_toStartOf="@+id/textView5"
+            app:layout_constraintTop_toTopOf="@+id/textView5" />
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="206dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="8dp"
+            android:text="Malaysia's hungry and it's not just the homeless as Covid-19 lockdown extended"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/imageNavigateNews1"
+            app:layout_constraintStart_toEndOf="@+id/imageView4"
+            app:layout_constraintTop_toTopOf="@+id/imageView4" />
+
+        <TextView
+            android:id="@+id/textView20"
+            android:layout_width="209dp"
+            android:layout_height="50dp"
+            android:text='“This was when the siblings decided to come together and set up a joint savings account so that all of us have access to some money for food."...'
+            android:textSize="10sp"
+            app:layout_constraintBottom_toBottomOf="@+id/textView5"
+            app:layout_constraintEnd_toEndOf="@+id/textView15"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/textView15"
+            app:layout_constraintTop_toBottomOf="@+id/textView15"
+            app:layout_constraintVertical_bias="0.545" />
+
+        <ImageView
+            android:id="@+id/imageNavigateNews1"
+            android:layout_width="32dp"
+            android:layout_height="51dp"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/ic_chevron_right"
+            app:layout_constraintBottom_toBottomOf="@+id/textView20"
+            app:layout_constraintEnd_toEndOf="@+id/textView5"
+            app:layout_constraintTop_toTopOf="@+id/textView15" />
+
+        <TextView
+            android:id="@+id/textView29"
+            android:layout_width="377dp"
+            android:layout_height="115dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/oval_shape"
+            app:layout_constraintEnd_toEndOf="@+id/textView5"
+            app:layout_constraintStart_toStartOf="@+id/textView5"
+            app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+        <ImageView
+            android:id="@+id/imageView22"
+            android:layout_width="108dp"
+            android:layout_height="104dp"
+            android:layout_marginStart="8dp"
+            android:src="@drawable/image_new2"
+            app:layout_constraintBottom_toBottomOf="@+id/textView29"
+            app:layout_constraintStart_toStartOf="@+id/textView29"
+            app:layout_constraintTop_toTopOf="@+id/textView29" />
+
+        <TextView
+            android:id="@+id/textView35"
+            android:layout_width="206dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="8dp"
+            android:text="FOR MANY FAMILIES, THE ONLY OPTION IS TO PUT THEIR CHILD IN AN INSTITUTION OR ORPHANAGE"
+            android:textColor="#000000"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/imageView22"
+            app:layout_constraintTop_toTopOf="@+id/imageView22" />
+
+        <TextView
+            android:id="@+id/textView36"
+            android:layout_width="209dp"
+            android:layout_height="50dp"
+            android:text="These children and their families are likely to go on to face many challenges – including the loss of income, mental health issues, as well as the inability to access education and ..."
+            android:textSize="10sp"
+            app:layout_constraintBottom_toBottomOf="@+id/textView29"
+            app:layout_constraintEnd_toEndOf="@+id/textView35"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/textView35"
+            app:layout_constraintTop_toBottomOf="@+id/textView35"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <ImageView
+            android:id="@+id/imageNavigateNews2"
+            android:layout_width="32dp"
+            android:layout_height="51dp"
+            android:src="@drawable/ic_chevron_right"
+            app:layout_constraintBottom_toBottomOf="@+id/textView36"
+            app:layout_constraintEnd_toEndOf="@+id/textView29"
+            app:layout_constraintStart_toEndOf="@+id/textView35"
+            app:layout_constraintTop_toTopOf="@+id/textView35" />
+
+        <TextView
+            android:id="@+id/textView37"
+            android:layout_width="377dp"
+            android:layout_height="115dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/oval_shape"
+            app:layout_constraintEnd_toEndOf="@+id/textView29"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/textView29"
+            app:layout_constraintTop_toBottomOf="@+id/textView29" />
+
+        <ImageView
+            android:id="@+id/imageView24"
+            android:layout_width="108dp"
+            android:layout_height="104dp"
+            android:layout_marginStart="8dp"
+            android:src="@drawable/image_new3"
+            app:layout_constraintBottom_toBottomOf="@+id/textView37"
+            app:layout_constraintStart_toStartOf="@+id/textView37"
+            app:layout_constraintTop_toTopOf="@+id/textView37" />
+
+        <TextView
+            android:id="@+id/textView38"
+            android:layout_width="206dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="8dp"
+            android:text="Why many old folks’ homes are unlicensed"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/imageView24"
+            app:layout_constraintTop_toTopOf="@+id/imageView24" />
+
+        <TextView
+            android:id="@+id/textView40"
+            android:layout_width="209dp"
+            android:layout_height="50dp"
+            android:text="There are at least 1,300 unlicensed old folks’ homes in the country. The number came to light after it was found that many of the home operators would not facilitate..."
+            android:textSize="10sp"
+            app:layout_constraintBottom_toBottomOf="@+id/textView37"
+            app:layout_constraintEnd_toEndOf="@+id/textView38"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/textView38"
+            app:layout_constraintTop_toBottomOf="@+id/textView38"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <ImageView
+            android:id="@+id/imageNavigateNews3"
+            android:layout_width="32dp"
+            android:layout_height="51dp"
+            android:src="@drawable/ic_chevron_right"
+            app:layout_constraintBottom_toBottomOf="@+id/textView40"
+            app:layout_constraintEnd_toEndOf="@+id/textView37"
+            app:layout_constraintStart_toEndOf="@+id/textView38"
+            app:layout_constraintTop_toTopOf="@+id/textView38" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
