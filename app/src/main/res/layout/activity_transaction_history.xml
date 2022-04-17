@@ -75,6 +75,7 @@
         app:layout_constraintVertical_bias="0.83" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvTransactionHistory"
         android:layout_width="411dp"
         android:layout_height="448dp"
         app:layout_constraintBottom_toBottomOf="parent"
