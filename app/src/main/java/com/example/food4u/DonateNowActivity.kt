@@ -63,6 +63,7 @@ class DonateNowActivity : AppCompatActivity() {
 //        }
 
 
+        val key = database.push().key!!
         raisedListener = database.child("Events/$eventId").addValueEventListener(object:
             ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
@@ -99,7 +100,6 @@ class DonateNowActivity : AppCompatActivity() {
                             database.child("Events/$eventId/complete").setValue(true)
 
                             //send noti
-                            val key = database.push().key!!
                             val notiTitle = "An event you have participated has reached it's GOAL WOO HOO!!"
                             val notiMsg = "You have helped ${event.eventTitle} reach it's target of RM${event.raised} Thank you so much!"
                             val sdf = SimpleDateFormat("dd/M/yyyy hh:mm:ss")
