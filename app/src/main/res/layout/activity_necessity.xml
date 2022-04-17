@@ -49,6 +49,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
         android:text="TextView"
+        android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/rvProducts"
         app:layout_constraintEnd_toStartOf="@+id/tvBreadTitle"
         app:layout_constraintStart_toStartOf="parent" />
@@ -60,6 +61,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:text="TextView"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="@+id/tvAllProductTitle"
         app:layout_constraintEnd_toStartOf="@+id/tvInstantNoodlesTitle"
         app:layout_constraintStart_toEndOf="@+id/tvAllProductTitle"
@@ -71,6 +73,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="52dp"
         android:text="TextView"
+        android:visibility="invisible"
         app:layout_constraintEnd_toStartOf="@+id/imageBtnCart"
         app:layout_constraintTop_toTopOf="@+id/tvBreadTitle" />
 
@@ -117,6 +120,7 @@
         android:layout_height="34dp"
         android:layout_marginStart="24dp"
         android:text="Add"
+        android:visibility="gone"
         app:layout_constraintStart_toEndOf="@+id/tvShopTitle"
         app:layout_constraintTop_toTopOf="@+id/tvShopTitle" />
 </androidx.constraintlayout.widget.ConstraintLayout>

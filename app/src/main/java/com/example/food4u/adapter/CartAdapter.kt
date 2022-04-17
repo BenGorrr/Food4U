@@ -10,15 +10,19 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.food4u.R
 import com.example.food4u.modal.CartItem
 import com.example.food4u.modal.Product
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.ktx.Firebase
 import com.squareup.picasso.Picasso
 
-class CartAdapter(private val list: List<Product>, private val cartItem: List<CartItem>, private val listener: CartAdapter.onItemClickListener) : RecyclerView.Adapter<CartAdapter.myViewHolder>() {
+class CartAdapter(private val list: List<Product>, private val agencyId: String, private val cartItem: List<CartItem>, private val listener: CartAdapter.onItemClickListener) : RecyclerView.Adapter<CartAdapter.myViewHolder>() {
     inner class myViewHolder (itemView: View) : RecyclerView.ViewHolder(itemView), View.OnClickListener {
 
         val tvNecessityName: TextView = itemView.findViewById(R.id.tvProductNecessityName)
         val tvNecessityPrice: TextView = itemView.findViewById(R.id.tvProductNecessityPrice)
         val ivNecessityImg: ImageView = itemView.findViewById(R.id.ivProductNecessityImg)
         val tvNecessityQty: TextView = itemView.findViewById(R.id.tvProductNecessityQuantity)
+        val btnNecessityRemove: Button = itemView.findViewById(R.id.btnDeleteProduct)
 
         init {
             itemView.setOnClickListener(this)
@@ -56,6 +60,17 @@ class CartAdapter(private val list: List<Product>, private val cartItem: List<Ca
                 holder.tvNecessityQty.text = item.qty.toString()
                 break
             }
+        }
+
+        holder.btnNecessityRemove.setOnClickListener {
+            val database = FirebaseDatabase.getInstance().getReference("Cart")
+            val userId = FirebaseAuth.getInstance().currentUser!!.uid
+            val id = currentProduct.id
+            val childUpdates = hashMapOf<String, Any?>(
+                "/$userId/$agencyId/$id" to null,
+            )
+            database.updateChildren(childUpdates)
+            this.notifyDataSetChanged()
         }
 
     }
