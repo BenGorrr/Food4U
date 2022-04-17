@@ -75,6 +75,7 @@ class MainActivity : AppCompatActivity() {
 
                 }
                 R.id.nav_donate -> {
+
                     setCurrentFragment(homeFragment)
                     //Log.i(TAG, "Necessity selected")
                 }
