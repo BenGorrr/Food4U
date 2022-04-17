@@ -1,16 +1,21 @@
 package com.example.food4u
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.content.Intent
 import android.content.SharedPreferences
+import android.util.DisplayMetrics
 import android.util.Log
+import android.util.TypedValue
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.food4u.databinding.ActivityMainBinding
 import com.example.food4u.firebase.firebaseHelper
 import com.example.food4u.fragments.*
+import com.google.android.material.bottomnavigation.BottomNavigationMenuView
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.navigation.NavigationBarItemView
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.DatabaseReference
@@ -24,6 +29,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var database: DatabaseReference
     val TAG = "MainActivity"
 
+    @SuppressLint("RestrictedApi")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -87,7 +93,14 @@ class MainActivity : AppCompatActivity() {
             }
             true
         }
-
+        nav.itemIconTintList = null;
+        val menuView: BottomNavigationMenuView = nav.getChildAt(0) as BottomNavigationMenuView
+        for (i in 0 until menuView.childCount) {
+            if (i == 2) {
+                val displayMetrics: DisplayMetrics = resources.displayMetrics
+                (menuView.getChildAt(i) as NavigationBarItemView).setIconSize(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 41f, displayMetrics).toInt())
+            }
+        }
     }
 
     private fun setCurrentFragment(fragment: Fragment) =
