@@ -11,8 +11,14 @@ import com.example.food4u.adapter.CartAdapter
 import com.example.food4u.adapter.ProductsAdapter
 import com.example.food4u.databinding.ActivityMyCartBinding
 import com.example.food4u.modal.CartItem
+import com.example.food4u.modal.OrderPayment
 import com.example.food4u.modal.Product
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
+import java.text.SimpleDateFormat
+import java.util.*
+import kotlin.collections.ArrayList
+import kotlin.math.roundToInt
 
 class MyCartActivity : AppCompatActivity(), CartAdapter.onItemClickListener {
     private lateinit var binding: ActivityMyCartBinding
@@ -32,6 +38,8 @@ class MyCartActivity : AppCompatActivity(), CartAdapter.onItemClickListener {
         agencyId = intent.getStringExtra("agencyId")!!
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        cartItemList = arrayListOf()
+        productList = arrayListOf()
 
         // populate Recycle View
         binding.rvCartProducts.layoutManager = LinearLayoutManager(applicationContext)
@@ -41,6 +49,20 @@ class MyCartActivity : AppCompatActivity(), CartAdapter.onItemClickListener {
         binding.btnCheckOut.setOnClickListener {
 
             if (cartItemList.isNotEmpty()) {
+                val orderId = UUID.randomUUID().toString()
+                totalAmt = (totalAmt * 100.0f).roundToInt() / 100.0f
+                val sdf = SimpleDateFormat("dd/M/yyyy")
+                val currentDate = sdf.format(Date())
+                val newOrderPayment = OrderPayment(orderId, totalAmt, FirebaseAuth.getInstance().currentUser!!.uid, agencyId, currentDate)
+                database.child("OrderPayment/$orderId").setValue(newOrderPayment).addOnSuccessListener {
+                    Log.d("OrderPayment", "Placed")
+                    val intent = Intent(this, PaymentMethodActivity::class.java)
+                    intent.putExtra("orderPaymentId", orderId)
+                    startActivity(intent)
+                }.addOnFailureListener{
+                    Log.d("OrderPayment", "failed: " + it.message)
+                }
+
 //                val intent = Intent(this, MyCartActivity::class.java)
 //                intent.putExtra("totalAmt", agencyId)
 //                startActivity(intent)
@@ -58,7 +80,7 @@ class MyCartActivity : AppCompatActivity(), CartAdapter.onItemClickListener {
     }
 
     fun readCart() {
-        val userId = "USERID"
+        val userId = FirebaseAuth.getInstance().currentUser!!.uid
 
         database.child("Cart").child(userId).child(agencyId).addValueEventListener(object :
             ValueEventListener {

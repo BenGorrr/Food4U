@@ -77,8 +77,12 @@ class EditProfileFragment : Fragment() {
 
         btnSave.setOnClickListener{
             val dateFromEditText = editBd.text.toString()
-            if(dateFromEditText!="" && dateFromEditText.length!=10 ) {
-                binding.tfEditBirthDate.setError("Your date is incorrect!")
+            val phoneNo = editPhoneNo.text.toString()
+            if((dateFromEditText!="" && !(dateFromEditText.matches(getPattern().toRegex()))) || !(phoneNo.length in 10..11)) {
+                if(dateFromEditText!="" && !(dateFromEditText.matches(getPattern().toRegex()))){
+                    binding.tfEditBirthDate.setError("Your date is incorrect!")
+                }
+                else binding.tfPhoneNo.setError("Invalid phone number!!")
             }
             else{
                 activity!!.tvMyProfile.visibility = View.VISIBLE
@@ -93,15 +97,14 @@ class EditProfileFragment : Fragment() {
                             if(editName.text.toString()!=""){
                                 database.child("User").child(Firebase.auth.uid.toString()).child("name").setValue(editName.text.toString())
                             }else database.child("User").child(Firebase.auth.uid.toString()).child("name").setValue(rec.child("name").value.toString())
-                            if(dateFromEditText!=""&& dateFromEditText.length==10){
+                            if(dateFromEditText!=""){
                                 database.child("User").child(Firebase.auth.uid.toString()).child("birthDate").setValue(dateFromEditText)
                             }
                             if(editAddress.text.toString()!=""){ //if there is edited entry
                                 database.child("User").child(Firebase.auth.uid.toString()).child("address").setValue(editAddress.text.toString())
                             }else database.child("User").child(Firebase.auth.uid.toString()).child("address").setValue(rec.child("address").value.toString()) //remain same value
                             if(editPhoneNo.text.toString()!=""){ //if there is edited entry
-                                if((editPhoneNo.length() in 10..11)) database.child("User").child(Firebase.auth.uid.toString()).child("phoneNo").setValue(editPhoneNo.text.toString())
-                                else binding.tfPhoneNo.setError("Your phone number is invalid!")
+                                database.child("User").child(Firebase.auth.uid.toString()).child("phoneNo").setValue(editPhoneNo.text.toString())
                             }else database.child("User").child(Firebase.auth.uid.toString()).child("phoneNo").setValue(rec.child("phoneNo").value.toString()) //remain same value
                         }
                     }
@@ -151,8 +154,8 @@ class EditProfileFragment : Fragment() {
                     print(e.message)
                 })
         }
-
     }
+    fun getPattern() = "^((?:(?:1[6-9]|2[0-9])\\d{2})(-)(?:(?:(?:0[13578]|1[02])(-)31)|((0[1,3-9]|1[0-2])(-)(29|30))))\$|^(?:(?:(?:(?:1[6-9]|[2-9]\\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00)))(-)02(-)29)\$|^(?:(?:1[6-9]|2[0-9])\\d{2})(-)(?:(?:0[1-9])|(?:1[0-2]))(-)(?:0[1-9]|1\\d|2[0-8])\$"
 
 
     //change fragment

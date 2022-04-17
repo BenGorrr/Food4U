@@ -28,6 +28,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        supportActionBar?.hide()
         FB = firebaseHelper(this)
         val DB =
             Firebase.database("https://food4u-9d1c8-default-rtdb.asia-southeast1.firebasedatabase.app/")
@@ -37,11 +38,12 @@ class MainActivity : AppCompatActivity() {
                 if (rec != null) {
                     if(rec.child("role").value.toString() == "Admin"){
                         val intent = Intent(this, AdminActivity::class.java)
+                        overridePendingTransition(0,0)
+                        intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
                         startActivity(intent)
                     }
                 }
             }
-
         val homeFragment = HomeFragment()
         val aboutUsFragment = AboutUsFragment()
         val notificationFragment = NotificationFragment()
@@ -73,8 +75,8 @@ class MainActivity : AppCompatActivity() {
 
                 }
                 R.id.nav_donate -> {
-                    setCurrentFragment(necessityFragment)
-                    Log.i(TAG, "Necessity selected")
+                    setCurrentFragment(homeFragment)
+                    //Log.i(TAG, "Necessity selected")
                 }
 //                R.id.nav_donate -> {
 //                    setCurrentFragment(fundRaisingFragment)

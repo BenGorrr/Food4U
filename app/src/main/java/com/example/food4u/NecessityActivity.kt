@@ -15,6 +15,7 @@ import com.example.food4u.fragments.NecessityFragment
 import com.example.food4u.modal.*
 import com.google.android.gms.tasks.OnFailureListener
 import com.google.android.gms.tasks.OnSuccessListener
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.UploadTask
@@ -85,7 +86,7 @@ class NecessityActivity : AppCompatActivity(), ProductsAdapter.onItemClickListen
 
     override fun onAddToCart(product: Product, qty: Int) {
         database = FirebaseDatabase.getInstance().getReference("Cart")
-        val userId = "USERID"
+        val userId = FirebaseAuth.getInstance().currentUser!!.uid
         val id = product.id
         val childUpdates = hashMapOf<String, Any>(
             "/$userId/$agencyId/$id" to qty,

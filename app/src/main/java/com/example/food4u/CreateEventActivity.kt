@@ -62,22 +62,32 @@ class CreateEventActivity : AppCompatActivity() {
                 successful = false
             }
 
-            if(successful == true){
+            if(successful){
 
                 database = FirebaseDatabase.getInstance().getReference("Events")
                 val key = database.push().key!!
-                uploadToFirebase(Uri.parse(imageUri))
 
-                if (imageURL.isNotEmpty()){
-                    val newEvent = Events(key,organizerName,organizerAddress,title,goal.toFloat(),description,imageURL)
-                    addNewEvent(newEvent)
-                }
+                val fileUri = imageUri
+                val filename = UUID.randomUUID().toString() + ".png"
+                val refStorage = FirebaseStorage.getInstance().reference.child("images/FundraisingEvent/$filename")
 
-//                //Displaying Toast after event created successfully
-//                Toast.makeText(getApplicationContext(),"Event Create Successfully",Toast.LENGTH_SHORT).show();
+                refStorage.putFile(Uri.parse(fileUri))
+                    .addOnSuccessListener (
+                        OnSuccessListener<UploadTask.TaskSnapshot> { taskSnapshot ->
+                            taskSnapshot.storage.downloadUrl.addOnSuccessListener {
+                                imageURL = it.toString()
+                                Log.d("GET IMAGE URL", imageURL)
+                                val newEvent = Events(key,organizerName,organizerAddress,title,goal.toFloat(),description,imageURL, FirebaseAuth.getInstance().currentUser!!.uid)
+                                addNewEvent(newEvent)
+                            }
+                        })
+                    ?.addOnFailureListener(OnFailureListener { e ->
+                        print(e.message)
+                    })
 
-                val intentFundraisingInfo: Intent = Intent(this, MainActivity::class.java)
-                startActivity(intentFundraisingInfo)
+//                val intentFundraisingInfo: Intent = Intent(this, MainActivity::class.java)
+//                startActivity(intentFundraisingInfo)
+                finish()
             }
         }
     }
@@ -86,6 +96,8 @@ class CreateEventActivity : AppCompatActivity() {
         database.child(newEvent.id).setValue(newEvent)
             .addOnSuccessListener {
                 Log.d("Successful","Successful")
+                //Displaying Toast after event created successfully
+                Toast.makeText(this,"Event Create Successfully",Toast.LENGTH_SHORT).show();
             }
             .addOnFailureListener{
                 Log.d("Something went wrong", "Error" + it.message)
@@ -96,24 +108,7 @@ class CreateEventActivity : AppCompatActivity() {
         ActivityResultContracts.GetContent()){ uri->
         binding.imageDonationEvent.setImageURI(uri)
         imageUri=uri.toString()
+        Log.d("GET IMAGE URI", imageUri)
     }
 
-    private fun uploadToFirebase(fileUri: Uri) {
-
-        if (fileUri != null) {
-            val filename = UUID.randomUUID().toString() + ".png"
-            val refStorage = FirebaseStorage.getInstance().reference.child("images/FundraisingEvent/$filename")
-
-            refStorage.putFile(fileUri)
-                .addOnSuccessListener (
-                    OnSuccessListener<UploadTask.TaskSnapshot> { taskSnapshot ->
-                        taskSnapshot.storage.downloadUrl.addOnSuccessListener {
-                            imageURL = it.toString()
-                        }
-                    })
-                ?.addOnFailureListener(OnFailureListener { e ->
-                    print(e.message)
-                })
-        }
-    }
 }

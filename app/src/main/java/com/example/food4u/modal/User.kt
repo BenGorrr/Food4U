@@ -8,7 +8,7 @@ data class User(
     var email: String="",
     var role: String="",
     var name: String="",
-    var birthDate: Date? = null,
+    var birthDate: String = "",
     var address: String = "",
     var phoneNo: String = "",
     var numOfDonation: Int = 0,

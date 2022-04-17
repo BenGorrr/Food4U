@@ -9,6 +9,8 @@ data class Events(
     var eventTitle:String="",
     var goal:Float= 0.0f,
     var description: String="",
-    var imageURL: String = ""
-
+    var imageURL: String = "",
+    var organizerId: String = "",
+    var raised: Float=0.0f,
+    var complete: Boolean = false,
 )

@@ -15,6 +15,7 @@ import com.example.food4u.firebase.firebaseHelper
 import com.example.food4u.fragments.EditProfileFragment
 import com.example.food4u.fragments.ProfileFragment
 import com.example.food4u.modal.User
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.DataSnapshot
@@ -78,7 +79,8 @@ class ProfilePage : AppCompatActivity() {
                 val post = dataSnapshot.getValue<User>()
                 if(post!=null){
                     tvName.text = post.name
-                    Picasso.get().load(post.imgUrl).resize(150, 150).centerCrop().into(profPic)
+                    if(post.imgUrl.isNotEmpty())
+                        Picasso.get().load(post.imgUrl).resize(150, 150).centerCrop().into(profPic)
                     numOfDonation.text = "Donation: " + post.numOfDonation
                 }
 
@@ -116,6 +118,12 @@ class ProfilePage : AppCompatActivity() {
         }
 
         homeBtn.setOnClickListener{
+            finish()
+        }
+
+        btnPaymentMethod.setOnClickListener {
+            val intent = Intent(this, PaymentMethodActivity::class.java)
+            startActivity(intent)
             finish()
         }
 

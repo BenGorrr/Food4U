@@ -30,9 +30,9 @@
 
     <TextView
         android:id="@+id/notificationTime"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="90dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="18dp"
         android:text="TextView"
         android:textColor="@color/orange"
@@ -41,25 +41,23 @@
 
     <TextView
         android:id="@+id/notificationTitles"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="6dp"
         android:text="TextView"
         android:textColor="@color/orange"
-        app:layout_constraintEnd_toEndOf="@+id/notificationTime"
         app:layout_constraintStart_toStartOf="@+id/notificationTime"
         app:layout_constraintTop_toBottomOf="@+id/notificationTime" />
 
     <TextView
         android:id="@+id/notificationMessages"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="6dp"
         android:text="TextView"
         android:textColor="@color/colorPrimary"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="@+id/notificationLables"
-        app:layout_constraintEnd_toEndOf="@+id/notificationTitles"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/notificationTitles"
         app:layout_constraintTop_toBottomOf="@+id/notificationTitles"
         app:layout_constraintVertical_bias="0.0" />
