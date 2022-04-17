@@ -101,6 +101,7 @@
         android:background="@drawable/grey_input_box"
         android:ems="10"
         android:inputType="date"
+        android:maxLength="7"
         android:padding="7dp"
         app:layout_constraintStart_toStartOf="@+id/tvExpirayDateTitle"
         app:layout_constraintTop_toBottomOf="@+id/tvExpirayDateTitle" />
@@ -152,6 +153,7 @@
         android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
         android:ems="10"
         android:inputType="textPersonName"
+        android:maxLength="50"
         android:minHeight="48dp"
         android:padding="7dp"
         app:layout_constraintStart_toStartOf="@+id/tvCardHolderName"
@@ -187,5 +189,29 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/checkBox" />
+
+    <TextView
+        android:id="@+id/errorMsgBg"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:background="@color/orange"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/ErrorMsgTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Unable to Save the same details"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/AddNewCardTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/errorMsgBg"
+        app:layout_constraintTop_toTopOf="@+id/errorMsgBg"
+        app:layout_constraintVertical_bias="0.9" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

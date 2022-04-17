@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import com.example.food4u.databinding.ActivityAddNewCardBinding
 import com.example.food4u.modal.CreditCard
 import com.example.food4u.modal.Product
@@ -11,6 +12,8 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.ktx.Firebase
+import kotlinx.android.synthetic.main.activity_add_new_card.*
+import kotlinx.android.synthetic.main.activity_add_new_card.view.*
 import java.util.ArrayList
 
 class AddNewCardActivity : AppCompatActivity() {
@@ -29,6 +32,33 @@ class AddNewCardActivity : AppCompatActivity() {
         val expiryDate = binding.editTextDate
         val cvv = binding.editTextNumberDecimal2
         val cardOwnerName = binding.editTextTextPersonName
+        val checkBox = binding.checkBox
+        var recentCardNumber = ""
+        var recentExpiryDate = ""
+        var recentCvv = ""
+        var recentCardOwnerName = ""
+        val errorMsgBg = binding.errorMsgBg
+        val errorMsgTv = binding.ErrorMsgTv
+
+        database = FirebaseDatabase.getInstance().reference
+        database.child("userDB/creditCard").child(Firebase.auth.uid.toString()).get()
+            .addOnSuccessListener { rec->
+                if(rec!=null){
+                    val card = rec.getValue(CreditCard::class.java)
+                    if (card != null){
+                        recentCardNumber = card.creditCardNo
+                        recentExpiryDate = card.expiryDate
+                        recentCvv = card.cvvNo
+                        recentCardOwnerName = card.cardName
+
+                        cardNumbers.setText(card.creditCardNo)
+                        expiryDate.setText(card.expiryDate)
+                        cvv.setText(card.cvvNo)
+                        cardOwnerName.setText(card.cardName)
+                        checkBox.checkBox!!.isChecked=true
+                    }
+                }
+            }
 
         btnBackAddNewCard.setOnClickListener() {
             val intent = Intent(this, PaymentMethodActivity::class.java)
@@ -64,6 +94,16 @@ class AddNewCardActivity : AppCompatActivity() {
                 cardValid = false
             }
 
+            if (recentCardNumber == cardNumbers.text.toString() && recentExpiryDate == expiryDate.text.toString() && recentCvv == cvv.text.toString() && recentCardOwnerName == cardOwnerName.text.toString()){
+                val viewBg: View = errorMsgBg
+                viewBg.setVisibility(View.VISIBLE)
+                viewBg.postDelayed(Runnable { viewBg.setVisibility(View.GONE) }, 2000)
+                val viewTv: View = errorMsgTv
+                viewTv.setVisibility(View.VISIBLE)
+                viewTv.postDelayed(Runnable { viewTv.setVisibility(View.GONE) }, 2000)
+                cardValid = false
+            }
+
             if (cardValid){
                 val card = CreditCard(cardNumbers.text.toString(), expiryDate.text.toString(), cvv.text.toString(), cardOwnerName.text.toString())
                 addNewCard(card)
@@ -73,20 +113,6 @@ class AddNewCardActivity : AppCompatActivity() {
                 finish()
             }
         }
-
-        database = FirebaseDatabase.getInstance().reference
-        database.child("userDB/creditCard").child(Firebase.auth.uid.toString()).get()
-            .addOnSuccessListener { rec->
-                if(rec!=null){
-                    val card = rec.getValue(CreditCard::class.java)
-                    if (card != null){
-                        cardNumbers.setText(card.creditCardNo)
-                        expiryDate.setText(card.expiryDate)
-                        cvv.setText(card.cvvNo)
-                        cardOwnerName.setText(card.cardName)
-                    }
-                }
-            }
 
     }
     private fun addNewCard(newCard: CreditCard) {
