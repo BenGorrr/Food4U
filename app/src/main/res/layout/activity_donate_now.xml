@@ -11,14 +11,14 @@
         android:layout_width="333dp"
         android:layout_height="132dp"
         android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/tvEventTittle"
+        app:layout_constraintBottom_toTopOf="@+id/tvEventTitle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.461"
         app:layout_constraintStart_toStartOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
-        android:id="@+id/tvEventTittle"
+        android:id="@+id/tvEventTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="4dp"
@@ -35,7 +35,7 @@
         android:layout_height="24dp"
         android:layout_marginBottom="12dp"
         app:layout_constraintBottom_toTopOf="@+id/progressBar"
-        app:layout_constraintStart_toStartOf="@+id/tvEventTittle" />
+        app:layout_constraintStart_toStartOf="@+id/tvEventTitle" />
 
     <ProgressBar
         android:id="@+id/progressBar"
@@ -43,35 +43,35 @@
         android:layout_width="324dp"
         android:layout_height="27dp"
         android:layout_marginBottom="4dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView16"
+        app:layout_constraintBottom_toTopOf="@+id/tvGoalAmt"
         app:layout_constraintEnd_toEndOf="@+id/imageEvent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/recyclerViewDonorPic" />
 
     <TextView
-        android:id="@+id/tvGoalAmount"
+        android:id="@+id/tvGoalAmountTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:layout_marginBottom="16dp"
         android:text="Goals:"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/tvOrganiserTittle"
+        app:layout_constraintBottom_toTopOf="@+id/tvOrganiserTitle"
         app:layout_constraintStart_toStartOf="@+id/progressBar"
         app:layout_constraintTop_toBottomOf="@+id/progressBar"
         app:layout_constraintVertical_bias="0.416" />
 
     <TextView
-        android:id="@+id/textView16"
+        android:id="@+id/tvGoalAmt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginBottom="8dp"
         android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/tvOrganiserTittle"
+        app:layout_constraintBottom_toTopOf="@+id/tvOrganiserTitle"
         app:layout_constraintEnd_toStartOf="@+id/tvRaised"
         app:layout_constraintHorizontal_bias="0.15"
-        app:layout_constraintStart_toEndOf="@+id/tvGoalAmount" />
+        app:layout_constraintStart_toEndOf="@+id/tvGoalAmountTitle" />
 
     <TextView
         android:id="@+id/tvRaised"
@@ -110,15 +110,14 @@
         app:layout_constraintGuide_begin="338dp" />
 
     <TextView
-        android:id="@+id/tvOrganiserTittle"
+        android:id="@+id/tvOrganiserTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
         android:layout_marginBottom="8dp"
         android:text="Organiser"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/imageOrganiser"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="@+id/tvGoalAmountTitle" />
 
     <ImageView
         android:id="@+id/imageOrganiser"
@@ -128,7 +127,7 @@
         app:layout_constraintBottom_toTopOf="@+id/tvDescription"
         app:layout_constraintEnd_toStartOf="@+id/tvOraniserName"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/tvOrganiserTittle"
+        app:layout_constraintStart_toStartOf="@+id/tvOrganiserTitle"
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
@@ -177,7 +176,7 @@
     <ScrollView
         android:id="@+id/scrollView2"
         android:layout_width="403dp"
-        android:layout_height="129dp"
+        android:layout_height="80dp"
         android:layout_marginStart="2dp"
         android:layout_marginTop="4dp"
         android:layout_marginEnd="1dp"
@@ -190,8 +189,9 @@
             android:layout_height="wrap_content">
 
             <com.borjabravo.readmoretextview.ReadMoreTextView
+                android:id="@+id/tvEventsReadMore"
                 android:layout_width="366dp"
-                android:layout_height="132dp"
+                android:layout_height="60dp"
                 android:layout_marginTop="8dp"
                 android:text="AAAAAAAAAAAAAAAAAAAAAAge the life of an orphan’s life by giving them a loving and caring home. Your sponsorship will provide nutritious meals, clothing, healthcare, education and a special guardian. Give the chance to break out of poverty today......aaaaaaaaaaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbbbbbbbbbbccccccccccccccccccccccc"
                 app:colorClickableText="@android:color/holo_blue_light"

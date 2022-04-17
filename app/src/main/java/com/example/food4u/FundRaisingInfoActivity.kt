@@ -12,6 +12,8 @@ import com.example.food4u.databinding.ActivityFundRaisingInfoBinding
 import com.example.food4u.databinding.ActivityPaymentThankYouBinding
 import com.example.food4u.modal.Donors
 import com.example.food4u.modal.Events
+import com.example.food4u.modal.User
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import java.text.SimpleDateFormat
@@ -21,6 +23,9 @@ import java.util.regex.Pattern
 class FundRaisingInfoActivity : AppCompatActivity() {
     private lateinit var binding: ActivityFundRaisingInfoBinding
     private lateinit var database: DatabaseReference
+    private lateinit var eventId: String
+    private lateinit var event: Events
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,6 +34,26 @@ class FundRaisingInfoActivity : AppCompatActivity() {
 
         val fundraisingDonationAmount = binding.tvFundRaisingAmount;
 
+        eventId = intent.getStringExtra("eventId").toString()
+
+        database = FirebaseDatabase.getInstance().reference
+        database.child("Events/$eventId").get().addOnSuccessListener {
+            event = it.getValue(Events::class.java)!!
+
+            binding.tvOrganizeName.text = event.organizerName
+        }
+        database.child("userDB/User").child(FirebaseAuth.getInstance().currentUser!!.uid).get().addOnSuccessListener {
+            val user = it.getValue(User::class.java)!!
+
+            binding.inputName.setText(user.name)
+            binding.inputEmail.setText(user.email)
+            binding.inputPhone.setText(user.phoneNo)
+            val sdf = SimpleDateFormat("dd/M/yyyy")
+            val currentDate = sdf.format(Date())
+            binding.inputDate.setText(currentDate)
+            binding.inputDate.isEnabled = false
+
+        }
 
         binding.btn10.setOnClickListener{
             fundraisingDonationAmount.setText("10")
@@ -100,7 +125,7 @@ class FundRaisingInfoActivity : AppCompatActivity() {
             valid=false
         }
 
-        if(valid == true){
+        if(valid){
             database = FirebaseDatabase.getInstance().getReference("Donors")
             val key = database.push().key!!
 

@@ -18,7 +18,7 @@
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="44dp"
+            android:layout_marginTop="24dp"
             android:src="@drawable/ic_baseline_arrow_back_24"
             app:layout_constraintEnd_toStartOf="@+id/tvFundRaising"
             app:layout_constraintHorizontal_bias="0.0"
@@ -39,18 +39,16 @@
             app:layout_constraintVertical_bias="0.437" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView4"
-            android:layout_width="389dp"
-            android:layout_height="607dp"
+            android:id="@+id/rvFundraisingEvents"
+            android:layout_width="385dp"
+            android:layout_height="565dp"
             android:layout_margin="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="16dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="150dp"
+            android:layout_marginEnd="17dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvFundRaising"
+            app:layout_constraintTop_toBottomOf="@+id/imageBtnBack"
             tools:listitem="@layout/view_cycle_fundraising_event" />
 
         <Button

@@ -91,7 +91,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
-        android:text="TextView"
+        android:text="RM 0.0"
         app:layout_constraintBottom_toBottomOf="@+id/tvSubTotaltittle"
         app:layout_constraintEnd_toEndOf="@+id/textView8"
         app:layout_constraintTop_toTopOf="@+id/tvSubTotaltittle" />
@@ -101,7 +101,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="TextView"
+        android:text="RM 0.0"
         app:layout_constraintEnd_toEndOf="@+id/tvSubTotalAmount"
         app:layout_constraintStart_toStartOf="@+id/tvSubTotalAmount"
         app:layout_constraintTop_toBottomOf="@+id/tvSubTotalAmount" />
@@ -133,7 +133,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        android:text="TextView"
+        android:text="RM 0.0"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/textView8"
         app:layout_constraintStart_toStartOf="@+id/tvTotalTittle"
