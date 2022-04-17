@@ -57,6 +57,8 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
             android:text="Create"
+            android:backgroundTint="@color/orange"
+            app:backgroundTint="@null"
             app:layout_constraintBottom_toBottomOf="@+id/imageBtnBack"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/imageBtnBack" />

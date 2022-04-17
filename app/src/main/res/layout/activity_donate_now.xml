@@ -213,6 +213,8 @@
         android:layout_height="55dp"
         android:layout_marginBottom="8dp"
         android:text="Donate Now"
+        android:backgroundTint="@color/orange"
+        app:backgroundTint="@null"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
