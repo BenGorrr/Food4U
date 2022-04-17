@@ -92,7 +92,7 @@
             app:layout_constraintTop_toTopOf="@+id/tvDonationAmountBox" />
 
         <EditText
-            android:id="@+id/InputName"
+            android:id="@+id/inputName"
             android:layout_width="250dp"
             android:layout_height="48dp"
             android:layout_marginTop="16dp"
@@ -115,8 +115,8 @@
             android:minHeight="48dp"
             app:layout_constraintEnd_toEndOf="@+id/tvProfileDetailBox"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/InputName"
-            app:layout_constraintTop_toBottomOf="@+id/InputName"
+            app:layout_constraintStart_toStartOf="@+id/inputName"
+            app:layout_constraintTop_toBottomOf="@+id/inputName"
             tools:ignore="SpeakableTextPresentCheck" />
 
         <EditText
@@ -152,7 +152,7 @@
             android:layout_marginEnd="4dp"
             android:layout_marginBottom="10dp"
             app:layout_constraintBottom_toTopOf="@+id/imageView5"
-            app:layout_constraintEnd_toStartOf="@+id/InputName"
+            app:layout_constraintEnd_toStartOf="@+id/inputName"
             app:layout_constraintStart_toStartOf="@+id/tvProfileDetailBox"
             app:srcCompat="@drawable/person_icon" />
 
@@ -193,7 +193,7 @@
             app:srcCompat="@drawable/ic_phone" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/btn10"
             android:layout_width="62dp"
             android:layout_height="48dp"
             android:layout_marginStart="16dp"
@@ -201,48 +201,48 @@
             android:layout_marginEnd="16dp"
             android:text="$10"
             android:visibility="visible"
-            app:layout_constraintEnd_toStartOf="@+id/button2"
+            app:layout_constraintEnd_toStartOf="@+id/btn20"
             app:layout_constraintHorizontal_bias="0.166"
             app:layout_constraintStart_toStartOf="@+id/tvDonationAmountBox"
             app:layout_constraintTop_toBottomOf="@+id/tvDonationAmountTittle" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/btn20"
             android:layout_width="62dp"
             android:layout_height="48dp"
             android:layout_marginEnd="20dp"
             android:text="$20"
             android:visibility="visible"
-            app:layout_constraintBottom_toBottomOf="@+id/button"
-            app:layout_constraintEnd_toStartOf="@+id/button3"
-            app:layout_constraintTop_toTopOf="@+id/button"
+            app:layout_constraintBottom_toBottomOf="@+id/btn10"
+            app:layout_constraintEnd_toStartOf="@+id/btn50"
+            app:layout_constraintTop_toTopOf="@+id/btn10"
             app:layout_constraintVertical_bias="0.0" />
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/btn50"
             android:layout_width="62dp"
             android:layout_height="48dp"
             android:layout_marginEnd="20dp"
             android:text="$50"
             android:visibility="visible"
-            app:layout_constraintBottom_toBottomOf="@+id/button2"
-            app:layout_constraintEnd_toStartOf="@+id/button4"
-            app:layout_constraintTop_toTopOf="@+id/button2"
+            app:layout_constraintBottom_toBottomOf="@+id/btn20"
+            app:layout_constraintEnd_toStartOf="@+id/btn100"
+            app:layout_constraintTop_toTopOf="@+id/btn20"
             app:layout_constraintVertical_bias="0.0" />
 
         <Button
-            android:id="@+id/button4"
+            android:id="@+id/btn100"
             android:layout_width="71dp"
             android:layout_height="48dp"
             android:layout_marginEnd="16dp"
             android:text="$100"
             android:visibility="visible"
-            app:layout_constraintBottom_toBottomOf="@+id/button3"
+            app:layout_constraintBottom_toBottomOf="@+id/btn50"
             app:layout_constraintEnd_toEndOf="@+id/tvDonationAmountBox"
-            app:layout_constraintTop_toTopOf="@+id/button3" />
+            app:layout_constraintTop_toTopOf="@+id/btn50" />
 
         <EditText
-            android:id="@+id/editTextNumberDecimal"
+            android:id="@+id/tvFundRaisingAmount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="64dp"
@@ -264,7 +264,7 @@
             android:minWidth="48dp"
             android:minHeight="48dp"
             android:visibility="visible"
-            app:layout_constraintBottom_toTopOf="@+id/editTextTextMultiLine"
+            app:layout_constraintBottom_toTopOf="@+id/donateMessageBox"
             app:layout_constraintEnd_toEndOf="@+id/tvDonationAmountBox"
             app:layout_constraintHorizontal_bias="0.504"
             app:layout_constraintStart_toEndOf="@+id/textView12" />
@@ -276,11 +276,11 @@
             android:layout_marginTop="8dp"
             android:text="Anonymously"
             android:visibility="visible"
-            app:layout_constraintStart_toStartOf="@+id/editTextNumberDecimal"
+            app:layout_constraintStart_toStartOf="@+id/tvFundRaisingAmount"
             app:layout_constraintTop_toBottomOf="@+id/button5" />
 
         <EditText
-            android:id="@+id/editTextTextMultiLine"
+            android:id="@+id/donateMessageBox"
             android:layout_width="264dp"
             android:layout_height="63dp"
             android:layout_marginTop="12dp"
@@ -317,7 +317,7 @@
             android:textSize="10sp"
             android:visibility="visible"
             app:layout_constraintEnd_toStartOf="@+id/editTextNumber"
-            app:layout_constraintTop_toBottomOf="@+id/editTextNumberDecimal" />
+            app:layout_constraintTop_toBottomOf="@+id/tvFundRaisingAmount" />
 
         <EditText
             android:id="@+id/editTextNumber"
@@ -331,8 +331,8 @@
             android:inputType="number"
             android:visibility="visible"
             app:layout_constraintBottom_toTopOf="@+id/switch1"
-            app:layout_constraintEnd_toEndOf="@+id/button4"
-            app:layout_constraintTop_toBottomOf="@+id/editTextNumberDecimal"
+            app:layout_constraintEnd_toEndOf="@+id/btn100"
+            app:layout_constraintTop_toBottomOf="@+id/tvFundRaisingAmount"
             app:layout_constraintVertical_bias="0.357" />
 
         <Button
@@ -346,7 +346,7 @@
             app:layout_constraintBottom_toBottomOf="@+id/tvDonationAmountBox"
             app:layout_constraintEnd_toEndOf="@+id/tvDonationAmountBox"
             app:layout_constraintStart_toStartOf="@+id/tvDonationAmountBox"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLine" />
+            app:layout_constraintTop_toBottomOf="@+id/donateMessageBox" />
 
         <ImageView
             android:id="@+id/imageView9"
@@ -357,9 +357,9 @@
             android:layout_marginBottom="8dp"
             android:visibility="visible"
             app:layout_constraintBottom_toTopOf="@+id/textView13"
-            app:layout_constraintEnd_toStartOf="@+id/editTextNumberDecimal"
-            app:layout_constraintStart_toStartOf="@+id/button"
-            app:layout_constraintTop_toBottomOf="@+id/button"
+            app:layout_constraintEnd_toStartOf="@+id/tvFundRaisingAmount"
+            app:layout_constraintStart_toStartOf="@+id/btn10"
+            app:layout_constraintTop_toBottomOf="@+id/btn10"
             app:srcCompat="@drawable/ic_flag2" />
 
 

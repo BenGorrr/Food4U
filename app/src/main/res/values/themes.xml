@@ -19,5 +19,7 @@
     </style>
     <style name="Theme.Food4U.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
     <style name="Theme.Food4U.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
-
+    <style name="Button.DarkBlue" parent="ThemeOverlay.AppCompat">
+        <item name="colorAccent">@color/darkblue</item>
+    </style>
 </resources>

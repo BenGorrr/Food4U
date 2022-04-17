@@ -9,7 +9,7 @@
     android:background="@drawable/oval_shape">
 
     <ImageView
-        android:id="@+id/imageView19"
+        android:id="@+id/ivProductNecessityImg"
         android:layout_width="106dp"
         android:layout_height="98dp"
         android:layout_marginStart="16dp"
@@ -23,27 +23,27 @@
 
     <TextView
         android:id="@+id/tvProductNecessityName"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="16dp"
         android:text="TextView"
         android:textColor="#000000"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/tvX"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/imageView19"
-        app:layout_constraintTop_toTopOf="@+id/imageView19" />
+        app:layout_constraintEnd_toStartOf="@+id/btnDeleteProduct"
+        app:layout_constraintStart_toEndOf="@+id/ivProductNecessityImg"
+        app:layout_constraintTop_toTopOf="@+id/ivProductNecessityImg" />
 
     <TextView
         android:id="@+id/tvProductNecessityPrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginBottom="8dp"
         android:text="TextView"
         android:textColor="#F30101"
-        app:layout_constraintStart_toStartOf="@+id/tvProductNecessityName"
-        app:layout_constraintTop_toBottomOf="@+id/tvProductNecessityName" />
+        app:layout_constraintBottom_toBottomOf="@+id/ivProductNecessityImg"
+        app:layout_constraintStart_toStartOf="@+id/tvProductNecessityName" />
 
     <TextView
         android:id="@+id/tvX"
@@ -61,11 +61,12 @@
         android:id="@+id/tvProductNecessityQuantity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="34dp"
         android:text="TextView"
         android:textColor="#000000"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/tvProductNecessityName"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <Button

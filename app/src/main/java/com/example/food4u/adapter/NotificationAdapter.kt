@@ -8,15 +8,14 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.food4u.R
 import com.example.food4u.modal.Events
-import com.example.food4u.modal.Product
 import com.squareup.picasso.Picasso
 
-class EventsAdapter(private val list: List<Events>, private val listener: EventsAdapter.onItemClickListener) : RecyclerView.Adapter<EventsAdapter.myViewHolder>() {
+class NotificationAdapter (private val list: List<Events>, private val listener: NotificationAdapter.onItemClickListener) : RecyclerView.Adapter<NotificationAdapter.myViewHolder>(){
     inner class myViewHolder (itemView: View) : RecyclerView.ViewHolder(itemView), View.OnClickListener {
 
-        val tvFEventTittle:TextView = itemView.findViewById(R.id.tvFEventTittle)
-        val tvFEventContent:TextView = itemView.findViewById(R.id.tvFEventContent)
-        val imageFEvent:ImageView = itemView.findViewById(R.id.imageFEvent)
+        val noficationTitle: TextView = itemView.findViewById(R.id.notificationTitles)
+        val notificationMessage: TextView = itemView.findViewById(R.id.notificationMessages)
+        val notificationTime: ImageView = itemView.findViewById(R.id.notificationTime)
 
         init {
             itemView.setOnClickListener(this)
@@ -37,19 +36,15 @@ class EventsAdapter(private val list: List<Events>, private val listener: Events
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): myViewHolder {
-        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.view_cycle_fundraising_event, parent, false)
+        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.view_cycle_notification, parent, false)
 
         return myViewHolder(itemView)
     }
 
     override fun onBindViewHolder(holder: myViewHolder, position: Int) {
         val currentEvents = list[position]
-        holder.tvFEventTittle.text = currentEvents.eventTitle
-        holder.tvFEventContent.text = currentEvents.description
-
-        if (currentEvents.imageURL.isNotEmpty()){
-            Picasso.get().load(currentEvents.imageURL).resize(150, 0).centerCrop().into(holder.imageFEvent)
-        }
+        holder.noficationTitle.text = currentEvents.eventTitle
+        holder.notificationMessage.text = currentEvents.description
     }
 
     override fun getItemCount(): Int {
