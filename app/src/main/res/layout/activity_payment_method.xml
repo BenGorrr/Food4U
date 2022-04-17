@@ -57,6 +57,7 @@
         android:textColor="#FDF9F9"
         android:textStyle="bold"
         android:translationZ="90dp"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="@+id/btnAddCreditCard"
         app:layout_constraintEnd_toEndOf="@+id/btnAddCreditCard"
         app:layout_constraintHorizontal_bias="0.498"
@@ -74,6 +75,7 @@
         android:text="+"
         android:textSize="48sp"
         android:theme="@style/Button.DarkBlue"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
@@ -184,6 +186,44 @@
         app:layout_constraintEnd_toEndOf="@+id/paymentErrorMsgBg"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/paymentErrorMsgBg" />
+
+    <TextView
+        android:id="@+id/savedcreditCardBg"
+        android:layout_width="300dp"
+        android:layout_height="170dp"
+        android:background="@drawable/oval_shape_blue"
+        app:layout_constraintBottom_toBottomOf="@+id/textView10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/AddNewCardTitle"
+        app:layout_constraintVertical_bias="0.07999998" />
+
+    <TextView
+        android:id="@+id/savedcreditCardNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Card Number"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:translationZ="90dp"
+        app:layout_constraintBottom_toBottomOf="@+id/savedcreditCardBg"
+        app:layout_constraintEnd_toEndOf="@+id/savedcreditCardBg"
+        app:layout_constraintStart_toStartOf="@+id/savedcreditCardBg"
+        app:layout_constraintTop_toTopOf="@+id/savedcreditCardBg"
+        app:layout_constraintVertical_bias="0.84000003" />
+
+    <ImageView
+        android:id="@+id/masterCardImg"
+        android:layout_width="198dp"
+        android:layout_height="115dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/savedcreditCardBg"
+        app:layout_constraintStart_toStartOf="@+id/savedcreditCardBg"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.19999999"
+        app:srcCompat="@drawable/ic_master_card" />
 
     <!--    <com.paypal.checkout.paymentbutton.PayPalButton-->
 <!--        android:id="@+id/payPalButton"-->

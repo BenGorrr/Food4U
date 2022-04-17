@@ -26,6 +26,7 @@ class ContactUs : AppCompatActivity() {
         val successfulMsgTv = binding.successfulMsg
         val successfulMsgBg = binding.successfulMsgBg
         val telPhoneNumber = binding.addressLocation3
+        val findLocation = binding.addressLocation
 
         btnContactUs.setOnClickListener() {
             val intent = Intent(this, ContactUsActivity::class.java)
@@ -34,7 +35,14 @@ class ContactUs : AppCompatActivity() {
         }
 
         telPhoneNumber.setOnClickListener(){
-            val intent = Intent(Intent.ACTION_CALL, Uri.parse("tel:" + "603 2234 1123"))
+            val telNo = Uri.parse("tel:60322341123")
+            val intent: Intent = Intent(Intent.ACTION_DIAL, telNo)
+            startActivity(intent)
+        }
+
+        findLocation.setOnClickListener() {
+            val geo = Uri.parse("3.175471140409656, 101.66035248190155")
+            val intent: Intent = Intent(Intent.ACTION_VIEW, geo)
             startActivity(intent)
         }
 

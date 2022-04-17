@@ -1,40 +1,21 @@
 package com.example.food4u
 
-import android.R.attr
 import android.content.Intent
-import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
-import androidx.annotation.Nullable
-import androidx.annotation.RequiresApi
 import com.example.food4u.databinding.ActivityPaymentMethodBinding
-import com.paypal.checkout.PayPalCheckout
-import com.paypal.checkout.approve.OnApprove
-import com.paypal.checkout.cancel.OnCancel
-import com.paypal.checkout.config.CheckoutConfig
-import com.paypal.checkout.config.Environment
-import com.paypal.checkout.config.SettingsConfig
-import com.paypal.checkout.createorder.CreateOrder
-import com.paypal.checkout.createorder.UserAction
+import com.example.food4u.modal.CreditCard
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_payment_method.*
-import com.paypal.checkout.createorder.CurrencyCode
-import com.paypal.checkout.createorder.OrderIntent
-import com.paypal.checkout.error.OnError
-import com.paypal.checkout.order.Amount
-import com.paypal.checkout.order.AppContext
-import com.paypal.checkout.order.Order
-import com.paypal.checkout.order.PurchaseUnit
-import com.paypal.checkout.paymentbutton.PayPalButton
-
-import org.json.JSONException
-
-import org.json.JSONObject
 
 
 class PaymentMethodActivity : AppCompatActivity() {
     private lateinit var binding: ActivityPaymentMethodBinding
+    lateinit var database: DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,8 +33,36 @@ class PaymentMethodActivity : AppCompatActivity() {
         val paymentErrorBg = binding.paymentErrorMsgBg
         val touchNGoImg = binding.imageViewTNG
         val touchNGoTv = binding.tvTNGTittle
+        val savedCreditCardBg = binding.savedcreditCardBg
+
+        //GetCard
+        database = FirebaseDatabase.getInstance().reference
+        database.child("userDB/creditCard").child(Firebase.auth.uid.toString()).get()
+            .addOnSuccessListener { rec->
+                if(rec!=null){
+                    val card = rec.getValue(CreditCard::class.java)
+                    if (card != null){
+                        savedcreditCardNumber.setText(card.creditCardNo)
+                        val viewCard: View = binding.btnAddCreditCard
+                        viewCard.setVisibility(View.GONE)
+                        val viewCardTv: View = binding.tvAddCardTitle
+                        viewCardTv.setVisibility(View.GONE)
+                        val savedCardBg: View = binding.savedcreditCardBg
+                        savedCardBg.setVisibility(View.VISIBLE)
+                        val savedCardNumber: View = binding.savedcreditCardNumber
+                        savedCardNumber.setVisibility(View.VISIBLE)
+                        val savedMasterCardImg: View = binding.masterCardImg
+                        savedMasterCardImg.setVisibility(View.VISIBLE)
+                    }
+                }
+            }
 
         btnAddCard.setOnClickListener() {
+            val intent = Intent(this, AddNewCardActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+        savedCreditCardBg.setOnClickListener() {
             val intent = Intent(this, AddNewCardActivity::class.java)
             startActivity(intent)
             finish()

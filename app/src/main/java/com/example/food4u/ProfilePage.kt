@@ -78,7 +78,8 @@ class ProfilePage : AppCompatActivity() {
                 val post = dataSnapshot.getValue<User>()
                 if(post!=null){
                     tvName.text = post.name
-                    Picasso.get().load(post.imgUrl).resize(150, 150).centerCrop().into(profPic)
+                    if (post.imgUrl.isNotEmpty())
+                        Picasso.get().load(post.imgUrl).resize(150, 150).centerCrop().into(profPic)
                     numOfDonation.text = "Donation: " + post.numOfDonation
                 }
 
