@@ -2,6 +2,7 @@ package com.example.food4u.fragments
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -102,6 +103,9 @@ class HomeFragment : Fragment() {
         }
         binding.imageBtnNecessity.setOnClickListener {
             setCurrentFragment(NecessityFragment())
+        }
+        binding.imageNavigateNews2.setOnClickListener {
+            setCurrentFragment(NewsDetailFragment())
         }
     }
     private fun setCurrentFragment(fragment: Fragment) =
