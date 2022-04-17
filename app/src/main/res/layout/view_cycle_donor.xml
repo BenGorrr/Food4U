@@ -7,7 +7,7 @@
     android:layout_height="wrap_content">
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/imageDonor"
         android:layout_width="73dp"
         android:layout_height="81dp"
         android:layout_marginStart="16dp"
@@ -49,7 +49,7 @@
         android:layout_height="wrap_content"
         android:text="TextView"
         android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView4"
+        app:layout_constraintBottom_toBottomOf="@+id/imageDonor"
         app:layout_constraintEnd_toEndOf="@+id/tvDonorDate"
         app:layout_constraintStart_toStartOf="@+id/tvDonorName" />
 

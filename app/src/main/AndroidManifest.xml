@@ -57,7 +57,8 @@
         </activity>
         <activity
             android:name=".MyCartActivity"
-            android:exported="true">
+            android:exported="true"
+            android:parentActivityName=".NecessityActivity">
 
             <!-- <intent-filter> -->
             <!-- <action android:name="android.intent.action.MAIN" /> -->

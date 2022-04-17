@@ -12,6 +12,7 @@
     <ScrollView
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -64,25 +65,25 @@
             app:layout_constraintStart_toStartOf="@+id/vissionBox"
             app:layout_constraintTop_toTopOf="@+id/vissionBox" />
 
-        <TextView
-            android:id="@+id/tvVission"
-            android:layout_width="179dp"
-            android:layout_height="81dp"
-            android:layout_marginStart="2dp"
-            android:layout_marginTop="2dp"
-            android:layout_marginEnd="2dp"
-            android:layout_marginBottom="2dp"
-            android:background="@color/colorAccent"
-            android:text="Vission"
-            android:textAlignment="center"
-            android:textColor="#FFFFFF"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:visibility="visible"
-            app:layout_constraintBottom_toBottomOf="@+id/textView9"
-            app:layout_constraintEnd_toEndOf="@+id/textView9"
-            app:layout_constraintStart_toStartOf="@+id/textView9"
-            app:layout_constraintTop_toTopOf="@+id/textView9" />
+            <TextView
+                android:id="@+id/tvVission"
+                android:layout_width="179dp"
+                android:layout_height="81dp"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="2dp"
+                android:layout_marginBottom="2dp"
+                android:background="@color/colorAccent"
+                android:text="Vision"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@+id/textView9"
+                app:layout_constraintEnd_toEndOf="@+id/textView9"
+                app:layout_constraintStart_toStartOf="@+id/textView9"
+                app:layout_constraintTop_toTopOf="@+id/textView9" />
 
         <TextView
             android:id="@+id/tvVissionDetail"
@@ -214,50 +215,51 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView30" />
 
-        <ImageView
-            android:id="@+id/imageView15"
-            android:layout_width="87dp"
-            android:layout_height="106dp"
-            android:layout_marginEnd="24dp"
-            android:src="@drawable/ben"
-            app:layout_constraintEnd_toStartOf="@+id/imageView16"
-            app:layout_constraintTop_toTopOf="@+id/imageView14" />
+            <ImageView
+                android:id="@+id/imageView15"
+                android:layout_width="87dp"
+                android:layout_height="106dp"
+                android:layout_marginEnd="20dp"
+                android:src="@drawable/ben"
+                app:layout_constraintEnd_toStartOf="@+id/imageView16"
+                app:layout_constraintTop_toTopOf="@+id/imageView14" />
 
-        <ImageView
-            android:id="@+id/imageView16"
-            android:layout_width="78dp"
-            android:layout_height="103dp"
-            android:layout_marginEnd="108dp"
-            android:src="@drawable/weilun"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/imageView15" />
+            <ImageView
+                android:id="@+id/imageView16"
+                android:layout_width="78dp"
+                android:layout_height="103dp"
+                android:layout_marginEnd="16dp"
+                android:src="@drawable/weilun"
+                app:layout_constraintEnd_toStartOf="@+id/imageView21"
+                app:layout_constraintTop_toTopOf="@+id/imageView15" />
 
-        <TextView
-            android:id="@+id/textView31"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="President"
-            android:textSize="10sp"
-            app:layout_constraintEnd_toEndOf="@+id/imageView14"
-            app:layout_constraintHorizontal_bias="0.375"
-            app:layout_constraintStart_toStartOf="@+id/imageView14"
-            app:layout_constraintTop_toBottomOf="@+id/imageView14" />
+            <TextView
+                android:id="@+id/tvPositionKL"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="President"
+                android:textColor="#000000"
+                android:textSize="10sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tvPositionBen"
+                app:layout_constraintEnd_toEndOf="@+id/imageView14"
+                app:layout_constraintHorizontal_bias="0.489"
+                app:layout_constraintStart_toStartOf="@+id/imageView14"
+                app:layout_constraintTop_toBottomOf="@+id/imageView14" />
 
-        <TextView
-            android:id="@+id/textView32"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="8dp"
-            android:text="Vice-President I"
-            android:textSize="10sp"
-            app:layout_constraintEnd_toEndOf="@+id/imageView15"
-            app:layout_constraintHorizontal_bias="0.685"
-            app:layout_constraintStart_toEndOf="@+id/textView31"
-            app:layout_constraintTop_toBottomOf="@+id/imageView15" />
+            <TextView
+                android:id="@+id/tvPositionBen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Vice-President I"
+                android:textColor="#000000"
+                android:textSize="10sp"
+                app:layout_constraintEnd_toEndOf="@+id/imageView15"
+                app:layout_constraintStart_toStartOf="@+id/imageView15"
+                app:layout_constraintTop_toBottomOf="@+id/imageView15" />
 
-        <TextView
+            <TextView
             android:id="@+id/textView33"
             android:layout_width="408dp"
             android:layout_height="40dp"
@@ -286,6 +288,41 @@
             app:layout_constraintStart_toStartOf="@+id/textView33"
             app:layout_constraintTop_toTopOf="@+id/textView33"
             app:layout_constraintVertical_bias="1.0" />
+
+            <ImageView
+                android:id="@+id/imageView21"
+                android:layout_width="89dp"
+                android:layout_height="100dp"
+                android:layout_marginEnd="16dp"
+                android:src="@drawable/wenhan_pic"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/imageView16" />
+
+            <TextView
+                android:id="@+id/tvPositionWL"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Honorary Treasurer"
+                android:textColor="#020202"
+                android:textSize="10sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tvPositionBen"
+                app:layout_constraintEnd_toEndOf="@+id/imageView16"
+                app:layout_constraintStart_toStartOf="@+id/imageView16"
+                app:layout_constraintTop_toBottomOf="@+id/imageView16" />
+
+            <TextView
+                android:id="@+id/tvPositionWH"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Honorary Secretary"
+                android:textSize="10sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tvPositionWL"
+                app:layout_constraintEnd_toEndOf="@+id/imageView21"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/imageView21"
+                app:layout_constraintTop_toBottomOf="@+id/imageView21"
+                app:layout_constraintVertical_bias="1.0" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
