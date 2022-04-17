@@ -39,7 +39,9 @@ class AddNewCardActivity : AppCompatActivity() {
         var recentCardOwnerName = ""
         val errorMsgBg = binding.errorMsgBg
         val errorMsgTv = binding.ErrorMsgTv
+        val btnDeleteCard = binding.btnDeleteCard
 
+        //Load Card
         database = FirebaseDatabase.getInstance().reference
         database.child("userDB/creditCard").child(Firebase.auth.uid.toString()).get()
             .addOnSuccessListener { rec->
@@ -56,9 +58,29 @@ class AddNewCardActivity : AppCompatActivity() {
                         cvv.setText(card.cvvNo)
                         cardOwnerName.setText(card.cardName)
                         checkBox.checkBox!!.isChecked=true
+                        val viewBtnDelete: View = btnDeleteCard
+                        viewBtnDelete.setVisibility(View.VISIBLE)
                     }
                 }
             }
+
+        //Delete Card
+        btnDeleteCard.setOnClickListener() {
+            database = FirebaseDatabase.getInstance().reference
+            database.child("userDB/creditCard").child(Firebase.auth.uid.toString()).removeValue()
+                .addOnSuccessListener {
+                    Log.d("Delete CreditCard", "Deleted")
+                }
+                .addOnFailureListener {
+                    Log.d("Delete CreditCard", "Error" + it.message)
+                }
+            val intent = Intent(this, PaymentMethodActivity::class.java)
+            var b = Bundle()
+            b.putBoolean("deleted", true)
+            intent.putExtras(b)
+            startActivity(intent)
+            finish()
+        }
 
         btnBackAddNewCard.setOnClickListener() {
             val intent = Intent(this, PaymentMethodActivity::class.java)
@@ -66,6 +88,7 @@ class AddNewCardActivity : AppCompatActivity() {
             finish()
         }
 
+        //Add Card
         btnAddCard.setOnClickListener() {
             var cardValid = true
 
