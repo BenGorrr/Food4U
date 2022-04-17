@@ -49,22 +49,6 @@
         app:layout_constraintTop_toBottomOf="@+id/btnAddCreditCard"
         app:layout_constraintVertical_bias="1.0" />
 
-    <TextView
-        android:id="@+id/tvAddCardTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Add Card"
-        android:textColor="#FDF9F9"
-        android:textStyle="bold"
-        android:translationZ="90dp"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="@+id/btnAddCreditCard"
-        app:layout_constraintEnd_toEndOf="@+id/btnAddCreditCard"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="@+id/btnAddCreditCard"
-        app:layout_constraintTop_toTopOf="@+id/btnAddCreditCard"
-        app:layout_constraintVertical_bias="0.73" />
-
     <Button
         android:id="@+id/btnAddCreditCard"
         android:layout_width="314dp"
@@ -75,11 +59,26 @@
         android:text="+"
         android:textSize="48sp"
         android:theme="@style/Button.DarkBlue"
-        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvAddCardTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Card"
+        android:textColor="#FDF9F9"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:translationZ="90dp"
+        app:layout_constraintBottom_toBottomOf="@+id/btnAddCreditCard"
+        app:layout_constraintEnd_toEndOf="@+id/btnAddCreditCard"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="@+id/btnAddCreditCard"
+        app:layout_constraintTop_toTopOf="@+id/btnAddCreditCard"
+        app:layout_constraintVertical_bias="0.77" />
 
     <TextView
         android:id="@+id/textView17"
@@ -192,6 +191,7 @@
         android:layout_width="300dp"
         android:layout_height="170dp"
         android:background="@drawable/oval_shape_blue"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="@+id/textView10"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -208,6 +208,7 @@
         android:textSize="18sp"
         android:textStyle="bold"
         android:translationZ="90dp"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="@+id/savedcreditCardBg"
         app:layout_constraintEnd_toEndOf="@+id/savedcreditCardBg"
         app:layout_constraintStart_toStartOf="@+id/savedcreditCardBg"
@@ -218,6 +219,7 @@
         android:id="@+id/masterCardImg"
         android:layout_width="198dp"
         android:layout_height="115dp"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/savedcreditCardBg"
         app:layout_constraintStart_toStartOf="@+id/savedcreditCardBg"
