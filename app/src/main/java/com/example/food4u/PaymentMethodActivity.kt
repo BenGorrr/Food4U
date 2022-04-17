@@ -19,6 +19,7 @@ class PaymentMethodActivity : AppCompatActivity() {
     lateinit var database: DatabaseReference
     var eventPaymentId = "null"
     var orderPaymentId = "null"
+    var userCreditCard = false
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -60,10 +61,25 @@ class PaymentMethodActivity : AppCompatActivity() {
                         savedCardNumber.setVisibility(View.VISIBLE)
                         val savedMasterCardImg: View = binding.masterCardImg
                         savedMasterCardImg.setVisibility(View.VISIBLE)
+                        userCreditCard = true
                     }
                 }
             }
 
+        //Display Msg After Card Deleted
+        var deletedCard = false
+        deletedCard = intent.getBooleanExtra("deleted", deletedCard)
+        if (deletedCard) {
+            paymentErrorTv.text = "Card Successfully Deleted"
+            val view: View = paymentErrorTv
+            view.setVisibility(View.VISIBLE)
+            view.postDelayed(Runnable { view.setVisibility(View.GONE) }, 3000)
+            val viewBg: View = paymentErrorBg
+            viewBg.setVisibility(View.VISIBLE)
+            viewBg.postDelayed(Runnable { viewBg.setVisibility(View.GONE) }, 3000)
+        }
+
+        //Navigate to add new card page
         btnAddCard.setOnClickListener() {
             val intent = Intent(this, AddNewCardActivity::class.java)
             startActivity(intent)
@@ -75,6 +91,7 @@ class PaymentMethodActivity : AppCompatActivity() {
             finish()
         }
 
+        //Back to profile page
         btnBackPaymentMethod.setOnClickListener {
             val intent = Intent(this, ProfilePage::class.java)
             startActivity(intent)
@@ -120,8 +137,7 @@ class PaymentMethodActivity : AppCompatActivity() {
         }
         //CreditCard
         creditCardImg.setOnClickListener() {
-            val creditCardDetail = ""
-            if (creditCardDetail.isEmpty()){
+            if (!userCreditCard){
                 paymentErrorTv.text = "No Credit Card Available"
                 val view: View = paymentErrorTv
                 view.setVisibility(View.VISIBLE)
@@ -129,11 +145,14 @@ class PaymentMethodActivity : AppCompatActivity() {
                 val viewBg: View = paymentErrorBg
                 viewBg.setVisibility(View.VISIBLE)
                 viewBg.postDelayed(Runnable { viewBg.setVisibility(View.GONE) }, 3000)
+            } else {
+                val intent = Intent(this, AddNewCardActivity::class.java)
+                startActivity(intent)
+                finish()
             }
         }
         creditCardTv.setOnClickListener() {
-            val creditCardDetail = ""
-            if (creditCardDetail.isEmpty()){
+            if (!userCreditCard){
                 paymentErrorTv.text = "No Credit Card Available"
                 val view: View = paymentErrorTv
                 view.setVisibility(View.VISIBLE)
@@ -141,6 +160,10 @@ class PaymentMethodActivity : AppCompatActivity() {
                 val viewBg: View = paymentErrorBg
                 viewBg.setVisibility(View.VISIBLE)
                 viewBg.postDelayed(Runnable { viewBg.setVisibility(View.GONE) }, 3000)
+            } else {
+                val intent = Intent(this, AddNewCardActivity::class.java)
+                startActivity(intent)
+                finish()
             }
         }
     }

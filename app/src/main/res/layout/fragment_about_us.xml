@@ -117,7 +117,7 @@
         <ScrollView
             android:id="@+id/scrollView3"
             android:layout_width="381dp"
-            android:layout_height="120dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -129,10 +129,10 @@
 
                 <com.borjabravo.readmoretextview.ReadMoreTextView
                     android:layout_width="362dp"
-                    android:layout_height="104dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:layout_marginBottom="8dp"
-                    android:text="AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAaIt all began in 1999, amidst a raging war in Kosova where thousands of livntless innolah Mahmood, a Malaysian obstetrician gynaecologist, was moved to volunteer "
+                    android:text="It all began in 1999, amidst a raging war in Kosova where thousands of lives were lost and suffering was widespread. Moved by the plight of countless innocent civilians, especially women and children, Dr. Jemilah Mahmood, a Malaysian obstetrician and gynaecologist, was moved to volunteer her medical services.  Finding no national organisation ready to support such international crises, she established the Malaysian Medical Relief Society – better known today as FOOD4U Malaysia"
                     app:colorClickableText="@android:color/holo_blue_light"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -141,7 +141,7 @@
                     app:layout_constraintVertical_bias="0.0"
                     app:trimCollapsedText="Read less"
                     app:trimExpandedText="Read more"
-                    app:trimLength="20"
+                    app:trimLength="100"
                     app:trimMode="trimModeLength" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>

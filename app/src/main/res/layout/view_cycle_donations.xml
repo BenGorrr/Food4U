@@ -56,7 +56,7 @@
 
     <TextView
         android:id="@+id/donationAmount"
-        android:layout_width="66dp"
+        android:layout_width="100dp"
         android:layout_height="19dp"
         android:text="$"
         android:textColor="@color/orange"
@@ -64,9 +64,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/donationsNotify"
         app:layout_constraintEnd_toEndOf="@+id/donationsNotify"
-        app:layout_constraintHorizontal_bias="0.97"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/donationsNotify"
-        app:layout_constraintTop_toTopOf="@+id/donationsNotify" />
+        app:layout_constraintTop_toTopOf="@+id/donationsNotify"
+        app:layout_constraintVertical_bias="0.461" />
 
     <TextView
         android:id="@+id/donationTitle"

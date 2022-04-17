@@ -78,7 +78,7 @@ class EditProfileFragment : Fragment() {
         btnSave.setOnClickListener{
             val dateFromEditText = editBd.text.toString()
             val phoneNo = editPhoneNo.text.toString()
-            if((dateFromEditText!="" && !(dateFromEditText.matches(getPattern().toRegex()))) || !(phoneNo.length in 10..11)) {
+            if((dateFromEditText!="" && !(dateFromEditText.matches(getPattern().toRegex()))) || (phoneNo!="" && !(phoneNo.length in 10..11))) {
                 if(dateFromEditText!="" && !(dateFromEditText.matches(getPattern().toRegex()))){
                     binding.tfEditBirthDate.setError("Your date is incorrect!")
                 }

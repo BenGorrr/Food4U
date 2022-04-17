@@ -14,6 +14,7 @@ import com.example.food4u.modal.EventPayment
 import com.example.food4u.modal.OrderPayment
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ServerValue
 import com.paypal.checkout.PayPalCheckout.setConfig
 import com.paypal.checkout.PayPalCheckout
 import com.paypal.checkout.approve.OnApprove
@@ -130,9 +131,10 @@ class PaypalActivity : AppCompatActivity() {
 
                                         val childUpdate = hashMapOf<String, Any>(
                                             "/Donor/${eventPayment.eventId}/${eventPaymentId}" to true,
-                                            "/Events/${eventPayment.eventId}/raised" to raised,
+                                            "/Events/${eventPayment.eventId}/raised" to raised
                                         )
                                         database.updateChildren(childUpdate)
+                                        database.child("userDB/User/${eventPayment.userId}").setValue(ServerValue.increment(1))
                                     }
 
                                     val intent = Intent(this, PaymentThankYouActivity::class.java)
