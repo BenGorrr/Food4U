@@ -28,7 +28,7 @@ tools:context=".fragments.NewsDetailFragment">
         app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
-        android:id="@+id/imageView26"
+        android:id="@+id/ivBack"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginStart="16dp"
@@ -45,7 +45,7 @@ tools:context=".fragments.NewsDetailFragment">
         android:src="@drawable/image_new2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView26" />
+        app:layout_constraintTop_toBottomOf="@+id/ivBack" />
 
     <TextView
         android:id="@+id/textView39"
