@@ -54,7 +54,6 @@ class DonorListActivity : AppCompatActivity(), DonorsAdapter.onItemClickListener
                                 val eventPayment = it.getValue(EventPayment::class.java)!!
                                 eventPaymentList.add(eventPayment)
 
-
                                 val adapter = DonorsAdapter(eventPaymentList, this@DonorListActivity)
                                 binding.rvDonorList.adapter = adapter
                                 binding.tvDonorAmount.setText(eventPaymentList.size.toString() + " Donated")

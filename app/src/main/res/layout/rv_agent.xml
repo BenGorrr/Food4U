@@ -18,7 +18,9 @@
         android:ellipsize="none"
         android:scrollHorizontally="false"
         android:text="Agency Name"
+        android:textColor="#000000"
         android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/ivAgencyPic"
         app:layout_constraintTop_toTopOf="parent" />
@@ -29,6 +31,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
+        android:justificationMode="inter_word"
         android:text="Description"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/tvAgencyName"

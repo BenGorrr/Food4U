@@ -90,6 +90,8 @@
             android:layout_width="153dp"
             android:layout_height="62dp"
             android:padding="4dp"
+            android:textAlignment="center"
+            android:gravity="center"
             android:text="A world where every woman, man and child leads a healthy, fulfilling life of self-reliance and dignity."
             android:textColor="#FAFAFA"
             android:textSize="11sp"
@@ -119,20 +121,24 @@
             android:layout_width="381dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
+            android:justificationMode="inter_word"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvIntro">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                >
 
                 <com.borjabravo.readmoretextview.ReadMoreTextView
+                    android:id="@+id/tvIntroContent"
                     android:layout_width="362dp"
+                    android:justificationMode="inter_word"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:layout_marginBottom="8dp"
-                    android:text="It all began in 1999, amidst a raging war in Kosova where thousands of lives were lost and suffering was widespread. Moved by the plight of countless innocent civilians, especially women and children, Dr. Jemilah Mahmood, a Malaysian obstetrician and gynaecologist, was moved to volunteer her medical services.  Finding no national organisation ready to support such international crises, she established the Malaysian Medical Relief Society – better known today as FOOD4U Malaysia"
+                    android:text="It all began in 1999, amidst a raging war in Kosova where thousands of lives were lost and suffering was widespread. Moved by the plight of countless innocent civilians, especially women and children, Dr. Jemilah Mahmood, a Malaysian obstetrician and gynaecologist, was moved to volunteer her medical services.  Finding no national organisation ready to support such international crises, she established the Malaysian Medical Relief Society – better known today as FOOD4U Malaysia \n"
                     app:colorClickableText="@android:color/holo_blue_light"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -180,6 +186,8 @@
             android:layout_width="336dp"
             android:layout_height="63dp"
             android:layout_marginTop="2dp"
+            android:textAlignment="center"
+            android:gravity="center"
             android:text="(Registration No: PPM-020-14-16091999). To date, we have over 500 members, and over 7,000 registered volunteers in our database. In compliance with the Societies Act, FOOD4U submits its accounts to an external auditor, publishes its Annual Report for review and holds an Annual General Meeting for all members, usually in June every year. "
             android:textColor="#FAF9F9"
             android:textSize="10sp"
@@ -203,32 +211,32 @@
             app:layout_constraintTop_toBottomOf="@+id/tvStoryBehingBox"
             app:layout_constraintVertical_bias="0.142" />
 
-        <ImageView
-            android:id="@+id/imageView14"
-            android:layout_width="90dp"
-            android:layout_height="104dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:src="@drawable/kailok"
-            app:layout_constraintEnd_toStartOf="@+id/imageView15"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView30" />
+            <ImageView
+                android:id="@+id/imageView14"
+                android:layout_width="90dp"
+                android:layout_height="104dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:src="@drawable/kailok"
+                app:layout_constraintEnd_toStartOf="@+id/imageView15"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView30" />
 
             <ImageView
                 android:id="@+id/imageView15"
-                android:layout_width="87dp"
-                android:layout_height="106dp"
-                android:layout_marginEnd="20dp"
+                android:layout_width="90dp"
+                android:layout_height="104dp"
+                android:layout_marginEnd="12dp"
                 android:src="@drawable/ben"
                 app:layout_constraintEnd_toStartOf="@+id/imageView16"
                 app:layout_constraintTop_toTopOf="@+id/imageView14" />
 
             <ImageView
                 android:id="@+id/imageView16"
-                android:layout_width="78dp"
-                android:layout_height="103dp"
-                android:layout_marginEnd="16dp"
+                android:layout_width="90dp"
+                android:layout_height="104dp"
+                android:layout_marginEnd="12dp"
                 android:src="@drawable/weilun"
                 app:layout_constraintEnd_toStartOf="@+id/imageView21"
                 app:layout_constraintTop_toTopOf="@+id/imageView15" />
@@ -241,6 +249,7 @@
                 android:text="President"
                 android:textColor="#000000"
                 android:textSize="10sp"
+                android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="@+id/tvPositionBen"
                 app:layout_constraintEnd_toEndOf="@+id/imageView14"
                 app:layout_constraintHorizontal_bias="0.489"
@@ -252,9 +261,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Vice-President I"
+                android:text="Vice-President "
                 android:textColor="#000000"
                 android:textSize="10sp"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="@+id/imageView15"
                 app:layout_constraintStart_toStartOf="@+id/imageView15"
                 app:layout_constraintTop_toBottomOf="@+id/imageView15" />
@@ -291,8 +301,8 @@
 
             <ImageView
                 android:id="@+id/imageView21"
-                android:layout_width="89dp"
-                android:layout_height="100dp"
+                android:layout_width="90dp"
+                android:layout_height="104dp"
                 android:layout_marginEnd="16dp"
                 android:src="@drawable/wenhan_pic"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -306,6 +316,7 @@
                 android:text="Honorary Treasurer"
                 android:textColor="#020202"
                 android:textSize="10sp"
+                android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="@+id/tvPositionBen"
                 app:layout_constraintEnd_toEndOf="@+id/imageView16"
                 app:layout_constraintStart_toStartOf="@+id/imageView16"
@@ -316,7 +327,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Honorary Secretary"
+                android:textColor="#000000"
                 android:textSize="10sp"
+                android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="@+id/tvPositionWL"
                 app:layout_constraintEnd_toEndOf="@+id/imageView21"
                 app:layout_constraintHorizontal_bias="0.0"

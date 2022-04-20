@@ -12,58 +12,50 @@
         android:id="@+id/imageDonor"
         android:layout_width="73dp"
         android:layout_height="81dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/tvDonorName"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
         android:id="@+id/tvDonorName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="116dp"
-        android:layout_marginBottom="16dp"
         android:text="TextView"
+        android:textColor="#000000"
         android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/tvDonorDate"
+        android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/tvDonorPrice"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintStart_toEndOf="@+id/imageDonor"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tvDonorDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:layout_marginTop="24dp"
         android:text="TextView"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toTopOf="@+id/tvDonorTime"
-        app:layout_constraintStart_toStartOf="@+id/tvDonorName" />
-
-    <TextView
-        android:id="@+id/tvDonorTime"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        android:textSize="12sp"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="@+id/imageDonor"
-        app:layout_constraintEnd_toEndOf="@+id/tvDonorDate"
-        app:layout_constraintStart_toStartOf="@+id/tvDonorName" />
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/tvDonorName"
+        app:layout_constraintTop_toBottomOf="@+id/tvDonorName" />
 
     <TextView
         android:id="@+id/tvDonorPrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="24dp"
         android:text="TextView"
+        android:textColor="#43DA32"
         android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

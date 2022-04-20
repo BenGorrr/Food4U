@@ -1,10 +1,12 @@
 package com.example.food4u
 
 import android.content.Intent
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.util.Patterns
+import androidx.core.content.ContextCompat
 import com.example.food4u.databinding.ActivityFundRaisingInfoBinding
 import com.example.food4u.modal.Donors
 import com.example.food4u.modal.Events
@@ -16,6 +18,8 @@ import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_fund_raising_info.*
 import java.text.SimpleDateFormat
 import java.util.*
+import java.util.regex.Matcher
+import java.util.regex.Pattern
 
 class FundRaisingInfoActivity : AppCompatActivity() {
     private lateinit var binding: ActivityFundRaisingInfoBinding
@@ -54,15 +58,31 @@ class FundRaisingInfoActivity : AppCompatActivity() {
 
         binding.btn10.setOnClickListener{
             fundraisingDonationAmount.setText("10")
+            btn10.setBackgroundColor(Color.CYAN)
+            btn20.setBackgroundColor(Color.GRAY)
+            btn50.setBackgroundColor(Color.GRAY)
+            btn100.setBackgroundColor(Color.GRAY)
         }
         binding.btn20.setOnClickListener{
             fundraisingDonationAmount.setText("20")
+            btn10.setBackgroundColor(Color.GRAY)
+            btn20.setBackgroundColor(Color.CYAN)
+            btn50.setBackgroundColor(Color.GRAY)
+            btn100.setBackgroundColor(Color.GRAY)
         }
         binding.btn50.setOnClickListener{
             fundraisingDonationAmount.setText("50")
+            btn10.setBackgroundColor(Color.GRAY)
+            btn20.setBackgroundColor(Color.GRAY)
+            btn50.setBackgroundColor(Color.CYAN)
+            btn100.setBackgroundColor(Color.GRAY)
         }
         binding.btn100.setOnClickListener{
             fundraisingDonationAmount.setText("100")
+            btn10.setBackgroundColor(Color.GRAY)
+            btn20.setBackgroundColor(Color.GRAY)
+            btn50.setBackgroundColor(Color.GRAY)
+            btn100.setBackgroundColor(Color.CYAN)
         }
 
         binding.btnDonate.setOnClickListener {
@@ -75,7 +95,6 @@ class FundRaisingInfoActivity : AppCompatActivity() {
         val donorEmail = binding.inputEmail.text.toString().trim()
         val donorPhone = binding.inputPhone.text.toString().trim()
         val symbols = "0123456789/?!:;%"
-        val donateDate = binding.inputDate.text.toString().trim()
         val donateAmount = binding.tvFundRaisingAmount.text.toString().trim()
         val donateMessage = binding.donateMessageBox.text.toString().trim()
         var valid=true
@@ -99,24 +118,19 @@ class FundRaisingInfoActivity : AppCompatActivity() {
         if(donorPhone.isEmpty()){
             binding.inputPhone.error = "This field cannot be empty"
             valid=false
-//            if (donorPhone.length != 10) {
-//                binding.inputEmail.error = "Invalid Phone Number"
-//                valid=false
-//            }
-//            else if(!Patterns.PHONE.matcher(donorPhone).matches()){
-//                binding.inputEmail.error = "Invalid Phone Number"
-//                valid=false
-//            }
-        }
-
-        if(donateDate.isEmpty()){
-            binding.inputDate.error = "This field cannot be empty"
+        } else if (phoneValidate(donorPhone) == false) {
+            binding.inputPhone.error = "Invalid Phone Number"
             valid=false
         }
+
         if(donateAmount.isEmpty()){
             binding.tvFundRaisingAmount.error = "This field cannot be empty"
             valid=false
+        } else if(Integer.parseInt(donateAmount) <= 0){
+            binding.tvFundRaisingAmount.error = "Value cannot be zero"
+            valid=false
         }
+
         if(donateMessage.isEmpty()){
             binding.donateMessageBox.error = "This field cannot be empty"
             valid=false
@@ -165,5 +179,11 @@ class FundRaisingInfoActivity : AppCompatActivity() {
             .addOnFailureListener{
                 Log.d("Something went wrong", "Error" + it.message)
             }
+    }
+
+    private fun phoneValidate(text:String?):Boolean{
+        var p:Pattern = Pattern.compile("(\\+?6?01)[02-46-9]-*[0-9]{7}\$|^(\\+?6?01)[1]-*[0-9]{8}\$")
+        var m:Matcher = p.matcher(text)
+        return m.matches()
     }
 }

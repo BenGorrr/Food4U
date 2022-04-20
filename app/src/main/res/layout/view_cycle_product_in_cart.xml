@@ -30,6 +30,7 @@
         android:layout_marginEnd="16dp"
         android:text="TextView"
         android:textColor="#000000"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/btnDeleteProduct"
         app:layout_constraintStart_toEndOf="@+id/ivProductNecessityImg"
@@ -42,6 +43,7 @@
         android:layout_marginBottom="8dp"
         android:text="TextView"
         android:textColor="#F30101"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="@+id/ivProductNecessityImg"
         app:layout_constraintStart_toStartOf="@+id/tvProductNecessityName" />
 
