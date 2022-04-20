@@ -284,20 +284,36 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView16" />
 
-        <TextView
-            android:id="@+id/textView34"
-            android:layout_width="177dp"
-            android:layout_height="21dp"
-            android:text="Still need help? Contact us"
-            android:textAlignment="center"
-            android:textColor="#FAFAFA"
-            android:textSize="10sp"
-            app:layout_constraintBottom_toBottomOf="@+id/textView33"
-            app:layout_constraintEnd_toEndOf="@+id/textView33"
-            app:layout_constraintHorizontal_bias="0.484"
-            app:layout_constraintStart_toStartOf="@+id/textView33"
-            app:layout_constraintTop_toTopOf="@+id/textView33"
-            app:layout_constraintVertical_bias="1.0" />
+            <TextView
+                android:id="@+id/ContactUsTv"
+                android:layout_width="177dp"
+                android:layout_height="14dp"
+                android:text="Still need help?"
+                android:textAlignment="center"
+                android:textColor="#FAFAFA"
+                android:textSize="10sp"
+                app:layout_constraintBottom_toBottomOf="@+id/textView33"
+                app:layout_constraintEnd_toEndOf="@+id/textView33"
+                app:layout_constraintHorizontal_bias="0.36"
+                app:layout_constraintStart_toStartOf="@+id/textView33"
+                app:layout_constraintTop_toTopOf="@+id/textView33"
+                app:layout_constraintVertical_bias="0.8" />
+
+            <TextView
+                android:id="@+id/contactUsTv8"
+                android:layout_width="54dp"
+                android:layout_height="15dp"
+                android:text="Contact us"
+                android:textAlignment="center"
+                android:textColor="@android:color/holo_blue_dark"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/textView33"
+                app:layout_constraintEnd_toEndOf="@+id/textView33"
+                app:layout_constraintHorizontal_bias="0.59"
+                app:layout_constraintStart_toStartOf="@+id/textView33"
+                app:layout_constraintTop_toTopOf="@+id/textView33"
+                app:layout_constraintVertical_bias="0.81" />
 
             <ImageView
                 android:id="@+id/imageView21"

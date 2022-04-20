@@ -4,22 +4,23 @@ import android.R
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.food4u.databinding.ActivityContactUsBinding
-import com.example.food4u.databinding.FragmentContactUsMainBinding
 import android.content.DialogInterface
 import android.net.Uri
 import android.view.View
 import androidx.appcompat.app.AlertDialog
 import androidx.core.view.isVisible
+import com.example.food4u.databinding.ActivityContactUsMainBinding
+import com.example.food4u.fragments.AboutUsFragment
+import com.example.food4u.fragments.HomeFragment
 
 
-class ContactUs : AppCompatActivity() {
-    lateinit var binding: FragmentContactUsMainBinding
+class ContactUsMainActivity : AppCompatActivity() {
+    lateinit var binding: ActivityContactUsMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         supportActionBar?.hide()
-        binding = FragmentContactUsMainBinding.inflate(layoutInflater)
+        binding = ActivityContactUsMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         val btnContactUs = binding.btnSendUsMessage
@@ -27,9 +28,16 @@ class ContactUs : AppCompatActivity() {
         val successfulMsgBg = binding.successfulMsgBg
         val telPhoneNumber = binding.addressLocation3
         val findLocation = binding.addressLocation
+        val btnBackToAboutUs = binding.backContactUs
 
         btnContactUs.setOnClickListener() {
             val intent = Intent(this, ContactUsActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+
+        btnBackToAboutUs.setOnClickListener() {
+            val intent = Intent(this, HomeFragment::class.java)
             startActivity(intent)
             finish()
         }

@@ -21,13 +21,13 @@ class ContactUsActivity : AppCompatActivity() {
         val contactUsMessage = binding.contactUsMessageTf
 
         btnBackContactUsActivity.setOnClickListener() {
-            val intent = Intent(this, ContactUs::class.java)
+            val intent = Intent(this, ContactUsMainActivity::class.java)
             startActivity(intent)
             finish()
         }
 
         btnSubmitContactUs.setOnClickListener() {
-            val intent = Intent(this, ContactUs::class.java)
+            val intent = Intent(this, ContactUsMainActivity::class.java)
             var b = Bundle()
             b.putBoolean("submitted", true)
             intent.putExtras(b)
