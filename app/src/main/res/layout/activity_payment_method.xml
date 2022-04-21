@@ -61,7 +61,6 @@
         android:backgroundTint="@color/darkblue"
         app:backgroundTint="@null"
         android:theme="@style/Button.DarkBlue"
-        app:backgroundTint="@null"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
